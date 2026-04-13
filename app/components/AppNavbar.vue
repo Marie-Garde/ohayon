@@ -39,6 +39,7 @@ onMounted(() => {
   position: sticky;
   top: 0;
   z-index: 100;
+  box-shadow: 0 2px 4px rgba(50, 50, 50, 0.5);
 }
 
 .navbar__logo img {
@@ -57,21 +58,21 @@ onMounted(() => {
 
 .navbar__links a {
   font-family: var(--font-body);
-  font-weight: 200;
-  font-size: 15px;
+  font-weight: 300;
+  font-size: 18px;
   color: var(--color-primary);
   text-decoration: none;
-  transition: opacity 0.2s;
+  transition: color 0.3s;
 }
 
 .navbar__links a:hover {
-  opacity: 0.7;
+  color: var(--color-text);
 }
 
 .navbar__btn {
   font-family: var(--font-body);
-  font-weight: 400;
-  font-size: 15px;
+  font-weight: 300;
+  font-size: 18px;
   color: #fff;
   background-color: var(--color-primary);
   border: 2px solid transparent;

@@ -21,7 +21,7 @@
 
 .skills__image-wrapper {
   width: 100%;
-  height: 350px;
+  height: 450px;
   overflow: hidden;
   clip-path: polygon(
     0 var(--slant-height),

@@ -46,8 +46,9 @@
 }
 
 .values__grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 50px;
   max-width: 1000px;
   margin: 0 auto;
@@ -58,6 +59,11 @@
   border-radius: 5px;
   padding: 30px 20px;
   text-align: center;
+  width: 350px;
+  height: 220px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .values__card h3 {
@@ -86,7 +92,10 @@
   text-decoration: none;
   line-height: 1.5;
   border: 2px solid transparent;
-  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+  transition:
+    background-color 0.3s,
+    color 0.3s,
+    border-color 0.3s;
 }
 
 .values__btn:hover {

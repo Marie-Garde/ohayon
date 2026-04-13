@@ -10,28 +10,40 @@
         <div class="timeline__step timeline__step--top">
           <div class="timeline__content">
             <h3>Étape 1</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean tincidunt, orci eget viverra feugiat.</p>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean
+              tincidunt, orci eget viverra feugiat.
+            </p>
           </div>
           <span class="timeline__dot"></span>
         </div>
         <div class="timeline__step timeline__step--bottom">
           <span class="timeline__dot"></span>
           <div class="timeline__content">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean tincidunt, orci eget viverra feugiat.</p>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean
+              tincidunt, orci eget viverra feugiat.
+            </p>
             <h3>Étape 2</h3>
           </div>
         </div>
         <div class="timeline__step timeline__step--top">
           <div class="timeline__content">
             <h3>Étape 3</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean tincidunt, orci eget viverra feugiat.</p>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean
+              tincidunt, orci eget viverra feugiat.
+            </p>
           </div>
           <span class="timeline__dot"></span>
         </div>
         <div class="timeline__step timeline__step--bottom">
           <span class="timeline__dot"></span>
           <div class="timeline__content">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean tincidunt, orci eget viverra feugiat.</p>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean
+              tincidunt, orci eget viverra feugiat.
+            </p>
             <h3>Étape 4</h3>
           </div>
         </div>
@@ -45,7 +57,7 @@
   background-color: var(--color-primary);
   height: 700px;
   padding: 100px 40px 80px;
-  margin-bottom: 80px;
+  margin-bottom: 50px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -91,7 +103,7 @@
 }
 
 .timeline__track::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 50%;
   left: 0;
@@ -102,7 +114,7 @@
 }
 
 .timeline__track::after {
-  content: '';
+  content: "";
   position: absolute;
   top: 50%;
   right: -5px;
@@ -172,7 +184,7 @@
   font-weight: 300;
   margin: 0;
   margin-left: 7px;
-  border-left: 2px solid #fff;
+  border-left: 3px solid #fff;
   padding-left: 10px;
 }
 

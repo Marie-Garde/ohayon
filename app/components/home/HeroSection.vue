@@ -75,7 +75,6 @@
   color: #fff;
   font-weight: 300;
   font-size: 22px;
-  line-height: 1.8;
   margin: 0 0 30px;
   padding-left: 160px;
 }
@@ -101,7 +100,10 @@
   text-decoration: none;
   background: transparent;
   width: fit-content;
-  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+  transition:
+    background-color 0.3s,
+    color 0.3s,
+    border-color 0.3s;
 }
 
 .hero__btn:hover {

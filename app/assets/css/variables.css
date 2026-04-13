@@ -1,16 +1,16 @@
 :root {
   /* Couleurs principales */
-  --color-primary: #1CB1A1;
-  --color-secondary: #FFBF00;
-  --color-background: #FFFFFF;
-  --color-text: #3A3A3A;
+  --color-primary: #1cb1a1;
+  --color-secondary: #ffbf00;
+  --color-background: #ffffff;
+  --color-text: #3a3a3a;
 
   /* Diagonale réutilisable */
   --slant-height: 60px;
 
   /* Polices */
-  --font-heading: 'Manrope', sans-serif;
-  --font-body: 'Roboto Slab', serif;
+  --font-heading: "Manrope", sans-serif;
+  --font-body: "Roboto Slab", serif;
 }
 
 /* Reset */
@@ -49,4 +49,5 @@ p {
   font-weight: 400;
   font-size: 15px;
   color: var(--color-text);
+  line-height: 1.4;
 }

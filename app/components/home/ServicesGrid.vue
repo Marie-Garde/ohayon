@@ -2,27 +2,47 @@
   <section class="services">
     <div class="services__grid">
       <div class="services__card">
-        <img src="~/assets/illustrations/icons/home/accounting.svg" alt="" class="services__icon" />
+        <img
+          src="~/assets/illustrations/icons/home/accounting.svg"
+          alt=""
+          class="services__icon"
+        />
         <h3>Comptabilité</h3>
         <p>La gestion de vos comptes au quotidien, tenue, révision, bilans.</p>
       </div>
       <div class="services__card">
-        <img src="~/assets/illustrations/icons/home/tax-management.svg" alt="" class="services__icon" />
+        <img
+          src="~/assets/illustrations/icons/home/tax-management.svg"
+          alt=""
+          class="services__icon"
+        />
         <h3>Gestion fiscale</h3>
         <p>Optimisation fiscale, déclarations, conseil stratégique.</p>
       </div>
       <div class="services__card">
-        <img src="~/assets/illustrations/icons/home/social-management.svg" alt="" class="services__icon" />
+        <img
+          src="~/assets/illustrations/icons/home/social-management.svg"
+          alt=""
+          class="services__icon"
+        />
         <h3>Gestion sociale</h3>
         <p>Bulletins de paie, déclarations sociales, droit du travail.</p>
       </div>
       <div class="services__card">
-        <img src="~/assets/illustrations/icons/home/accompaniement.svg" alt="" class="services__icon" />
+        <img
+          src="~/assets/illustrations/icons/home/accompaniement.svg"
+          alt=""
+          class="services__icon"
+        />
         <h3>Accompagnement</h3>
         <p>Création, transmission, évaluation, patrimoine du dirigeant.</p>
       </div>
       <div class="services__card">
-        <img src="~/assets/illustrations/icons/home/audit-office.svg" alt="" class="services__icon" />
+        <img
+          src="~/assets/illustrations/icons/home/audit-office.svg"
+          alt=""
+          class="services__icon"
+        />
         <h3>Commissariat</h3>
         <p>Audit légal, certification, opérations sur capital.</p>
       </div>
@@ -43,7 +63,7 @@
 .services__grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 40px 30px;
+  gap: 50px 0;
   max-width: 1000px;
   margin: 0 auto;
 }
@@ -64,7 +84,8 @@
 }
 
 .services__card p {
-  margin: 0;
+  margin: 0 auto;
+  max-width: 80%;
 }
 
 .services__card--cta {
@@ -85,7 +106,10 @@
   text-decoration: none;
   line-height: 1.5;
   text-align: center;
-  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+  transition:
+    background-color 0.3s,
+    color 0.3s,
+    border-color 0.3s;
 }
 
 .services__btn:hover {
