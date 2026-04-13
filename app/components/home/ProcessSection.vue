@@ -43,7 +43,9 @@
 <style scoped>
 .process {
   background-color: var(--color-primary);
-  padding: 80px 40px;
+  height: 700px;
+  padding: 100px 40px 80px;
+  margin-bottom: 80px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -58,14 +60,15 @@
 .process__header {
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
+  align-items: flex-start;
 }
 
 .process__subtitle {
   color: #fff;
   font-weight: 300;
   font-size: 25px;
-  margin: 0 -40px 0 0;
+  margin: 0;
+  margin-left: 310px;
 }
 
 .process__title {

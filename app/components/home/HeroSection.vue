@@ -22,7 +22,7 @@
 .hero {
   position: relative;
   width: 100%;
-  height: 530px;
+  height: 580px;
   overflow: hidden;
   clip-path: polygon(
     0 0,
@@ -58,13 +58,12 @@
   z-index: 2;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   text-align: left;
   height: 100%;
   width: 60%;
   margin: 0 auto;
-  padding: 0 40px;
-  padding-bottom: 100px;
+  padding: 100px 40px 0;
 }
 
 .hero__content h1 {
@@ -78,7 +77,7 @@
   font-size: 22px;
   line-height: 1.8;
   margin: 0 0 30px;
-  padding-left: 100px;
+  padding-left: 160px;
 }
 
 .hero__content strong {
@@ -89,33 +88,25 @@
   font-weight: 700;
 }
 
-.highlight {
-  text-decoration: underline;
-  text-decoration-color: var(--color-secondary);
-  text-underline-offset: 3px;
-  text-decoration-thickness: 2px;
-}
-
 .hero__btn {
-  align-self: flex-end;
-  margin-right: 50px;
+  align-self: flex-start;
+  margin-left: 490px;
   font-family: var(--font-body);
   font-weight: 400;
   font-size: 15px;
   color: #fff;
   border: 2px solid #fff;
   border-radius: 5px;
-  padding: 10px 24px;
+  padding: 12px 24px;
   text-decoration: none;
   background: transparent;
   width: fit-content;
-  transition:
-    background-color 0.2s,
-    color 0.2s;
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
 }
 
 .hero__btn:hover {
   background-color: #fff;
   color: var(--color-primary);
+  border-color: #fff;
 }
 </style>

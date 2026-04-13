@@ -15,7 +15,7 @@
 
 <style scoped>
 .cta {
-  padding: 60px 40px 80px;
+  padding: 0 40px 100px;
 }
 
 .cta__image-wrapper {
@@ -53,10 +53,13 @@
   text-decoration: none;
   text-align: center;
   line-height: 1.5;
-  transition: opacity 0.2s;
+  border: 2px solid transparent;
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
 }
 
 .cta__btn:hover {
-  opacity: 0.9;
+  background-color: var(--color-primary);
+  color: #fff;
+  border-color: var(--color-primary);
 }
 </style>

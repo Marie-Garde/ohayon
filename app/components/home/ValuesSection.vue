@@ -42,13 +42,13 @@
 
 <style scoped>
 .values {
-  padding: 60px 40px;
+  padding: 60px 40px 0;
 }
 
 .values__grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 30px;
+  gap: 50px;
   max-width: 1000px;
   margin: 0 auto;
 }
@@ -56,7 +56,7 @@
 .values__card {
   border: 2px solid var(--color-primary);
   border-radius: 5px;
-  padding: 30px;
+  padding: 30px 20px;
   text-align: center;
 }
 
@@ -71,24 +71,27 @@
 
 .values__cta {
   text-align: center;
-  margin-top: 40px;
+  margin-top: 50px;
 }
 
 .values__btn {
   display: inline-block;
   font-family: var(--font-body);
   font-weight: 300;
-  font-size: 15px;
+  font-size: 18px;
   color: #fff;
   background-color: var(--color-primary);
   border-radius: 5px;
-  padding: 12px 30px;
+  padding: 12px 20px;
   text-decoration: none;
   line-height: 1.5;
-  transition: opacity 0.2s;
+  border: 2px solid transparent;
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
 }
 
 .values__btn:hover {
-  opacity: 0.85;
+  background-color: transparent;
+  color: var(--color-primary);
+  border: 2px solid var(--color-primary);
 }
 </style>

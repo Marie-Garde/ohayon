@@ -16,12 +16,12 @@
 <style scoped>
 .whoweare {
   position: relative;
-  margin-top: 140px;
+  margin-top: 150px;
 }
 
 .whoweare__image-wrapper {
   width: 100%;
-  height: 350px;
+  height: 450px;
   overflow: hidden;
   clip-path: polygon(
     0 var(--slant-height),
@@ -39,7 +39,7 @@
 
 .whoweare__title-wrapper {
   position: absolute;
-  top: 0;
+  top: -10px;
   left: 50%;
   transform: translateX(-50%);
   z-index: 1;
@@ -49,7 +49,7 @@
   display: inline-block;
   background-color: var(--color-primary);
   color: #fff;
-  padding: 10px 30px;
+  padding: 15px 50px;
   white-space: nowrap;
   transform: rotate(calc(-1 * atan2(var(--slant-height), 100vw)));
 }

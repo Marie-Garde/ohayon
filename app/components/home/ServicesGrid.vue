@@ -37,7 +37,7 @@
 
 <style scoped>
 .services {
-  padding: 60px 40px;
+  padding: 120px 40px 100px;
 }
 
 .services__grid {
@@ -53,9 +53,9 @@
 }
 
 .services__icon {
-  height: 80px;
-  width: auto;
-  margin-bottom: 15px;
+  height: 100px;
+  width: 100px;
+  margin-bottom: 10px;
 }
 
 .services__card h3 {
@@ -85,10 +85,12 @@
   text-decoration: none;
   line-height: 1.5;
   text-align: center;
-  transition: opacity 0.2s;
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
 }
 
 .services__btn:hover {
-  opacity: 0.7;
+  background-color: var(--color-secondary);
+  color: #fff;
+  border-color: var(--color-secondary);
 }
 </style>

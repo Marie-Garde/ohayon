@@ -11,7 +11,7 @@ export default defineNuxtConfig({
   googleFonts: {
     families: {
       Manrope: [700, 800],
-      'Roboto Slab': [300, 400],
+      'Roboto Slab': [200, 300, 400],
     },
     display: 'swap',
   },

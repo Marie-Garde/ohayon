@@ -16,7 +16,7 @@
 <style scoped>
 .skills {
   position: relative;
-  margin-top: 60px;
+  margin-top: 80px;
 }
 
 .skills__image-wrapper {
@@ -49,7 +49,7 @@
   display: inline-block;
   background-color: var(--color-primary);
   color: #fff;
-  padding: 10px 30px;
+  padding: 15px 50px;
   white-space: nowrap;
   transform: rotate(calc(-1 * atan2(var(--slant-height), 100vw)));
 }

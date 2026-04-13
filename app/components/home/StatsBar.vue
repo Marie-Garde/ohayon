@@ -26,7 +26,7 @@
   align-items: center;
   width: 70%;
   height: 222px;
-  margin: -120px auto 0;
+  margin: -130px auto 0;
   position: relative;
   z-index: 3;
   background: #fff;

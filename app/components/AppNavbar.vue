@@ -1,5 +1,5 @@
 <template>
-  <nav class="navbar">
+  <nav :class="['navbar', { 'navbar--scrolled': scrolled }]">
     <NuxtLink to="/" class="navbar__logo">
       <img src="~/assets/illustrations/logos/logo-green.svg" alt="Ohayon – Accueil" />
     </NuxtLink>
@@ -15,6 +15,16 @@
   </nav>
 </template>
 
+<script setup>
+const scrolled = ref(false)
+
+onMounted(() => {
+  window.addEventListener('scroll', () => {
+    scrolled.value = window.scrollY > 50
+  })
+})
+</script>
+
 <style scoped>
 .navbar {
   display: flex;
@@ -22,7 +32,8 @@
   justify-content: space-between;
   width: 100%;
   height: 100px;
-  padding: 0 40px;
+  transition: height 0.3s;
+  padding: 0 40px 0 0;
   background-color: var(--color-background);
   box-sizing: border-box;
   position: sticky;
@@ -46,7 +57,7 @@
 
 .navbar__links a {
   font-family: var(--font-body);
-  font-weight: 400;
+  font-weight: 200;
   font-size: 15px;
   color: var(--color-primary);
   text-decoration: none;
@@ -63,14 +74,28 @@
   font-size: 15px;
   color: #fff;
   background-color: var(--color-primary);
-  border: none;
+  border: 2px solid transparent;
   border-radius: 5px;
-  padding: 10px 24px;
+  padding: 12px 24px;
   text-decoration: none;
-  transition: opacity 0.2s;
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
 }
 
 .navbar__btn:hover {
-  opacity: 0.85;
+  background-color: #fff;
+  color: var(--color-primary);
+  border: 2px solid var(--color-primary);
+}
+
+.navbar--scrolled {
+  height: 60px;
+}
+
+.navbar--scrolled .navbar__logo img {
+  height: 50px;
+}
+
+.navbar--scrolled .navbar__btn {
+  padding: 10px 24px;
 }
 </style>
