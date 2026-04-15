@@ -16,7 +16,7 @@
 <style scoped>
 .whoweare {
   position: relative;
-  margin-top: 150px;
+  margin-top: 130px;
 }
 
 .whoweare__image-wrapper {

@@ -43,8 +43,8 @@
           alt=""
           class="services__icon"
         />
-        <h3>Commissariat</h3>
-        <p>Audit légal, certification, opérations sur capital.</p>
+        <h3>Audit légal</h3>
+        <p>Commissariat aux comptes, certification, opérations sur capital.</p>
       </div>
       <div class="services__card services__card--cta">
         <NuxtLink to="/nos-services" class="services__btn">
@@ -64,7 +64,7 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 50px 0;
-  max-width: 1000px;
+  max-width: 900px;
   margin: 0 auto;
 }
 

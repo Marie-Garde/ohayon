@@ -8,7 +8,7 @@
       />
     </div>
     <div class="skills__title-wrapper">
-      <h2 class="skills__title">Nos savoir-faires</h2>
+      <h2 class="skills__title">Nos savoir-faire</h2>
     </div>
   </section>
 </template>
@@ -16,7 +16,7 @@
 <style scoped>
 .skills {
   position: relative;
-  margin-top: 80px;
+  margin-top: 100px;
 }
 
 .skills__image-wrapper {

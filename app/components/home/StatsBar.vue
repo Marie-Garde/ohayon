@@ -5,16 +5,16 @@
       <span class="stats__label">Années d'expériences</span>
     </div>
     <div class="stats__item">
-      <span class="stats__number">12</span>
-      <span class="stats__label">Personnes à plein temps</span>
+      <span class="stats__number">4</span>
+      <span class="stats__label">Experts-comptables</span>
     </div>
     <div class="stats__item">
       <span class="stats__number">⅓</span>
       <span class="stats__label">Experts-comptables</span>
     </div>
     <div class="stats__item">
-      <span class="stats__number">0</span>
-      <span class="stats__label">Papier depuis 15 ans</span>
+      <span class="stats__number">15</span>
+      <span class="stats__label">Années de zéro papier</span>
     </div>
   </div>
 </template>
@@ -31,7 +31,7 @@
   z-index: 3;
   background: #fff;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-  padding: 0 40px;
+  padding: 0 20px;
 }
 
 .stats__item {

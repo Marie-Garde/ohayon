@@ -34,7 +34,7 @@
     </div>
     <div class="values__cta">
       <NuxtLink to="/qui-sommes-nous" class="values__btn">
-        Découvrir <strong>qui sommes-nous</strong><br />et nos valeurs
+        Découvrir <strong>qui nous sommes</strong><br />et nos valeurs
       </NuxtLink>
     </div>
   </section>
@@ -42,7 +42,7 @@
 
 <style scoped>
 .values {
-  padding: 60px 40px 0;
+  padding: 80px 40px 0;
 }
 
 .values__grid {

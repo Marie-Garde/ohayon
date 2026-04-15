@@ -1,7 +1,10 @@
 <template>
   <nav :class="['navbar', { 'navbar--scrolled': scrolled }]">
     <NuxtLink to="/" class="navbar__logo">
-      <img src="~/assets/illustrations/logos/logo-green.svg" alt="Ohayon – Accueil" />
+      <img
+        src="~/assets/illustrations/logos/logo-green.svg"
+        alt="Ohayon – Accueil"
+      />
     </NuxtLink>
 
     <ul class="navbar__links">
@@ -16,13 +19,13 @@
 </template>
 
 <script setup>
-const scrolled = ref(false)
+const scrolled = ref(false);
 
 onMounted(() => {
-  window.addEventListener('scroll', () => {
-    scrolled.value = window.scrollY > 50
-  })
-})
+  window.addEventListener("scroll", () => {
+    scrolled.value = window.scrollY > 50;
+  });
+});
 </script>
 
 <style scoped>
@@ -39,7 +42,7 @@ onMounted(() => {
   position: sticky;
   top: 0;
   z-index: 100;
-  box-shadow: 0 2px 4px rgba(50, 50, 50, 0.5);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
 .navbar__logo img {
@@ -79,7 +82,10 @@ onMounted(() => {
   border-radius: 5px;
   padding: 12px 24px;
   text-decoration: none;
-  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+  transition:
+    background-color 0.3s,
+    color 0.3s,
+    border-color 0.3s;
 }
 
 .navbar__btn:hover {
