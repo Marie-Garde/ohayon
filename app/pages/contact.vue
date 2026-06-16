@@ -1,5 +1,9 @@
 <template>
   <div>
-    <h1>Contact</h1>
+    <ContactPageHero />
+    <ContactLocationSection />
+    <ContactFaqSection />
+    <ContactImageBanner />
+    <ContactFormSection />
   </div>
 </template>
