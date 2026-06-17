@@ -5,5 +5,6 @@
     <RejoindreReasonsSection />
     <RejoindreCultureSection />
     <RejoindreProfilesSection />
+    <RejoindreRecruitmentProcessSection />
   </div>
 </template>
