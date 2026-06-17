@@ -6,5 +6,6 @@
     <RejoindreCultureSection />
     <RejoindreProfilesSection />
     <RejoindreRecruitmentProcessSection />
+    <HomeCtaSection />
   </div>
 </template>
