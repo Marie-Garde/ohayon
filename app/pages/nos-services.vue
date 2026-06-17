@@ -3,5 +3,6 @@
     <ServicesPageHero />
     <ServicesDetailSection />
     <ServicesProcessSection />
+    <HomeCtaSection />
   </div>
 </template>
