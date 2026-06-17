@@ -4,5 +4,6 @@
     <RejoindreHookSection />
     <RejoindreReasonsSection />
     <RejoindreCultureSection />
+    <RejoindreProfilesSection />
   </div>
 </template>
