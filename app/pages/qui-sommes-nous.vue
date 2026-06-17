@@ -4,5 +4,6 @@
     <QuiSommesNousStatsBar />
     <QuiSommesNousTeamSection />
     <QuiSommesNousPillarsSection />
+    <HomeCtaSection />
   </div>
 </template>
