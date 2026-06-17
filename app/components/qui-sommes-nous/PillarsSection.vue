@@ -29,8 +29,8 @@
           </svg>
           <h3>Qualité &amp; expertise</h3>
           <p>
-            Une équipe où ⅓ sont experts-comptables. Votre interlocuteur a la
-            compétence de répondre à 99% de vos questions.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
+            eiusmod tempor incididunt ut labore.
           </p>
         </div>
         <div class="pillars__item">
@@ -48,8 +48,8 @@
           </svg>
           <h3>Digitalisation pionnière</h3>
           <p>
-            0 papier depuis 15 ans, outils interactifs (Pennylane, iSuite…).
-            Intégration de l'IA depuis 2010.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
+            eiusmod tempor incididunt ut labore.
           </p>
         </div>
         <div class="pillars__item">
@@ -67,8 +67,8 @@
           </svg>
           <h3>Réactivité &amp; proximité</h3>
           <p>
-            Un collaborateur dédié, joignable en ligne directe, réponse mail
-            dans la journée. Toulouse et alentours.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
+            eiusmod tempor incididunt ut labore.
           </p>
         </div>
         <div class="pillars__item">
@@ -86,8 +86,8 @@
           </svg>
           <h3>Sur-mesure</h3>
           <p>
-            Pas de pack, pas de grille. On comprend votre activité et vos
-            besoins avant de construire l'accompagnement adapté.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
+            eiusmod tempor incididunt ut labore.
           </p>
         </div>
       </div>
