@@ -3,5 +3,6 @@
     <QuiSommesNousPageHero />
     <QuiSommesNousStatsBar />
     <QuiSommesNousTeamSection />
+    <QuiSommesNousPillarsSection />
   </div>
 </template>
