@@ -1,5 +1,5 @@
 <template>
   <div>
-    <h1>Nos services</h1>
+    <ServicesPageHero />
   </div>
 </template>
