@@ -3,5 +3,6 @@
     <RejoindrePageHero />
     <RejoindreHookSection />
     <RejoindreReasonsSection />
+    <RejoindreCultureSection />
   </div>
 </template>
