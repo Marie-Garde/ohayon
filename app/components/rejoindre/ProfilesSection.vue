@@ -18,20 +18,18 @@
           :key="profile.id"
           @click="selectedId = profile.id"
         >
-          <div class="profile-card__band">
-            <div class="profile-card__avatar">
-              <svg
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="#fff"
-                stroke-width="1.5"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <circle cx="12" cy="8" r="4" />
-                <path d="M4 21v-1a8 8 0 0 1 16 0v1" />
-              </svg>
-            </div>
+          <div class="profile-card__avatar">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="#fff"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <circle cx="12" cy="8" r="4" />
+              <path d="M4 21v-1a8 8 0 0 1 16 0v1" />
+            </svg>
           </div>
           <div class="profile-card__body">
             <h3>{{ profile.title }}</h3>
@@ -55,20 +53,18 @@
 
       <div class="profiles__detail" v-else>
         <div class="profile-card profile-card--selected">
-          <div class="profile-card__band">
-            <div class="profile-card__avatar">
-              <svg
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="#fff"
-                stroke-width="1.5"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <circle cx="12" cy="8" r="4" />
-                <path d="M4 21v-1a8 8 0 0 1 16 0v1" />
-              </svg>
-            </div>
+          <div class="profile-card__avatar">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="#fff"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <circle cx="12" cy="8" r="4" />
+              <path d="M4 21v-1a8 8 0 0 1 16 0v1" />
+            </svg>
           </div>
           <div class="profile-card__body">
             <h3>{{ selectedProfile.title }}</h3>
@@ -193,17 +189,17 @@ const selectedProfile = computed(() =>
 }
 
 .profile-card {
+  position: relative;
   width: 250px;
-  border-radius: 10px;
-  overflow: hidden;
+  border: 2px solid var(--color-primary);
+  border-radius: 5px;
   background-color: #fff;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   cursor: pointer;
-  transition: box-shadow 0.3s;
+  transition: background-color 0.3s;
 }
 
 .profile-card:hover {
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  background-color: rgba(28, 177, 161, 0.05);
 }
 
 .profile-card--selected {
@@ -221,24 +217,18 @@ const selectedProfile = computed(() =>
 }
 
 .profile-card--selected:hover {
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-}
-
-.profile-card__band {
-  height: 60px;
-  background-color: var(--color-primary);
-  position: relative;
+  background-color: #fff;
 }
 
 .profile-card__avatar {
   position: absolute;
-  bottom: -35px;
+  top: -35px;
   left: 50%;
   transform: translateX(-50%);
-  width: 70px;
-  height: 70px;
+  width: 90px;
+  height: 90px;
   border-radius: 50%;
-  background-color: var(--color-secondary);
+  background-color: var(--color-primary);
   border: 4px solid #fff;
   display: flex;
   align-items: center;
@@ -246,12 +236,12 @@ const selectedProfile = computed(() =>
 }
 
 .profile-card__avatar svg {
-  width: 32px;
-  height: 32px;
+  width: 40px;
+  height: 40px;
 }
 
 .profile-card__body {
-  padding: 45px 20px 25px;
+  padding: 55px 20px 25px;
   text-align: center;
 }
 
