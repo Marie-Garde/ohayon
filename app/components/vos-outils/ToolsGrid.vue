@@ -130,6 +130,7 @@
 }
 
 .tools__link {
+  margin-top: auto;
   font-family: var(--font-body);
   font-weight: 300;
   font-size: 15px;
