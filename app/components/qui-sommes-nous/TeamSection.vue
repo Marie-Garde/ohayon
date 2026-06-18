@@ -28,7 +28,16 @@
         </div>
         <h3>{{ associate.name }}</h3>
         <p class="associate-card__role">{{ associate.role }}</p>
-        <p class="associate-card__specialty">{{ associate.specialty }}</p>
+        <ul v-if="associate.bullets.length" class="associate-card__bullets">
+          <li v-for="(bullet, i) in associate.bullets" :key="i">{{ bullet }}</li>
+        </ul>
+        <a
+          v-if="associate.email"
+          :href="`mailto:${associate.email}`"
+          class="associate-card__email"
+        >
+          {{ associate.email }}
+        </a>
       </div>
     </div>
 
@@ -49,7 +58,16 @@
         </div>
         <h3>{{ member.name }}</h3>
         <p class="team-card__role">{{ member.role }}</p>
-        <p class="team-card__specialty">{{ member.specialty }}</p>
+        <ul v-if="member.bullets.length" class="team-card__bullets">
+          <li v-for="(bullet, i) in member.bullets" :key="i">{{ bullet }}</li>
+        </ul>
+        <a
+          v-if="member.email"
+          :href="`mailto:${member.email}`"
+          class="team-card__email"
+        >
+          {{ member.email }}
+        </a>
       </div>
     </div>
   </section>
@@ -59,39 +77,120 @@
 const associates = [
   {
     id: 1,
-    name: "Associé 1",
-    role: "Expert-comptable associé",
-    specialty: "Fiscalité des groupes",
+    name: "Jérôme Ohayon",
+    role: "Associé, expert-comptable et commissaire aux comptes",
+    bullets: [
+      "Spécialiste en problématiques des groupes de sociétés.",
+      "Diplômé de l'École Supérieure de Commerce de Bordeaux, titulaire d'un master Contrôle Comptabilité Audit.",
+      "Professeur affilié à l'École Supérieure de Commerce de Toulouse.",
+      "Intervenant en centre de gestion des professions libérales.",
+      "Auteur d'un mémoire déposé en bibliothèque.",
+    ],
+    email: "jo@ohayon-associes.com",
   },
   {
     id: 2,
-    name: "Associé 2",
-    role: "Expert-comptable associé",
-    specialty: "Commissariat aux comptes",
+    name: "Laurence Bertrand",
+    role: "Associée, expert-comptable",
+    bullets: [
+      "Spécialiste de la paye - multi conventions.",
+      "Auteur d'un mémoire en 1999 déposé en bibliothèque, publié aux éditions ECM (série des meilleurs mémoires de l'expertise-comptable) et récompensé deux fois par la profession au titre des meilleurs mémoires, au plan national puis régional.",
+    ],
+    email: "lb@ohayon-associes.com",
   },
   {
     id: 3,
-    name: "Associé 3",
-    role: "Expert-comptable associée",
-    specialty: "Accompagnement TPE-PME",
+    name: "Maryse Olhats",
+    role: "Associée, expert-comptable",
+    bullets: [
+      "DESS Banque-Finance, 5 ans d'expérience en Gestion de Patrimoine dans le milieu bancaire.",
+    ],
+    email: "mo@ohayon-associes.com",
   },
   {
     id: 4,
-    name: "Associé 4",
-    role: "Expert-comptable associé",
-    specialty: "Social & paie",
+    name: "Océane Ducoulombier",
+    role: "Associée, expert-comptable",
+    bullets: [
+      "Auteur d'un mémoire en 2020 déposé en bibliothèque, récompensé par la profession au titre des meilleurs mémoires.",
+    ],
+    email: "od@ohayon-associes.com",
   },
 ];
 
 const team = [
-  { id: 1, name: "Collaborateur 1", role: "Comptable", specialty: "Tenue & révision" },
-  { id: 2, name: "Collaborateur 2", role: "Comptable", specialty: "Tenue & révision" },
-  { id: 3, name: "Collaborateur 3", role: "Gestionnaire de paie", specialty: "Social" },
-  { id: 4, name: "Collaborateur 4", role: "Gestionnaire de paie", specialty: "Social" },
-  { id: 5, name: "Collaborateur 5", role: "Assistant(e) comptable", specialty: "Saisie & rapprochements" },
-  { id: 6, name: "Collaborateur 6", role: "Assistant(e) comptable", specialty: "Saisie & rapprochements" },
-  { id: 7, name: "Collaborateur 7", role: "Assistant(e) administratif", specialty: "Accueil & secrétariat" },
-  { id: 8, name: "Collaborateur 8", role: "Chargé(e) de mission", specialty: "Audit & conseil" },
+  {
+    id: 1,
+    name: "Laurence",
+    role: "Chef de mission",
+    bullets: [
+      "Titulaire du DESCF, Diplôme d'Études Supérieures Comptables et Financières.",
+      "Expérience bancaire de 10 ans sur les produits financiers.",
+      "Plus de 15 ans d'expérience en cabinet d'expertise comptable.",
+    ],
+    email: "lt@ohayon-associes.com",
+  },
+  {
+    id: 2,
+    name: "Maïlys",
+    role: "Expert-comptable mémorialiste",
+    bullets: [
+      "Titulaire du DSCG.",
+      "Plus de 10 ans d'expérience en cabinet d'expertise comptable.",
+    ],
+    email: "mg@ohayon-associes.com",
+  },
+  {
+    id: 3,
+    name: "Marilyne",
+    role: "Collaboratrice comptable & fiscal",
+    bullets: [
+      "Plus de 10 ans d'expérience en cabinet d'expertise comptable.",
+      "Titulaire d'une licence de mathématique.",
+    ],
+    email: "md@ohayon-associes.com",
+  },
+  {
+    id: 4,
+    name: "Arthur",
+    role: "Expert-comptable mémorialiste",
+    bullets: [
+      "Titulaire du DSCG.",
+      "Plus de 10 ans d'expérience en cabinet comptable.",
+    ],
+    email: "am@ohayon-associes.com",
+  },
+  {
+    id: 5,
+    name: "Pauline",
+    role: "Collaboratrice comptable & fiscal",
+    bullets: ["7 ans d'expérience en cabinet d'expertise comptable."],
+    email: "pc@ohayon-associes.com",
+  },
+  {
+    id: 6,
+    name: "Elise",
+    role: "Expert-comptable stagiaire",
+    bullets: [
+      "Titulaire du DSCG.",
+      "3 ans d'expérience en cabinet d'expertise comptable.",
+    ],
+    email: "eca@ohayon-associes.com",
+  },
+  {
+    id: 7,
+    name: "Johanna",
+    role: "À compléter",
+    bullets: [],
+    email: null,
+  },
+  {
+    id: 8,
+    name: "Hourya",
+    role: "À compléter",
+    bullets: [],
+    email: null,
+  },
 ];
 </script>
 
@@ -137,22 +236,22 @@ const team = [
 }
 
 .team__associates {
-  display: flex;
-  flex-wrap: nowrap;
-  justify-content: center;
-  gap: 30px;
-  max-width: 1100px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 50px 40px;
+  max-width: 900px;
   margin: 80px auto 80px;
   padding: 0 40px;
 }
 
 .associate-card {
   position: relative;
-  flex: 1;
-  max-width: 240px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   border: 2px solid var(--color-primary);
   border-radius: 5px;
-  padding: 55px 20px 30px;
+  padding: 55px 30px 30px;
   text-align: center;
 }
 
@@ -183,19 +282,36 @@ const team = [
 
 .associate-card__role {
   font-weight: 700;
-  margin: 0 0 4px;
+  margin: 0 0 14px;
 }
 
-.associate-card__specialty {
+.associate-card__bullets {
+  list-style: disc;
+  text-align: left;
+  margin: 0 0 16px;
+  padding-left: 20px;
+}
+
+.associate-card__bullets li {
   font-size: 14px;
-  margin: 0;
+  margin-bottom: 6px;
+}
+
+.associate-card__email {
+  margin-top: auto;
+  font-size: 14px;
+  color: var(--color-secondary);
+  text-decoration: none;
+}
+
+.associate-card__email:hover {
+  text-decoration: underline;
 }
 
 .team__grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 30px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px 30px;
   max-width: 1100px;
   margin: 0 auto;
   padding: 0 40px 100px;
@@ -203,10 +319,12 @@ const team = [
 
 .team-card {
   position: relative;
-  width: 170px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   border: 2px solid var(--color-primary);
   border-radius: 5px;
-  padding: 40px 15px 20px;
+  padding: 40px 20px 20px;
   text-align: center;
 }
 
@@ -239,11 +357,29 @@ const team = [
   font-size: 13px;
   font-weight: 700;
   color: var(--color-primary);
-  margin: 0 0 2px;
+  margin: 0 0 10px;
 }
 
-.team-card__specialty {
+.team-card__bullets {
+  list-style: disc;
+  text-align: left;
+  margin: 0 0 12px;
+  padding-left: 18px;
+}
+
+.team-card__bullets li {
   font-size: 12px;
-  margin: 0;
+  margin-bottom: 4px;
+}
+
+.team-card__email {
+  margin-top: auto;
+  font-size: 12px;
+  color: var(--color-secondary);
+  text-decoration: none;
+}
+
+.team-card__email:hover {
+  text-decoration: underline;
 }
 </style>
