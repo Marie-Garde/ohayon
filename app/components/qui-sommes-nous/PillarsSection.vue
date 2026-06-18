@@ -27,10 +27,10 @@
           >
             <path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7z" />
           </svg>
-          <h3>Qualité &amp; expertise</h3>
+          <h3>Expertise &amp; qualité</h3>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-            eiusmod tempor incididunt ut labore.
+            Une équipe où ⅓ sont experts-comptables. Votre interlocuteur a la
+            compétence de répondre à 99% de vos questions.
           </p>
         </div>
         <div class="pillars__item">
@@ -48,8 +48,9 @@
           </svg>
           <h3>Digitalisation pionnière</h3>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-            eiusmod tempor incididunt ut labore.
+            0 papier depuis 15 ans, outils interactifs (Pennylane, iSuite…),
+            intégration de l'IA. On ne vous parle pas de digital, on le
+            pratique depuis 2010.
           </p>
         </div>
         <div class="pillars__item">
@@ -67,8 +68,9 @@
           </svg>
           <h3>Réactivité &amp; proximité</h3>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-            eiusmod tempor incididunt ut labore.
+            Un collaborateur dédié, joignable en ligne directe, réponse mail
+            dans la journée. Toulouse et alentours mais proches de tous nos
+            clients.
           </p>
         </div>
         <div class="pillars__item">
@@ -84,10 +86,11 @@
             <path d="M4 21V8l8-5 8 5v13" />
             <path d="M9 21v-7h6v7" />
           </svg>
-          <h3>Sur-mesure</h3>
+          <h3>Sur-mesure, sans standard</h3>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-            eiusmod tempor incididunt ut labore.
+            Pas de pack, pas de grille. On commence par comprendre votre
+            activité, vos besoins, vos difficultés. Ensuite on construit
+            l'accompagnement adapté.
           </p>
         </div>
       </div>
@@ -173,6 +176,8 @@
 .pillars__item h3 {
   color: #fff;
   font-size: 20px;
+  line-height: 1.3;
+  min-height: 52px;
   margin: 0 0 12px;
 }
 
