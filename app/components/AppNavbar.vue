@@ -11,10 +11,9 @@
       <li><NuxtLink to="/qui-sommes-nous">Qui sommes-nous</NuxtLink></li>
       <li><NuxtLink to="/nos-services">Nos services</NuxtLink></li>
       <li><NuxtLink to="/nous-rejoindre">Nous rejoindre</NuxtLink></li>
+      <li><NuxtLink to="/vos-outils">Vos outils</NuxtLink></li>
       <li><NuxtLink to="/contact">Contactez-nous</NuxtLink></li>
     </ul>
-
-    <NuxtLink to="/vos-outils" class="navbar__btn">Vos outils</NuxtLink>
   </nav>
 </template>
 
@@ -72,37 +71,11 @@ onMounted(() => {
   color: var(--color-text);
 }
 
-.navbar__btn {
-  font-family: var(--font-body);
-  font-weight: 300;
-  font-size: 18px;
-  color: #fff;
-  background-color: var(--color-primary);
-  border: 2px solid transparent;
-  border-radius: 5px;
-  padding: 12px 24px;
-  text-decoration: none;
-  transition:
-    background-color 0.3s,
-    color 0.3s,
-    border-color 0.3s;
-}
-
-.navbar__btn:hover {
-  background-color: #fff;
-  color: var(--color-primary);
-  border: 2px solid var(--color-primary);
-}
-
 .navbar--scrolled {
   height: 60px;
 }
 
 .navbar--scrolled .navbar__logo img {
   height: 50px;
-}
-
-.navbar--scrolled .navbar__btn {
-  padding: 10px 24px;
 }
 </style>
