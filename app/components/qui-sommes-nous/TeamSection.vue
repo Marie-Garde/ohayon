@@ -65,6 +65,23 @@
         <ul v-if="selectedAssociate.bullets.length" class="associate-detail__bullets">
           <li v-for="(bullet, i) in selectedAssociate.bullets" :key="i">{{ bullet }}</li>
         </ul>
+
+        <div class="associate-detail__likes">
+          <div class="associate-detail__like-row">
+            <span class="associate-detail__like-icon associate-detail__like-icon--yes">✓</span>
+            <p>
+              <strong>J'aime</strong>
+              {{ selectedAssociate.likes }}
+            </p>
+          </div>
+          <div class="associate-detail__like-row">
+            <span class="associate-detail__like-icon associate-detail__like-icon--no">✕</span>
+            <p>
+              <strong>J'aime pas</strong>
+              {{ selectedAssociate.dislikes }}
+            </p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -90,6 +107,10 @@ const associates = [
       "Intervenant en centre de gestion des professions libérales.",
       "Auteur d'un mémoire déposé en bibliothèque.",
     ],
+    likes:
+      "les entrepreneurs qui ont de grandes ambitions et les tableaux de bord qui tiennent sur une page.",
+    dislikes:
+      "les usines à gaz et les phrases qui commencent par « normalement, ça devait marcher ».",
     email: "jo@ohayon-associes.com",
   },
   {
@@ -102,6 +123,9 @@ const associates = [
       "Spécialiste de la paye - multi conventions.",
       "Auteur d'un mémoire en 1999 déposé en bibliothèque, publié aux éditions ECM (série des meilleurs mémoires de l'expertise-comptable) et récompensé deux fois par la profession au titre des meilleurs mémoires, au plan national puis régional.",
     ],
+    likes:
+      "l'automatisation, la digitalisation, et simplifier la vie des entreprises. Les échanges, expliquer, et donner du sens aux textes et aux actes.",
+    dislikes: "les papiers, ni le Moyen Âge. Ni les enquêtes de la DARES.",
     email: "lb@ohayon-associes.com",
   },
   {
@@ -111,8 +135,14 @@ const associates = [
     role: "Associée, expert-comptable",
     photo: photoMaryse,
     bullets: [
-      "DESS Banque-Finance, 5 ans d'expérience en Gestion de Patrimoine dans le milieu bancaire.",
+      "DESS Banque-Finance, 5 ans d'expérience en Gestion de Patrimoine dans le secteur bancaire.",
+      "15 ans d'expérience en cabinet d'expertise comptable.",
+      "Accompagnement des dirigeants de TPE, PME et professions libérales.",
     ],
+    likes:
+      "rendre la comptabilité utile, transformer les chiffres en décisions et les obligations comptables en véritable outil de pilotage.",
+    dislikes:
+      "les approximations, les « ça prendra cinq minutes » qui en prennent finalement cinquante, et les surprises… sauf à mon anniversaire.",
     email: "mo@ohayon-associes.com",
   },
   {
@@ -124,6 +154,10 @@ const associates = [
     bullets: [
       "Auteur d'un mémoire en 2020 déposé en bibliothèque, récompensé par la profession au titre des meilleurs mémoires.",
     ],
+    likes:
+      "découvrir de nouvelles histoires d'entrepreneurs passionnés par leur métier, accompagner mes clients dans leur quotidien et rendre les chiffres compréhensibles.",
+    dislikes:
+      "la complexité quand on peut faire simple et le café froid oublié entre deux dossiers.",
     email: "od@ohayon-associes.com",
   },
 ];
@@ -226,7 +260,7 @@ const selectedAssociate = computed(() =>
   height: 150px;
   border-radius: 50%;
   background-color: var(--color-primary);
-  border: 4px solid #fff;
+  box-shadow: 0 6px 14px rgba(28, 80, 177, 0.18);
   overflow: hidden;
   display: flex;
   align-items: center;
@@ -316,6 +350,61 @@ const selectedAssociate = computed(() =>
 .associate-detail__bullets li {
   margin-bottom: 8px;
   line-height: 1.5;
+}
+
+.associate-detail__likes {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.associate-detail__like-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.associate-detail__like-row p {
+  color: #fff;
+  font-weight: 300;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.associate-detail__like-row strong {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  opacity: 0.85;
+  margin-bottom: 2px;
+}
+
+.associate-detail__like-icon {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  font-size: 13px;
+  font-weight: 700;
+  margin-top: 2px;
+}
+
+.associate-detail__like-icon--yes {
+  background-color: var(--color-secondary);
+  color: var(--color-primary);
+}
+
+.associate-detail__like-icon--no {
+  background-color: rgba(255, 191, 0, 0.2);
+  color: var(--color-secondary);
 }
 
 .associate-detail__close {
