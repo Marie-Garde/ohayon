@@ -51,3 +51,28 @@ p {
   color: var(--color-text);
   line-height: 1.4;
 }
+
+/* Animations au scroll (directive v-reveal) */
+.reveal {
+  opacity: 0;
+  transition:
+    opacity 0.6s ease,
+    transform 0.6s ease;
+}
+
+.reveal--up {
+  transform: translateY(40px);
+}
+
+.reveal--left {
+  transform: translateX(-40px);
+}
+
+.reveal--right {
+  transform: translateX(40px);
+}
+
+.reveal--visible {
+  opacity: 1;
+  transform: none;
+}

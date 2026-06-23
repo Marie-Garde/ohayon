@@ -45,9 +45,9 @@
   z-index: 1;
   background: linear-gradient(
     to right,
-    var(--color-primary) 45%,
-    rgba(28, 177, 161, 0.75) 70%,
-    rgba(28, 177, 161, 0.3) 100%
+    var(--color-primary) 40%,
+    rgba(28, 177, 161, 0.6) 60%,
+    transparent 100%
   );
 }
 

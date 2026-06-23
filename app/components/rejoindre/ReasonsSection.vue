@@ -1,33 +1,32 @@
 <template>
   <section class="reasons">
     <div class="reasons__grid">
-      <div class="reasons__card">
-        <h3>Raison 1</h3>
+      <div class="reasons__card" v-reveal="'left'">
+        <h3>Un cabinet moderne</h3>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          Évoluez dans un cabinet moderne où vos idées et votre autonomie
+          sont valorisées au quotidien.
         </p>
       </div>
-      <div class="reasons__card">
-        <h3>Raison 2</h3>
+      <div class="reasons__card" v-reveal="'up'">
+        <h3>Votre progression compte</h3>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          Ici, votre progression compte autant que vos compétences
+          techniques.
         </p>
       </div>
-      <div class="reasons__card">
-        <h3>Raison 3</h3>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        </p>
-      </div>
-      <div class="reasons__card">
-        <h3>Raison 4</h3>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        </p>
+      <div class="reasons__card reasons__card--stats" v-reveal="'right'">
+        <h3>Une équipe expérimentée</h3>
+        <div class="reasons__stats">
+          <div class="reasons__stat">
+            <span class="reasons__stat-number">40</span>
+            <span class="reasons__stat-label">ans d'expérience</span>
+          </div>
+          <div class="reasons__stat">
+            <span class="reasons__stat-number">4</span>
+            <span class="reasons__stat-label">experts-comptables</span>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -40,10 +39,10 @@
 
 .reasons__grid {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   justify-content: center;
   gap: 50px;
-  max-width: 1000px;
+  max-width: 1150px;
   margin: 0 auto;
 }
 
@@ -56,7 +55,7 @@
   height: 220px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
 }
 
 .reasons__card h3 {
@@ -66,5 +65,34 @@
 
 .reasons__card p {
   margin: 0;
+}
+
+.reasons__stats {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 10px;
+}
+
+.reasons__stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.reasons__stat-number {
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 48px;
+  color: var(--color-secondary);
+  line-height: 1;
+}
+
+.reasons__stat-label {
+  font-family: var(--font-heading);
+  font-weight: 400;
+  font-size: 13px;
+  color: var(--color-text);
+  margin-top: 5px;
 }
 </style>
