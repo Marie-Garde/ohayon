@@ -11,74 +11,78 @@
       />
     </div>
 
-    <div class="team__associates">
-      <div class="associate-card" v-for="associate in associates" :key="associate.id">
+    <div class="team__associates" v-if="!selectedAssociate">
+      <div
+        class="associate-card"
+        v-for="associate in associates"
+        :key="associate.id"
+        @click="selectedId = associate.id"
+      >
         <div class="associate-card__avatar">
-          <svg
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="#fff"
-            stroke-width="1.5"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          >
-            <circle cx="12" cy="8" r="4" />
-            <path d="M4 21v-1a8 8 0 0 1 16 0v1" />
-          </svg>
+          <img
+            :src="associate.photo"
+            :alt="`${associate.firstName} ${associate.lastName}`"
+          />
         </div>
-        <h3>{{ associate.name }}</h3>
-        <p class="associate-card__role">{{ associate.role }}</p>
-        <ul v-if="associate.bullets.length" class="associate-card__bullets">
-          <li v-for="(bullet, i) in associate.bullets" :key="i">{{ bullet }}</li>
-        </ul>
-        <a
-          v-if="associate.email"
-          :href="`mailto:${associate.email}`"
-          class="associate-card__email"
-        >
-          {{ associate.email }}
-        </a>
+        <div class="associate-card__body">
+          <h3>{{ associate.firstName }}<br />{{ associate.lastName }}</h3>
+          <p class="associate-card__role">{{ associate.role }}</p>
+          <a
+            v-if="associate.email"
+            :href="`mailto:${associate.email}`"
+            class="associate-card__email"
+            @click.stop
+          >
+            {{ associate.email }}
+          </a>
+          <span class="associate-card__cta">En savoir plus</span>
+        </div>
       </div>
     </div>
 
-    <div class="team__grid">
-      <div class="team-card" v-for="member in team" :key="member.id">
-        <div class="team-card__avatar">
-          <svg
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="#fff"
-            stroke-width="1.5"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          >
-            <circle cx="12" cy="8" r="4" />
-            <path d="M4 21v-1a8 8 0 0 1 16 0v1" />
-          </svg>
+    <div class="team__detail" v-else>
+      <div class="associate-card associate-card--selected">
+        <div class="associate-card__avatar">
+          <img
+            :src="selectedAssociate.photo"
+            :alt="`${selectedAssociate.firstName} ${selectedAssociate.lastName}`"
+          />
         </div>
-        <h3>{{ member.name }}</h3>
-        <p class="team-card__role">{{ member.role }}</p>
-        <ul v-if="member.bullets.length" class="team-card__bullets">
-          <li v-for="(bullet, i) in member.bullets" :key="i">{{ bullet }}</li>
-        </ul>
-        <a
-          v-if="member.email"
-          :href="`mailto:${member.email}`"
-          class="team-card__email"
+        <div class="associate-card__body">
+          <h3>{{ selectedAssociate.firstName }}<br />{{ selectedAssociate.lastName }}</h3>
+          <p class="associate-card__role">{{ selectedAssociate.role }}</p>
+        </div>
+      </div>
+
+      <div class="associate-detail">
+        <button
+          class="associate-detail__close"
+          aria-label="Fermer"
+          @click="selectedId = null"
         >
-          {{ member.email }}
-        </a>
+          ×
+        </button>
+        <ul v-if="selectedAssociate.bullets.length" class="associate-detail__bullets">
+          <li v-for="(bullet, i) in selectedAssociate.bullets" :key="i">{{ bullet }}</li>
+        </ul>
       </div>
     </div>
   </section>
 </template>
 
 <script setup>
+import photoJerome from "~/assets/illustrations/images/qui-sommes-nous/Jérome.jpg";
+import photoLaurence from "~/assets/illustrations/images/qui-sommes-nous/Laurence.jpg";
+import photoMaryse from "~/assets/illustrations/images/qui-sommes-nous/Maryse.jpg";
+import photoOceane from "~/assets/illustrations/images/qui-sommes-nous/Océane.jpg";
+
 const associates = [
   {
     id: 1,
-    name: "Jérôme Ohayon",
+    firstName: "Jérôme",
+    lastName: "Ohayon",
     role: "Associé, expert-comptable et commissaire aux comptes",
+    photo: photoJerome,
     bullets: [
       "Spécialiste en problématiques des groupes de sociétés.",
       "Diplômé de l'École Supérieure de Commerce de Bordeaux, titulaire d'un master Contrôle Comptabilité Audit.",
@@ -90,8 +94,10 @@ const associates = [
   },
   {
     id: 2,
-    name: "Laurence Bertrand",
+    firstName: "Laurence",
+    lastName: "Bertrand",
     role: "Associée, expert-comptable",
+    photo: photoLaurence,
     bullets: [
       "Spécialiste de la paye - multi conventions.",
       "Auteur d'un mémoire en 1999 déposé en bibliothèque, publié aux éditions ECM (série des meilleurs mémoires de l'expertise-comptable) et récompensé deux fois par la profession au titre des meilleurs mémoires, au plan national puis régional.",
@@ -100,8 +106,10 @@ const associates = [
   },
   {
     id: 3,
-    name: "Maryse Olhats",
+    firstName: "Maryse",
+    lastName: "Olhats",
     role: "Associée, expert-comptable",
+    photo: photoMaryse,
     bullets: [
       "DESS Banque-Finance, 5 ans d'expérience en Gestion de Patrimoine dans le milieu bancaire.",
     ],
@@ -109,8 +117,10 @@ const associates = [
   },
   {
     id: 4,
-    name: "Océane Ducoulombier",
+    firstName: "Océane",
+    lastName: "Ducoulombier",
     role: "Associée, expert-comptable",
+    photo: photoOceane,
     bullets: [
       "Auteur d'un mémoire en 2020 déposé en bibliothèque, récompensé par la profession au titre des meilleurs mémoires.",
     ],
@@ -118,80 +128,10 @@ const associates = [
   },
 ];
 
-const team = [
-  {
-    id: 1,
-    name: "Laurence",
-    role: "Chef de mission",
-    bullets: [
-      "Titulaire du DESCF, Diplôme d'Études Supérieures Comptables et Financières.",
-      "Expérience bancaire de 10 ans sur les produits financiers.",
-      "Plus de 15 ans d'expérience en cabinet d'expertise comptable.",
-    ],
-    email: "lt@ohayon-associes.com",
-  },
-  {
-    id: 2,
-    name: "Maïlys",
-    role: "Expert-comptable mémorialiste",
-    bullets: [
-      "Titulaire du DSCG.",
-      "Plus de 10 ans d'expérience en cabinet d'expertise comptable.",
-    ],
-    email: "mg@ohayon-associes.com",
-  },
-  {
-    id: 3,
-    name: "Marilyne",
-    role: "Collaboratrice comptable & fiscal",
-    bullets: [
-      "Plus de 10 ans d'expérience en cabinet d'expertise comptable.",
-      "Titulaire d'une licence de mathématique.",
-    ],
-    email: "md@ohayon-associes.com",
-  },
-  {
-    id: 4,
-    name: "Arthur",
-    role: "Expert-comptable mémorialiste",
-    bullets: [
-      "Titulaire du DSCG.",
-      "Plus de 10 ans d'expérience en cabinet comptable.",
-    ],
-    email: "am@ohayon-associes.com",
-  },
-  {
-    id: 5,
-    name: "Pauline",
-    role: "Collaboratrice comptable & fiscal",
-    bullets: ["7 ans d'expérience en cabinet d'expertise comptable."],
-    email: "pc@ohayon-associes.com",
-  },
-  {
-    id: 6,
-    name: "Elise",
-    role: "Expert-comptable stagiaire",
-    bullets: [
-      "Titulaire du DSCG.",
-      "3 ans d'expérience en cabinet d'expertise comptable.",
-    ],
-    email: "eca@ohayon-associes.com",
-  },
-  {
-    id: 7,
-    name: "Johanna",
-    role: "À compléter",
-    bullets: [],
-    email: null,
-  },
-  {
-    id: 8,
-    name: "Hourya",
-    role: "À compléter",
-    bullets: [],
-    email: null,
-  },
-];
+const selectedId = ref(null);
+const selectedAssociate = computed(() =>
+  associates.find((associate) => associate.id === selectedId.value),
+);
 </script>
 
 <style scoped>
@@ -236,69 +176,90 @@ const team = [
 }
 
 .team__associates {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 50px 40px;
-  max-width: 900px;
-  margin: 80px auto 80px;
-  padding: 0 40px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 120px 40px;
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 80px 40px 100px;
 }
 
 .associate-card {
   position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  width: 260px;
   border: 2px solid var(--color-primary);
   border-radius: 5px;
-  padding: 55px 30px 30px;
-  text-align: center;
+  background-color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.associate-card:hover {
+  background-color: rgba(28, 177, 161, 0.05);
+}
+
+.associate-card--selected {
+  cursor: default;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.associate-card--selected .associate-card__body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.associate-card--selected:hover {
+  background-color: #fff;
 }
 
 .associate-card__avatar {
   position: absolute;
-  top: -35px;
+  top: -65px;
   left: 50%;
   transform: translateX(-50%);
-  width: 90px;
-  height: 90px;
+  width: 150px;
+  height: 150px;
   border-radius: 50%;
   background-color: var(--color-primary);
   border: 4px solid #fff;
+  overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.associate-card__avatar svg {
-  width: 40px;
-  height: 40px;
+.associate-card__avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.4);
 }
 
-.associate-card h3 {
+.associate-card__body {
+  padding: 95px 25px 30px;
+  text-align: center;
+}
+
+.associate-card__body h3 {
+  min-height: 64px;
   color: var(--color-primary);
   margin: 0 0 8px;
 }
 
 .associate-card__role {
+  min-height: 42px;
   font-weight: 700;
   margin: 0 0 14px;
 }
 
-.associate-card__bullets {
-  list-style: disc;
-  text-align: left;
-  margin: 0 0 16px;
-  padding-left: 20px;
-}
-
-.associate-card__bullets li {
-  font-size: 14px;
-  margin-bottom: 6px;
-}
-
 .associate-card__email {
-  margin-top: auto;
+  display: block;
+  margin: 0 0 20px;
   font-size: 14px;
   color: var(--color-secondary);
   text-decoration: none;
@@ -308,78 +269,64 @@ const team = [
   text-decoration: underline;
 }
 
-.team__grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 40px 30px;
+.associate-card__cta {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: 14px;
+  color: var(--color-secondary);
+  border: 2px solid var(--color-secondary);
+  border-radius: 5px;
+  padding: 8px 20px;
+  transition:
+    background-color 0.3s,
+    color 0.3s;
+}
+
+.associate-card:hover .associate-card__cta {
+  background-color: var(--color-secondary);
+  color: #fff;
+}
+
+.team__detail {
+  display: flex;
+  align-items: stretch;
+  gap: 50px;
   max-width: 1100px;
   margin: 0 auto;
-  padding: 0 40px 100px;
+  padding: 80px 40px 100px;
 }
 
-.team-card {
+.associate-detail {
   position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  border: 2px solid var(--color-primary);
-  border-radius: 5px;
-  padding: 40px 20px 20px;
-  text-align: center;
-}
-
-.team-card__avatar {
-  position: absolute;
-  top: -25px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 65px;
-  height: 65px;
-  border-radius: 50%;
+  flex: 1;
   background-color: var(--color-primary);
-  border: 3px solid #fff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  color: #fff;
+  border-radius: 10px;
+  padding: 40px;
 }
 
-.team-card__avatar svg {
-  width: 30px;
-  height: 30px;
-}
-
-.team-card h3 {
-  font-size: 17px;
-  margin: 0 0 4px;
-}
-
-.team-card__role {
-  font-size: 13px;
-  font-weight: 700;
-  color: var(--color-primary);
-  margin: 0 0 10px;
-}
-
-.team-card__bullets {
+.associate-detail__bullets {
   list-style: disc;
-  text-align: left;
-  margin: 0 0 12px;
-  padding-left: 18px;
+  margin: 0 0 20px;
+  padding-left: 20px;
+  color: #fff;
 }
 
-.team-card__bullets li {
-  font-size: 12px;
-  margin-bottom: 4px;
+.associate-detail__bullets li {
+  margin-bottom: 8px;
+  line-height: 1.5;
 }
 
-.team-card__email {
-  margin-top: auto;
-  font-size: 12px;
-  color: var(--color-secondary);
-  text-decoration: none;
-}
-
-.team-card__email:hover {
-  text-decoration: underline;
+.associate-detail__close {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 26px;
+  line-height: 1;
+  cursor: pointer;
 }
 </style>
