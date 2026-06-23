@@ -1,9 +1,11 @@
 <template>
   <div>
     <QuiSommesNousPageHero />
-    <QuiSommesNousStatsBar />
+    <QuiSommesNousHistorySection />
     <QuiSommesNousTeamSection />
     <QuiSommesNousPillarsSection />
+    <QuiSommesNousValuesSection />
+    <QuiSommesNousStatsBar />
     <HomeCtaSection />
   </div>
 </template>

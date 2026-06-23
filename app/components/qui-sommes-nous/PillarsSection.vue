@@ -52,8 +52,8 @@
 <style scoped>
 .pillars {
   position: relative;
-  margin-top: 100px;
-  padding-bottom: 100px;
+  margin-top: 0;
+  padding-bottom: 60px;
 }
 
 .pillars__banner {

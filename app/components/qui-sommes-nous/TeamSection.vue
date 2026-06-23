@@ -188,7 +188,7 @@ const selectedAssociate = computed(() =>
 <style scoped>
 .team {
   position: relative;
-  margin-top: 130px;
+  margin-top: 100px;
 }
 
 .team__image-wrapper {
