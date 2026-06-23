@@ -11,6 +11,23 @@
       />
     </div>
 
+    <div class="team__intro" v-if="!selectedAssociate">
+      <span class="team__intro-bar"></span>
+      <p>
+        Chez Ohayon & Associés, nous croyons qu'un cabinet d'expertise
+        comptable se juge avant tout par la qualité de la relation humaine
+        qu'il construit avec ses clients. Voici les quatre associés qui
+        pilotent le cabinet et vous accompagnent avec rigueur, écoute et
+        proximité à chaque étape de la vie de votre entreprise.
+        <strong>
+          Et ils ne sont pas seuls : toute une équipe de collaborateurs
+          dévoués travaille chaque jour à leurs côtés pour faire avancer vos
+          projets.
+        </strong>
+      </p>
+      <span class="team__intro-bar"></span>
+    </div>
+
     <div class="team__associates" v-if="!selectedAssociate">
       <div
         class="associate-card"
@@ -208,6 +225,36 @@ const selectedAssociate = computed(() =>
   padding: 15px 50px;
   white-space: nowrap;
   transform: rotate(calc(-1 * atan2(var(--slant-height), 100vw)));
+}
+
+.team__intro {
+  max-width: 680px;
+  margin: 60px auto 60px;
+  padding: 0 40px;
+  text-align: center;
+}
+
+.team__intro-bar {
+  display: inline-block;
+  width: 50px;
+  height: 3px;
+  background-color: var(--color-secondary);
+  border-radius: 2px;
+  margin: 0 0 20px;
+}
+
+.team__intro p {
+  text-align: justify;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 1.7;
+  color: var(--color-text);
+  margin: 0 0 24px;
+}
+
+.team__intro strong {
+  font-weight: 700;
+  color: var(--color-primary);
 }
 
 .team__associates {
