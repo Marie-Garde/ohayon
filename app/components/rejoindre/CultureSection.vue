@@ -13,90 +13,54 @@
       </div>
     </div>
 
-    <div class="culture__strip">
-      <div class="culture__list">
-        <div class="culture__item">
-          <svg
-            class="culture__icon"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="var(--color-secondary)"
-            stroke-width="1.5"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          >
-            <circle cx="9" cy="7" r="3" />
-            <path d="M3 21v-1a6 6 0 0 1 6-6 6 6 0 0 1 6 6v1" />
-            <circle cx="17" cy="8" r="2.5" />
-            <path d="M21 21v-0.5a4.5 4.5 0 0 0-3-4.24" />
-          </svg>
-          <h3>Esprit d'équipe</h3>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-            eiusmod tempor incididunt ut labore.
-          </p>
-        </div>
-        <div class="culture__item">
-          <svg
-            class="culture__icon"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="var(--color-secondary)"
-            stroke-width="1.5"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          >
-            <path d="M5 6l-3 7a4 4 0 0 0 8 0z" />
-            <path d="M19 6l-3 7a4 4 0 0 0 8 0z" />
-            <path d="M5 6h14" />
-            <path d="M12 6v15" />
-            <path d="M8 21h8" />
-          </svg>
-          <h3>Équilibre vie pro / perso</h3>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-            eiusmod tempor incididunt ut labore.
-          </p>
-        </div>
-        <div class="culture__item">
-          <svg
-            class="culture__icon"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="var(--color-secondary)"
-            stroke-width="1.5"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          >
-            <path d="M22 10L12 5 2 10l10 5 10-5z" />
-            <path d="M6 12v5c0 1.5 3 3 6 3s6-1.5 6-3v-5" />
-          </svg>
-          <h3>Formation continue</h3>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-            eiusmod tempor incididunt ut labore.
-          </p>
-        </div>
-        <div class="culture__item">
-          <svg
-            class="culture__icon"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="var(--color-secondary)"
-            stroke-width="1.5"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          >
-            <path
-              d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8z"
-            />
-          </svg>
-          <h3>Moments conviviaux</h3>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-            eiusmod tempor incididunt ut labore.
-          </p>
-        </div>
+    <div class="culture__grid">
+      <div class="culture__card">
+        <img
+          src="~/assets/illustrations/icons/rejoindre/team-spirit.svg"
+          alt=""
+          class="culture__icon"
+        />
+        <h3>Esprit d'équipe</h3>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
+          eiusmod tempor incididunt ut labore.
+        </p>
+      </div>
+      <div class="culture__card">
+        <img
+          src="~/assets/illustrations/icons/rejoindre/work-life-balance.svg"
+          alt=""
+          class="culture__icon"
+        />
+        <h3>Équilibre vie pro / perso</h3>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
+          eiusmod tempor incididunt ut labore.
+        </p>
+      </div>
+      <div class="culture__card">
+        <img
+          src="~/assets/illustrations/icons/rejoindre/continuous-training.svg"
+          alt=""
+          class="culture__icon"
+        />
+        <h3>Formation continue</h3>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
+          eiusmod tempor incididunt ut labore.
+        </p>
+      </div>
+      <div class="culture__card">
+        <img
+          src="~/assets/illustrations/icons/rejoindre/convivial-moments.svg"
+          alt=""
+          class="culture__icon"
+        />
+        <h3>Moments conviviaux</h3>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
+          eiusmod tempor incididunt ut labore.
+        </p>
       </div>
     </div>
   </section>
@@ -147,46 +111,35 @@
   transform: rotate(calc(-1 * atan2(var(--slant-height), 100vw)));
 }
 
-.culture__strip {
-  background-color: var(--color-primary);
-  padding: 100px 40px calc(60px + var(--slant-height));
-  margin-top: -1px;
-  clip-path: polygon(
-    0 var(--slant-height),
-    100% 0,
-    100% calc(100% - var(--slant-height)),
-    0 100%
-  );
-}
-
-.culture__list {
-  display: flex;
+.culture__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0 30px;
   max-width: 1100px;
-  margin: 0 auto;
+  margin: 80px auto 0;
+  padding: 0 40px 40px;
 }
 
-.culture__item {
-  flex: 1;
-  padding: 0 30px;
+.culture__card {
   text-align: center;
 }
 
 .culture__icon {
-  width: 44px;
-  height: 44px;
-  margin: 0 auto 15px;
+  width: 100px;
+  height: 100px;
+  margin: 0 auto 10px;
 }
 
-.culture__item h3 {
-  color: #fff;
+.culture__card h3 {
+  color: var(--color-primary);
   font-size: 20px;
   margin: 0 0 12px;
 }
 
-.culture__item p {
-  color: #fff;
+.culture__card p {
   font-weight: 300;
   font-size: 15px;
-  margin: 0;
+  margin: 0 auto;
+  max-width: 90%;
 }
 </style>
