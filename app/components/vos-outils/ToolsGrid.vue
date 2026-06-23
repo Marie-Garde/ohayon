@@ -1,7 +1,7 @@
 <script setup>
 import logoIsuite from "~/assets/illustrations/images/vos-outils/logo-isuite.png";
 import logoPennylane from "~/assets/illustrations/images/vos-outils/logo-pennylane.png";
-import logoSilae from "~/assets/illustrations/images/vos-outils/logo-silae.png";
+import logoSilae from "~/assets/illustrations/images/vos-outils/my-silae-white-64px.0at-9417.svg";
 
 const tools = [
   {
@@ -112,16 +112,16 @@ const tools = [
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 72px;
-  height: 72px;
+  width: 100px;
+  height: 100px;
   border-radius: 10px;
   background: #fff;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 .tools__icon {
-  max-width: 50px;
-  max-height: 50px;
+  max-width: 76px;
+  max-height: 76px;
   object-fit: contain;
 }
 
