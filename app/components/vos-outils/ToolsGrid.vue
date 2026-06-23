@@ -1,81 +1,56 @@
+<script setup>
+import logoIsuite from "~/assets/illustrations/images/vos-outils/logo-isuite.png";
+import logoPennylane from "~/assets/illustrations/images/vos-outils/logo-pennylane.png";
+import logoSilae from "~/assets/illustrations/images/vos-outils/logo-silae.png";
+
+const tools = [
+  {
+    name: "ISuite",
+    href: "https://portail.ohayon-associes.com/cnx/iSuiteExpert/Connexion",
+    description: "Accès GED",
+    logo: logoIsuite,
+  },
+  {
+    name: "Pennylane",
+    href: "https://app.pennylane.com/auth/login?",
+    description: "Outil comptable et de gestion",
+    logo: logoPennylane,
+  },
+  {
+    name: "My Silae",
+    href: "https://my.silae.fr/sign-in",
+    description: "Outils RH et paye",
+    logo: logoSilae,
+  },
+];
+</script>
+
 <template>
   <section class="tools">
     <div class="tools__grid">
       <a
+        v-for="tool in tools"
+        :key="tool.name"
         class="tools__card"
-        href="#"
+        :href="tool.href"
         target="_blank"
         rel="noopener"
       >
-        <svg
-          class="tools__icon"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="var(--color-primary)"
-          stroke-width="1.5"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        >
-          <rect x="3" y="4" width="18" height="14" rx="2" />
-          <path d="M8 21h8M12 18v3" />
-        </svg>
-        <h3>iSuite</h3>
-        <p>
-          Votre espace client sécurisé pour échanger documents et
-          informations avec le cabinet.
-        </p>
-        <span class="tools__link">Accéder à iSuite</span>
-      </a>
-
-      <a
-        class="tools__card"
-        href="#"
-        target="_blank"
-        rel="noopener"
-      >
-        <svg
-          class="tools__icon"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="var(--color-primary)"
-          stroke-width="1.5"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        >
-          <path d="M4 19h16M7 19V9M12 19V5M17 19v-7" />
-        </svg>
-        <h3>Pennylane</h3>
-        <p>
-          Suivez votre comptabilité et votre facturation en temps réel,
-          depuis une seule plateforme.
-        </p>
-        <span class="tools__link">Accéder à Pennylane</span>
-      </a>
-
-      <a
-        class="tools__card"
-        href="#"
-        target="_blank"
-        rel="noopener"
-      >
-        <svg
-          class="tools__icon"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="var(--color-primary)"
-          stroke-width="1.5"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        >
-          <path d="M4 21V8l8-5 8 5v13" />
-          <path d="M9 21v-7h6v7" />
-        </svg>
-        <h3>Silae</h3>
-        <p>
-          Retrouvez vos bulletins de paie et vos démarches RH en quelques
-          clics.
-        </p>
-        <span class="tools__link">Accéder à Silae</span>
+        <div class="tools__visual">
+          <img
+            class="tools__visual-bg"
+            :src="tool.logo"
+            alt=""
+            aria-hidden="true"
+          />
+          <span class="tools__badge">
+            <img class="tools__icon" :src="tool.logo" :alt="tool.name" />
+          </span>
+        </div>
+        <div class="tools__content">
+          <p>{{ tool.description }}</p>
+          <span class="tools__link">Accéder à {{ tool.name }}</span>
+        </div>
       </a>
     </div>
   </section>
@@ -97,11 +72,9 @@
 .tools__card {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  text-align: center;
   text-decoration: none;
-  padding: 40px 25px;
   border-radius: 10px;
+  overflow: hidden;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
   transition:
     transform 0.3s,
@@ -113,18 +86,55 @@
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
 }
 
+.tools__visual {
+  position: relative;
+  height: 130px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: var(--color-primary);
+}
+
+.tools__visual-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: blur(16px) brightness(0.9);
+  transform: scale(1.3);
+}
+
+.tools__badge {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 72px;
+  height: 72px;
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
 .tools__icon {
-  width: 44px;
-  height: 44px;
-  margin-bottom: 15px;
+  max-width: 50px;
+  max-height: 50px;
+  object-fit: contain;
 }
 
-.tools__card h3 {
-  color: var(--color-primary);
-  margin: 0 0 10px;
+.tools__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  flex: 1;
+  padding: 30px 25px 35px;
 }
 
-.tools__card p {
+.tools__content p {
   margin: 0 0 20px;
   max-width: 90%;
 }
