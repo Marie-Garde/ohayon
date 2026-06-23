@@ -9,9 +9,9 @@
     <div class="page-hero__content">
       <h1>Qui sommes-nous</h1>
       <p class="page-hero__lead">
-        Cabinet d'expertise comptable familial, nous accompagnons depuis
-        bientôt 40 ans des entrepreneurs et dirigeants avec une approche
-        sur-mesure, humaine et résolument digitale.
+        Équipe très qualifiée, interlocuteurs dédiés, grande disponibilité.
+        Depuis plus de 40 ans, le cabinet Ohayon &amp; Associés accompagne
+        les TPE et PME avec rigueur, proximité et un engagement sans faille.
       </p>
     </div>
   </section>
@@ -73,7 +73,8 @@
 .page-hero__lead {
   color: #fff;
   font-weight: 300;
-  font-size: 20px;
+  font-size: 18px;
+  line-height: 1.6;
   margin: 0;
   max-width: 500px;
 }
