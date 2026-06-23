@@ -343,7 +343,7 @@ const selectedAssociate = computed(() =>
   display: block;
   margin: 0 0 20px;
   font-size: 14px;
-  color: var(--color-secondary);
+  color: var(--color-primary);
   text-decoration: none;
 }
 
