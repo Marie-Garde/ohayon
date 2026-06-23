@@ -14,14 +14,14 @@
     </div>
 
     <div class="pillars__list">
-      <div class="pillars__item">
+      <div class="pillars__item" v-reveal="'left'">
         <h3>Expertise &amp; qualité</h3>
         <p>
           Une équipe où ⅓ sont experts-comptables. Votre interlocuteur a la
           compétence de répondre à 99% de vos questions.
         </p>
       </div>
-      <div class="pillars__item">
+      <div class="pillars__item" v-reveal="'right'">
         <h3>Digitalisation pionnière</h3>
         <p>
           0 papier depuis 15 ans, outils interactifs (Pennylane, Silae…),
@@ -29,7 +29,7 @@
           pratique depuis 2010.
         </p>
       </div>
-      <div class="pillars__item">
+      <div class="pillars__item" v-reveal="'left'">
         <h3>Réactivité &amp; proximité</h3>
         <p>
           Un collaborateur dédié, joignable en ligne directe, réponse mail
@@ -37,7 +37,7 @@
           clients.
         </p>
       </div>
-      <div class="pillars__item">
+      <div class="pillars__item" v-reveal="'right'">
         <h3>Sur-mesure, sans standard</h3>
         <p>
           Pas de pack, pas de grille. On commence par comprendre votre
