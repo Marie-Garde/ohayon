@@ -5,7 +5,7 @@
     </div>
     <div class="team__image-wrapper">
       <img
-        src="~/assets/illustrations/images/home/image.jpg"
+        src="~/assets/illustrations/images/qui-sommes-nous/equipe.jpg"
         alt="Équipe au travail"
         class="team__image"
       />
@@ -190,6 +190,7 @@ const selectedAssociate = computed(() =>
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center 30%;
 }
 
 .team__title-wrapper {
