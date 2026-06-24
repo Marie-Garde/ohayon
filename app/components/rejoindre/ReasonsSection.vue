@@ -2,7 +2,7 @@
   <section class="reasons">
     <div class="reasons__grid">
       <div class="reasons__card" v-reveal="'left'">
-        <h3>Un cabinet moderne</h3>
+        <h3>Un cabinet<br />moderne</h3>
         <p>
           Évoluez dans un cabinet moderne où vos idées et votre autonomie
           sont valorisées au quotidien.
@@ -34,7 +34,7 @@
 
 <style scoped>
 .reasons {
-  padding: 0 40px 80px;
+  padding: 0 40px 40px;
 }
 
 .reasons__grid {
@@ -49,13 +49,18 @@
 .reasons__card {
   border: 2px solid var(--color-primary);
   border-radius: 5px;
-  padding: 30px 20px;
+  padding: 40px 30px;
   text-align: center;
   width: 350px;
-  height: 220px;
+  min-height: 220px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+  transition: background-color 0.3s;
+}
+
+.reasons__card:hover {
+  background-color: rgba(28, 177, 161, 0.05);
 }
 
 .reasons__card h3 {

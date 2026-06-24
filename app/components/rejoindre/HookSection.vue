@@ -9,12 +9,12 @@
 <style scoped>
 .hook {
   position: relative;
-  padding: 80px 40px 60px;
+  padding: 50px 40px 30px;
 }
 
 .hook__title-wrapper {
   text-align: center;
-  margin-bottom: 60px;
+  margin-bottom: 30px;
 }
 
 .hook__title {
