@@ -2,7 +2,7 @@
   <section class="banner">
     <div class="banner__image-wrapper">
       <img
-        src="~/assets/illustrations/images/home/image.jpg"
+        src="~/assets/illustrations/images/contact/nousecrire.jpg"
         alt="Équipe au travail"
         class="banner__image"
       />

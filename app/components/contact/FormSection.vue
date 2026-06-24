@@ -184,4 +184,34 @@
   color: var(--color-secondary);
   border-color: var(--color-secondary);
 }
+
+@media (max-width: 768px) {
+  .form-section {
+    padding: 80px 24px 90px;
+  }
+
+  .form__row {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+}
+
+@media (max-width: 480px) {
+  .form-section {
+    padding: 60px 20px 70px;
+  }
+
+  .form {
+    gap: 18px;
+  }
+
+  .form__submit {
+    margin-top: 4px;
+  }
+
+  .form__btn {
+    width: 100%;
+    padding: 14px 20px;
+  }
+}
 </style>
