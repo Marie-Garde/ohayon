@@ -185,7 +185,11 @@
   }
 
   .service-block__icon-wrapper {
-    align-self: flex-start;
+    align-self: center;
+  }
+
+  .service-block__content h3 {
+    text-align: center;
   }
 }
 </style>
