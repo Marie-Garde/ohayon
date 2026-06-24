@@ -76,4 +76,43 @@
   margin: 0;
   max-width: 500px;
 }
+
+@media (max-width: 768px) {
+  .page-hero {
+    height: 320px;
+  }
+
+  .page-hero__content {
+    padding: 0 40px;
+  }
+
+  .page-hero__content h1 {
+    font-size: 40px;
+    margin: 0 0 15px;
+  }
+
+  .page-hero__lead {
+    font-size: 17px;
+  }
+}
+
+@media (max-width: 480px) {
+  .page-hero {
+    height: 280px;
+  }
+
+  .page-hero__content {
+    padding: 0 24px;
+  }
+
+  .page-hero__content h1 {
+    font-size: 30px;
+    margin: 0 0 10px;
+  }
+
+  .page-hero__lead {
+    font-size: 15px;
+    max-width: 100%;
+  }
+}
 </style>
