@@ -181,7 +181,11 @@
   .service-block,
   .service-block--reverse {
     flex-direction: column;
-    text-align: center;
+    text-align: left;
+  }
+
+  .service-block__icon-wrapper {
+    align-self: flex-start;
   }
 }
 </style>
