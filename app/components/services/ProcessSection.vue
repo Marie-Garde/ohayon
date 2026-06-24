@@ -9,7 +9,7 @@
       <div class="timeline__track">
         <div class="timeline__step timeline__step--top">
           <div class="timeline__content">
-            <h3>Premier échange</h3>
+            <h3>Premier<br />échange</h3>
             <span class="timeline__duration">15 à 30 min</span>
             <p>
               Nous prenons le temps d'échanger sur votre activité, vos
