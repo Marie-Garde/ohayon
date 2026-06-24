@@ -204,6 +204,11 @@
     font-size: 30px;
     padding: 12px 35px;
   }
+
+  .location__grid {
+    max-width: 90%;
+    margin: 0 auto;
+  }
 }
 
 @media (max-width: 480px) {
@@ -227,6 +232,10 @@
   .location__card--wide,
   .location__card--highlight {
     grid-column: auto;
+  }
+
+  .location__grid {
+    max-width: 94%;
   }
 }
 </style>
