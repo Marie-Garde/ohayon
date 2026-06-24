@@ -157,4 +157,44 @@ const tools = [
   background-color: var(--color-secondary);
   color: #fff;
 }
+
+@media (max-width: 900px) {
+  .tools__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .tools {
+    padding: 80px 24px 90px;
+  }
+}
+
+@media (max-width: 600px) {
+  .tools__grid {
+    grid-template-columns: 1fr;
+    max-width: 420px;
+    gap: 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .tools {
+    padding: 60px 20px 70px;
+  }
+
+  .tools__visual {
+    height: 110px;
+  }
+
+  .tools__badge {
+    width: 80px;
+    height: 80px;
+  }
+
+  .tools__icon {
+    max-width: 60px;
+    max-height: 60px;
+  }
+}
 </style>
