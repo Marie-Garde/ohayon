@@ -165,4 +165,47 @@
     grid-template-columns: repeat(2, 1fr);
   }
 }
+
+@media (max-width: 768px) {
+  .stats-section {
+    padding: 70px 24px 70px;
+  }
+
+  .stats-section__title-wrapper {
+    margin-bottom: 40px;
+  }
+
+  .stats-section__title {
+    font-size: 28px;
+    padding: 12px 32px;
+  }
+}
+
+@media (max-width: 480px) {
+  .stats-section {
+    padding: 50px 20px 50px;
+  }
+
+  .stats-section__title {
+    font-size: 20px;
+    padding: 10px 22px;
+  }
+
+  .stats__item {
+    padding: 32px 16px 36px;
+  }
+
+  .stats__icon {
+    width: 26px;
+    height: 26px;
+  }
+
+  .stats__number {
+    font-size: 42px;
+  }
+
+  .stats__label {
+    font-size: 13px;
+  }
+}
 </style>
