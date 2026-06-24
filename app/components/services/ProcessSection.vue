@@ -9,10 +9,12 @@
       <div class="timeline__track">
         <div class="timeline__step timeline__step--top">
           <div class="timeline__content">
-            <h3>Premier contact</h3>
+            <h3>Premier échange</h3>
+            <span class="timeline__duration">15 à 30 min</span>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean
-              tincidunt, orci eget viverra feugiat.
+              Nous prenons le temps d'échanger sur votre activité, vos
+              enjeux et vos besoins afin de comprendre précisément votre
+              situation.
             </p>
           </div>
           <span class="timeline__dot"></span>
@@ -21,18 +23,21 @@
           <span class="timeline__dot"></span>
           <div class="timeline__content">
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean
-              tincidunt, orci eget viverra feugiat.
+              Lors d'un entretien avec un expert-comptable, nous analysons
+              votre organisation, vos objectifs et vos enjeux du moment.
             </p>
             <h3>Rendez-vous découverte</h3>
+            <span class="timeline__duration">45 min à 1 h</span>
           </div>
         </div>
         <div class="timeline__step timeline__step--top">
           <div class="timeline__content">
-            <h3>Proposition</h3>
+            <h3>Proposition personnalisée</h3>
+            <span class="timeline__duration">24 à 72 h</span>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean
-              tincidunt, orci eget viverra feugiat.
+              Nous vous adressons une lettre de mission claire et adaptée,
+              détaillant les prestations proposées, les outils mis à
+              disposition et les honoraires.
             </p>
           </div>
           <span class="timeline__dot"></span>
@@ -41,11 +46,25 @@
           <span class="timeline__dot"></span>
           <div class="timeline__content">
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean
-              tincidunt, orci eget viverra feugiat.
+              Après validation de notre proposition, nous mettons en place
+              les outils, récupérons les informations nécessaires et
+              organisons votre suivi.
             </p>
-            <h3>Démarrage de la collaboration</h3>
+            <h3>Démarrage de la mission</h3>
+            <span class="timeline__duration">1 à 2 semaines</span>
           </div>
+        </div>
+        <div class="timeline__step timeline__step--top">
+          <div class="timeline__content">
+            <h3>Accompagnement continu</h3>
+            <span class="timeline__duration">En continu</span>
+            <p>
+              Vous bénéficiez d'un interlocuteur dédié et de conseils
+              réguliers, tout au long de l'année, pour piloter sereinement
+              votre activité.
+            </p>
+          </div>
+          <span class="timeline__dot"></span>
         </div>
       </div>
     </div>
@@ -55,7 +74,7 @@
 <style scoped>
 .process {
   background-color: var(--color-primary);
-  height: 700px;
+  height: 880px;
   padding: 100px 40px 80px;
   margin-bottom: 50px;
   display: flex;
@@ -91,15 +110,15 @@
 
 .timeline {
   width: 100%;
-  max-width: 1000px;
-  margin: 40px auto 0;
+  max-width: 1150px;
+  margin: 70px auto 0;
 }
 
 .timeline__track {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   position: relative;
-  min-height: 300px;
+  min-height: 480px;
 }
 
 .timeline__track::before {
@@ -128,6 +147,7 @@
 
 .timeline__step {
   position: relative;
+  height: 480px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -149,11 +169,11 @@
 
 .timeline__step--top {
   justify-content: flex-end;
-  padding-bottom: 150px;
+  padding-bottom: 240px;
 }
 
 .timeline__step--top .timeline__dot {
-  bottom: 142px;
+  bottom: 232px;
 }
 
 .timeline__step--top .timeline__content p {
@@ -162,11 +182,11 @@
 
 .timeline__step--bottom {
   justify-content: flex-start;
-  padding-top: 150px;
+  padding-top: 240px;
 }
 
 .timeline__step--bottom .timeline__dot {
-  top: 142px;
+  top: 232px;
 }
 
 .timeline__step--bottom .timeline__content p {
@@ -175,8 +195,8 @@
 
 .timeline__content h3 {
   color: #fff;
-  font-size: 22px;
-  margin: 0 0 8px;
+  font-size: 20px;
+  margin: 0 0 6px;
 }
 
 .timeline__content p {
@@ -188,7 +208,22 @@
   padding-left: 10px;
 }
 
+.timeline__duration {
+  display: block;
+  color: var(--color-secondary);
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin: 0 0 8px;
+}
+
 .timeline__step--bottom .timeline__content h3 {
   margin: 8px 0 0;
+}
+
+.timeline__step--bottom .timeline__duration {
+  margin: 4px 0 0;
 }
 </style>
