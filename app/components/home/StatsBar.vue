@@ -56,4 +56,39 @@
   color: var(--color-text);
   margin-top: 5px;
 }
+
+@media (max-width: 768px) {
+  .stats {
+    flex-wrap: wrap;
+    width: 90%;
+    height: auto;
+    margin: -80px auto 0;
+    padding: 30px 20px;
+    row-gap: 24px;
+  }
+
+  .stats__item {
+    flex: 1 1 40%;
+  }
+
+  .stats__number {
+    font-size: 56px;
+  }
+}
+
+@media (max-width: 480px) {
+  .stats {
+    width: 92%;
+    margin: -60px auto 0;
+    padding: 24px 16px;
+  }
+
+  .stats__number {
+    font-size: 44px;
+  }
+
+  .stats__label {
+    font-size: 12px;
+  }
+}
 </style>
