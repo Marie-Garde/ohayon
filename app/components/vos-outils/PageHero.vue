@@ -80,8 +80,7 @@
 
 @media (max-width: 768px) {
   .page-hero {
-    height: auto;
-    min-height: 320px;
+    height: 320px;
   }
 
   .page-hero__content {
@@ -100,7 +99,7 @@
 
 @media (max-width: 480px) {
   .page-hero {
-    min-height: 280px;
+    height: 280px;
   }
 
   .page-hero__content {
