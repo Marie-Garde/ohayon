@@ -24,4 +24,26 @@
   padding: 15px 50px;
   white-space: nowrap;
 }
+
+@media (max-width: 768px) {
+  .hook {
+    padding: 40px 24px 24px;
+  }
+
+  .hook__title {
+    font-size: 28px;
+    padding: 12px 35px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hook {
+    padding: 32px 20px 20px;
+  }
+
+  .hook__title {
+    font-size: 20px;
+    padding: 10px 20px;
+  }
+}
 </style>

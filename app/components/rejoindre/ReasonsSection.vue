@@ -100,4 +100,40 @@
   color: var(--color-text);
   margin-top: 5px;
 }
+
+@media (max-width: 900px) {
+  .reasons__grid {
+    flex-wrap: wrap;
+  }
+
+  .reasons__card {
+    width: calc(50% - 25px);
+  }
+}
+
+@media (max-width: 650px) {
+  .reasons__grid {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .reasons__card {
+    width: 100%;
+    max-width: 400px;
+  }
+}
+
+@media (max-width: 480px) {
+  .reasons {
+    padding: 0 20px 30px;
+  }
+
+  .reasons__card {
+    padding: 30px 20px;
+  }
+
+  .reasons__stat-number {
+    font-size: 38px;
+  }
+}
 </style>
