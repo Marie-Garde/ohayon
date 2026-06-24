@@ -2,7 +2,7 @@
   <section class="page-hero">
     <div class="page-hero__overlay"></div>
     <img
-      src="~/assets/illustrations/images/home/image.jpg"
+      src="~/assets/illustrations/images/nos-services/services-hero.jpg"
       alt="Cabinet Ohayon & Associés"
       class="page-hero__image"
     />
@@ -44,9 +44,9 @@
   z-index: 1;
   background: linear-gradient(
     to right,
-    var(--color-primary) 45%,
-    rgba(28, 177, 161, 0.75) 70%,
-    rgba(28, 177, 161, 0.3) 100%
+    var(--color-primary) 40%,
+    rgba(28, 177, 161, 0.6) 60%,
+    transparent 100%
   );
 }
 
