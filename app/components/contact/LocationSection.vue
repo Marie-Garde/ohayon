@@ -179,4 +179,54 @@
   font-size: 13px;
   font-weight: 400;
 }
+
+@media (max-width: 900px) {
+  .location__grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .location__map {
+    height: 350px;
+  }
+}
+
+@media (max-width: 768px) {
+  .location {
+    padding: 60px 24px 40px;
+  }
+
+  .location__title-wrapper {
+    margin-bottom: 40px;
+  }
+
+  .location__title {
+    font-size: 30px;
+    padding: 12px 35px;
+  }
+}
+
+@media (max-width: 480px) {
+  .location {
+    padding: 50px 20px 30px;
+  }
+
+  .location__title {
+    font-size: 24px;
+    padding: 10px 25px;
+  }
+
+  .location__map {
+    height: 260px;
+  }
+
+  .location__info {
+    grid-template-columns: 1fr;
+  }
+
+  .location__card--wide,
+  .location__card--highlight {
+    grid-column: auto;
+  }
+}
 </style>
