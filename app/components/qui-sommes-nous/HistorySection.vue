@@ -178,4 +178,30 @@
     right: auto;
   }
 }
+
+@media (max-width: 768px) {
+  .history {
+    padding: 70px 24px 0;
+  }
+
+  .history__title-wrapper {
+    margin-bottom: 40px;
+  }
+
+  .history__title {
+    font-size: 28px;
+    padding: 12px 32px;
+  }
+}
+
+@media (max-width: 480px) {
+  .history {
+    padding: 50px 20px 0;
+  }
+
+  .history__title {
+    font-size: 20px;
+    padding: 10px 22px;
+  }
+}
 </style>
