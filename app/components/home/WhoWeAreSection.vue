@@ -53,4 +53,30 @@
   white-space: nowrap;
   transform: rotate(calc(-1 * atan2(var(--slant-height), 100vw)));
 }
+
+@media (max-width: 768px) {
+  .whoweare {
+    margin-top: 90px;
+  }
+
+  .whoweare__image-wrapper {
+    height: 320px;
+  }
+
+  .whoweare__title {
+    font-size: 28px;
+    padding: 12px 32px;
+  }
+}
+
+@media (max-width: 480px) {
+  .whoweare__image-wrapper {
+    height: 260px;
+  }
+
+  .whoweare__title {
+    font-size: 20px;
+    padding: 10px 22px;
+  }
+}
 </style>
