@@ -117,4 +117,31 @@
   color: #fff;
   border-color: var(--color-secondary);
 }
+
+@media (max-width: 768px) {
+  .services {
+    padding: 80px 24px 70px;
+  }
+
+  .services__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 50px 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .services {
+    padding: 60px 20px 50px;
+  }
+
+  .services__grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .services__icon {
+    height: 80px;
+    width: 80px;
+  }
+}
 </style>
