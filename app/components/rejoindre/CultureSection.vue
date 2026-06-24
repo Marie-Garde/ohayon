@@ -3,7 +3,7 @@
     <div class="culture__banner">
       <div class="culture__image-wrapper">
         <img
-          src="~/assets/illustrations/images/home/image.jpg"
+          src="~/assets/illustrations/images/nous-rejoindre/culture.jpg"
           alt="Équipe au travail"
           class="culture__image"
         />
