@@ -117,4 +117,64 @@
   background-color: var(--color-primary);
   color: #fff;
 }
+
+@media (max-width: 768px) {
+  .profiles {
+    margin-top: 90px;
+    padding: 0 24px 90px;
+  }
+
+  .profiles__image-wrapper {
+    clip-path: none;
+    border-radius: 5px;
+  }
+
+  .profiles__title {
+    font-size: 26px;
+    padding: 12px 32px;
+    transform: none;
+  }
+
+  .profiles__card {
+    max-width: 90%;
+    padding: 24px 28px;
+    gap: 16px;
+  }
+
+  .profiles__text {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .profiles {
+    margin-top: 70px;
+    padding: 0 20px 70px;
+  }
+
+  .profiles__image-wrapper {
+    height: 460px;
+  }
+
+  .profiles__title {
+    font-size: 18px;
+    padding: 10px 20px;
+  }
+
+  .profiles__card {
+    max-width: 92%;
+    padding: 20px 20px;
+    gap: 14px;
+  }
+
+  .profiles__text {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  .profiles__btn {
+    font-size: 14px;
+    padding: 10px 16px;
+  }
+}
 </style>
