@@ -68,4 +68,38 @@
 .footer__info a:hover {
   opacity: 0.7;
 }
+
+@media (max-width: 700px) {
+  .footer {
+    flex-direction: column;
+    gap: 16px;
+    padding: 30px 24px;
+    min-height: 0;
+  }
+
+  .footer__logo {
+    position: static;
+    top: auto;
+    left: auto;
+    transform: none;
+  }
+
+  .footer__logo img {
+    height: 70px;
+  }
+
+  .footer__info {
+    flex-wrap: wrap;
+    justify-content: center;
+    row-gap: 6px;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer__info {
+    font-size: 12px;
+    gap: 6px;
+  }
+}
 </style>
