@@ -13,6 +13,18 @@
       </div>
     </div>
 
+    <p class="culture__values">
+      Bienveillance <span aria-hidden="true">·</span> Exigence
+      <span aria-hidden="true">·</span> Esprit d'équipe
+      <span aria-hidden="true">·</span> Confiance
+      <span aria-hidden="true">·</span> Proximité
+      <span aria-hidden="true">·</span> Autonomie
+      <span aria-hidden="true">·</span> Engagement
+      <span aria-hidden="true">·</span> Innovation
+      <span aria-hidden="true">·</span> Convivialité
+      <span aria-hidden="true">·</span> Réactivité
+    </p>
+
     <div class="culture__grid">
       <div class="culture__card">
         <img
@@ -111,12 +123,30 @@
   transform: rotate(calc(-1 * atan2(var(--slant-height), 100vw)));
 }
 
+.culture__values {
+  text-align: center;
+  max-width: 900px;
+  margin: 80px auto 0;
+  padding: 0 40px;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 17px;
+  letter-spacing: 0.3px;
+  color: var(--color-primary);
+  line-height: 2;
+}
+
+.culture__values span {
+  color: var(--color-secondary);
+  margin: 0 4px;
+}
+
 .culture__grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 0 30px;
   max-width: 1100px;
-  margin: 80px auto 0;
+  margin: 60px auto 0;
   padding: 0 40px 40px;
 }
 
