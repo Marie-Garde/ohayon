@@ -14,15 +14,25 @@
     </div>
 
     <p class="culture__values">
-      Bienveillance <span aria-hidden="true">·</span> Exigence
-      <span aria-hidden="true">·</span> Esprit d'équipe
-      <span aria-hidden="true">·</span> Confiance
-      <span aria-hidden="true">·</span> Proximité
-      <span aria-hidden="true">·</span> Autonomie
-      <span aria-hidden="true">·</span> Engagement
-      <span aria-hidden="true">·</span> Innovation
-      <span aria-hidden="true">·</span> Convivialité
-      <span aria-hidden="true">·</span> Réactivité
+      <span class="culture__value">Bienveillance</span>
+      <span class="culture__dot" aria-hidden="true">·</span>
+      <span class="culture__value">Exigence</span>
+      <span class="culture__dot" aria-hidden="true">·</span>
+      <span class="culture__value">Esprit d'équipe</span>
+      <span class="culture__dot" aria-hidden="true">·</span>
+      <span class="culture__value">Confiance</span>
+      <span class="culture__dot" aria-hidden="true">·</span>
+      <span class="culture__value">Proximité</span>
+      <span class="culture__dot" aria-hidden="true">·</span>
+      <span class="culture__value">Autonomie</span>
+      <span class="culture__dot" aria-hidden="true">·</span>
+      <span class="culture__value">Engagement</span>
+      <span class="culture__dot" aria-hidden="true">·</span>
+      <span class="culture__value">Innovation</span>
+      <span class="culture__dot" aria-hidden="true">·</span>
+      <span class="culture__value">Convivialité</span>
+      <span class="culture__dot" aria-hidden="true">·</span>
+      <span class="culture__value">Réactivité</span>
     </p>
 
     <div class="culture__grid">
@@ -136,7 +146,18 @@
   line-height: 2;
 }
 
-.culture__values span {
+.culture__value {
+  display: inline-block;
+  cursor: default;
+  transition: color 0.25s, transform 0.25s;
+}
+
+.culture__value:hover {
+  color: var(--color-secondary);
+  transform: translateY(-2px);
+}
+
+.culture__dot {
   color: var(--color-secondary);
   margin: 0 4px;
 }
