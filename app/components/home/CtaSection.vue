@@ -65,4 +65,38 @@
   color: #fff;
   border-color: var(--color-primary);
 }
+
+@media (max-width: 768px) {
+  .cta {
+    padding: 0 24px 90px;
+  }
+
+  .cta__image-wrapper {
+    height: 320px;
+    clip-path: none;
+    border-radius: 5px;
+  }
+
+  .cta__btn {
+    font-size: 16px;
+    padding: 14px 20px;
+    max-width: calc(100% - 48px);
+  }
+}
+
+@media (max-width: 480px) {
+  .cta {
+    padding: 0 20px 70px;
+  }
+
+  .cta__image-wrapper {
+    height: 260px;
+  }
+
+  .cta__btn {
+    font-size: 14px;
+    padding: 12px 16px;
+    max-width: calc(100% - 32px);
+  }
+}
 </style>
