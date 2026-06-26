@@ -2,7 +2,7 @@
   <section class="hero">
     <div class="hero__overlay"></div>
     <img
-      src="~/assets/illustrations/images/home/image.jpg"
+      src="~/assets/illustrations/images/home/ohayon.jpg"
       alt="Équipe au travail"
       class="hero__image"
     />
