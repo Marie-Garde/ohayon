@@ -5,7 +5,7 @@
     </div>
     <div class="whoweare__image-wrapper">
       <img
-        src="~/assets/illustrations/images/home/image.jpg"
+        src="~/assets/illustrations/images/home/define.jpg"
         alt="Équipe au travail"
         class="whoweare__image"
       />
@@ -35,6 +35,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center 30%;
 }
 
 .whoweare__title-wrapper {
