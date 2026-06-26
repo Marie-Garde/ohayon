@@ -2,7 +2,7 @@
   <section class="skills">
     <div class="skills__image-wrapper">
       <img
-        src="~/assets/illustrations/images/home/image.jpg"
+        src="~/assets/illustrations/images/home/savoir.jpg"
         alt="Équipe au travail"
         class="skills__image"
       />
