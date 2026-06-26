@@ -2,7 +2,7 @@
   <section class="cta">
     <div class="cta__image-wrapper">
       <img
-        src="~/assets/illustrations/images/home/image.jpg"
+        src="~/assets/illustrations/images/home/contactCTA.jpg"
         alt="Équipe au travail"
         class="cta__image"
       />
@@ -36,6 +36,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center 0%;
 }
 
 .cta__btn {
