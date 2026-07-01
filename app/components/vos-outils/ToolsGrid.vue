@@ -43,9 +43,10 @@ const tools = [
             :src="tool.logo"
             alt=""
             aria-hidden="true"
+            loading="lazy"
           />
           <span class="tools__badge">
-            <img class="tools__icon" :src="tool.logo" :alt="tool.name" />
+            <img class="tools__icon" :src="tool.logo" :alt="tool.name" loading="lazy" />
           </span>
         </div>
         <div class="tools__content">
