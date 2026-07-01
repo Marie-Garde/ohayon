@@ -99,6 +99,19 @@
   transform: translateX(-50%);
 }
 
+.history__timeline::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -10px;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-top: 12px solid var(--color-primary);
+}
+
 .history__item {
   position: relative;
   width: 50%;

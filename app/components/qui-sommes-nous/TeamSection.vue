@@ -228,7 +228,7 @@ const selectedAssociate = computed(() =>
 }
 
 .team__intro {
-  max-width: 680px;
+  max-width: 1300px;
   margin: 60px auto 60px;
   padding: 0 40px;
   text-align: center;
@@ -244,7 +244,7 @@ const selectedAssociate = computed(() =>
 }
 
 .team__intro p {
-  text-align: justify;
+  text-align: center;
   font-weight: 300;
   font-size: 18px;
   line-height: 1.7;
