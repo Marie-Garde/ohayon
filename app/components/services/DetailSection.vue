@@ -1,6 +1,6 @@
 <template>
   <section class="services">
-    <div class="service-card">
+    <div class="service-card" v-reveal="'up'">
       <div class="service-card__left">
         <div class="service-card__icon-wrapper">
           <img
@@ -32,7 +32,7 @@
       </ul>
     </div>
 
-    <div class="service-card">
+    <div class="service-card" v-reveal="'up'">
       <div class="service-card__left">
         <div class="service-card__icon-wrapper">
           <img
@@ -65,7 +65,7 @@
       </ul>
     </div>
 
-    <div class="service-card">
+    <div class="service-card" v-reveal="'up'">
       <div class="service-card__left">
         <div class="service-card__icon-wrapper">
           <img
@@ -98,7 +98,7 @@
       </ul>
     </div>
 
-    <div class="service-card">
+    <div class="service-card" v-reveal="'up'">
       <div class="service-card__left">
         <div class="service-card__icon-wrapper">
           <img
@@ -130,7 +130,7 @@
       </ul>
     </div>
 
-    <div class="service-card">
+    <div class="service-card" v-reveal="'up'">
       <div class="service-card__left">
         <div class="service-card__icon-wrapper">
           <img
