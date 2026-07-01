@@ -159,7 +159,11 @@
 
 .culture__dot {
   color: var(--color-secondary);
-  margin: 0 4px;
+  font-size: 24px;
+  font-weight: 700;
+  margin: 0 10px;
+  vertical-align: middle;
+  line-height: 1;
 }
 
 .culture__grid {
@@ -173,6 +177,11 @@
 
 .culture__card {
   text-align: center;
+  border-top: 3px solid var(--color-secondary);
+  padding-top: 20px;
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.08);
+  border-radius: 10px;
+  padding: 20px 16px;
 }
 
 .culture__icon {
