@@ -5,6 +5,7 @@
         src="~/assets/illustrations/images/home/savoir.jpg"
         alt="Équipe au travail"
         class="skills__image"
+        loading="lazy"
       />
     </div>
     <div class="skills__title-wrapper">

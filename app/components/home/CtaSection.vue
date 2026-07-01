@@ -5,6 +5,7 @@
         src="~/assets/illustrations/images/home/contactCTA.jpg"
         alt="Équipe au travail"
         class="cta__image"
+        loading="lazy"
       />
       <NuxtLink to="/contact" class="cta__btn">
         Pour toute question n'hésitez pas<br /><strong>contactez-nous !</strong>

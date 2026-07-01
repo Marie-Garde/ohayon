@@ -4,6 +4,7 @@
       <img
         src="~/assets/illustrations/logos/logo-white.svg"
         alt="Ohayon & Associés"
+        loading="lazy"
       />
     </div>
     <div class="footer__info">

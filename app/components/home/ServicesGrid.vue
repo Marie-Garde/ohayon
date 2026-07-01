@@ -6,6 +6,7 @@
           src="~/assets/illustrations/icons/home/accounting.svg"
           alt=""
           class="services__icon"
+          loading="lazy"
         />
         <h3>Comptabilité</h3>
         <p>La gestion de vos comptes au quotidien, tenue, révision, bilans.</p>
@@ -15,6 +16,7 @@
           src="~/assets/illustrations/icons/home/tax-management.svg"
           alt=""
           class="services__icon"
+          loading="lazy"
         />
         <h3>Gestion fiscale</h3>
         <p>Optimisation fiscale, déclarations, conseil stratégique.</p>
@@ -24,6 +26,7 @@
           src="~/assets/illustrations/icons/home/social-management.svg"
           alt=""
           class="services__icon"
+          loading="lazy"
         />
         <h3>Gestion sociale</h3>
         <p>Bulletins de paie, déclarations sociales, droit du travail.</p>
@@ -33,6 +36,7 @@
           src="~/assets/illustrations/icons/home/accompaniement.svg"
           alt=""
           class="services__icon"
+          loading="lazy"
         />
         <h3>Accompagnement</h3>
         <p>Création, transmission, évaluation, patrimoine du dirigeant.</p>
@@ -42,6 +46,7 @@
           src="~/assets/illustrations/icons/home/audit-office.svg"
           alt=""
           class="services__icon"
+          loading="lazy"
         />
         <h3>Audit légal</h3>
         <p>Commissariat aux comptes, certification, opérations sur capital.</p>

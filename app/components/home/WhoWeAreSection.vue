@@ -8,6 +8,7 @@
         src="~/assets/illustrations/images/home/define.jpg"
         alt="Équipe au travail"
         class="whoweare__image"
+        loading="lazy"
       />
     </div>
   </section>
