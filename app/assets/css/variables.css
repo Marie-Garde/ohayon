@@ -13,6 +13,12 @@
   --font-body: "Roboto Slab", serif;
 }
 
+@media (max-width: 768px) {
+  :root {
+    --slant-height: 15px;
+  }
+}
+
 /* Reset */
 *,
 *::before,
