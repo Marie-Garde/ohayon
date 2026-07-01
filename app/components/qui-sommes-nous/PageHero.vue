@@ -2,15 +2,16 @@
   <section class="page-hero">
     <div class="page-hero__overlay"></div>
     <img
-      src="~/assets/illustrations/images/contact/hero-contact.jpg"
+      src="~/assets/illustrations/images/qui-sommes-nous/historique.jpg"
       alt="Cabinet Ohayon & Associés"
       class="page-hero__image"
     />
     <div class="page-hero__content">
-      <h1>Contactez-nous</h1>
+      <h1>Qui sommes-nous</h1>
       <p class="page-hero__lead">
-        Une question, un projet, un rendez-vous ?<br />
-        Nous sommes à votre écoute.
+        Équipe très qualifiée, interlocuteurs dédiés, grande disponibilité.
+        Depuis plus de 40 ans, le cabinet Ohayon &amp; Associés accompagne
+        les TPE et PME avec rigueur, proximité et un engagement sans faille.
       </p>
     </div>
   </section>
@@ -72,7 +73,8 @@
 .page-hero__lead {
   color: #fff;
   font-weight: 300;
-  font-size: 20px;
+  font-size: 18px;
+  line-height: 1.6;
   margin: 0;
   max-width: 500px;
 }

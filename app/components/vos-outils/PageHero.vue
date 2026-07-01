@@ -2,15 +2,16 @@
   <section class="page-hero">
     <div class="page-hero__overlay"></div>
     <img
-      src="~/assets/illustrations/images/contact/hero-contact.jpg"
+      src="~/assets/illustrations/images/home/image.jpg"
       alt="Cabinet Ohayon & Associés"
       class="page-hero__image"
     />
     <div class="page-hero__content">
-      <h1>Contactez-nous</h1>
+      <h1>Vos outils</h1>
       <p class="page-hero__lead">
-        Une question, un projet, un rendez-vous ?<br />
-        Nous sommes à votre écoute.
+        Convaincus que la digitalisation sert avant tout la relation humaine,
+        nous mettons à votre disposition des plateformes sécurisées et
+        intuitives pour suivre votre activité en toute autonomie.
       </p>
     </div>
   </section>
@@ -45,9 +46,9 @@
   z-index: 1;
   background: linear-gradient(
     to right,
-    var(--color-primary) 40%,
-    rgba(28, 177, 161, 0.6) 60%,
-    transparent 100%
+    var(--color-primary) 45%,
+    rgba(28, 177, 161, 0.75) 70%,
+    rgba(28, 177, 161, 0.3) 100%
   );
 }
 

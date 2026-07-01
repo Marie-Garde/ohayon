@@ -1,5 +1,11 @@
 <template>
   <div>
-    <h1>Nous rejoindre</h1>
+    <RejoindrePageHero />
+    <RejoindreHookSection />
+    <RejoindreReasonsSection />
+    <RejoindreCultureSection />
+    <RejoindreRecruitmentProcessSection />
+    <RejoindreJobsSection />
+    <HomeCtaSection />
   </div>
 </template>

@@ -1,5 +1,8 @@
 <template>
   <div>
-    <h1>Nos services</h1>
+    <ServicesPageHero />
+    <ServicesDetailSection />
+    <ServicesProcessSection />
+    <HomeCtaSection />
   </div>
 </template>

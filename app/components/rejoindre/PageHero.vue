@@ -2,15 +2,15 @@
   <section class="page-hero">
     <div class="page-hero__overlay"></div>
     <img
-      src="~/assets/illustrations/images/contact/hero-contact.jpg"
+      src="~/assets/illustrations/images/nous-rejoindre/hero.jpg"
       alt="Cabinet Ohayon & Associés"
       class="page-hero__image"
     />
     <div class="page-hero__content">
-      <h1>Contactez-nous</h1>
+      <h1>Nous rejoindre</h1>
       <p class="page-hero__lead">
-        Une question, un projet, un rendez-vous ?<br />
-        Nous sommes à votre écoute.
+        Envie de rejoindre une équipe à taille humaine ?<br />
+        Découvrez nos opportunités.
       </p>
     </div>
   </section>

@@ -1,5 +1,6 @@
 <template>
   <div>
-    <h1>Vos outils</h1>
+    <VosOutilsPageHero />
+    <VosOutilsToolsGrid />
   </div>
 </template>
