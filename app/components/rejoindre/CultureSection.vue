@@ -178,10 +178,15 @@
 .culture__card {
   text-align: center;
   border-top: 3px solid var(--color-secondary);
-  padding-top: 20px;
   box-shadow: 0 2px 16px rgba(0, 0, 0, 0.08);
   border-radius: 10px;
   padding: 20px 16px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.culture__card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
 }
 
 .culture__icon {
