@@ -62,7 +62,7 @@
     flex-wrap: wrap;
     width: 90%;
     height: auto;
-    margin: -80px auto 0;
+    margin: -160px auto 0;
     padding: 30px 20px;
     row-gap: 24px;
   }
@@ -79,7 +79,7 @@
 @media (max-width: 480px) {
   .stats {
     width: 92%;
-    margin: -60px auto 0;
+    margin: -120px auto 0;
     padding: 24px 16px;
   }
 
