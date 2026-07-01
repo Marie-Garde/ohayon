@@ -4,7 +4,6 @@
     <RejoindreHookSection />
     <RejoindreReasonsSection />
     <RejoindreCultureSection />
-    <RejoindreProfilesSection />
     <RejoindreRecruitmentProcessSection />
     <RejoindreJobsSection />
     <HomeCtaSection />
