@@ -32,6 +32,7 @@ const tools = [
         v-for="tool in tools"
         :key="tool.name"
         class="tools__card"
+        v-reveal="'up'"
         :href="tool.href"
         target="_blank"
         rel="noopener"
