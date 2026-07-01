@@ -2,7 +2,7 @@
   <section class="page-hero">
     <div class="page-hero__overlay"></div>
     <img
-      src="~/assets/illustrations/images/home/image.jpg"
+      src="~/assets/illustrations/images/contact/hero-contact.jpg"
       alt="Cabinet Ohayon & Associés"
       class="page-hero__image"
     />
