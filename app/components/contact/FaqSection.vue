@@ -11,6 +11,7 @@
           v-for="(item, index) in questions"
           :key="index"
           class="faq__item"
+          v-reveal="'up'"
         >
           <summary class="faq__question">
             <span>{{ item.question }}</span>
