@@ -7,6 +7,7 @@
             src="~/assets/illustrations/icons/home/accounting.svg"
             alt=""
             class="service-card__icon"
+            loading="lazy"
           />
         </div>
         <div class="service-card__info">
@@ -39,6 +40,7 @@
             src="~/assets/illustrations/icons/home/tax-management.svg"
             alt=""
             class="service-card__icon"
+            loading="lazy"
           />
         </div>
         <div class="service-card__info">
@@ -72,6 +74,7 @@
             src="~/assets/illustrations/icons/home/social-management.svg"
             alt=""
             class="service-card__icon"
+            loading="lazy"
           />
         </div>
         <div class="service-card__info">
@@ -105,6 +108,7 @@
             src="~/assets/illustrations/icons/home/accompaniement.svg"
             alt=""
             class="service-card__icon"
+            loading="lazy"
           />
         </div>
         <div class="service-card__info">
@@ -137,6 +141,7 @@
             src="~/assets/illustrations/icons/home/audit-office.svg"
             alt=""
             class="service-card__icon"
+            loading="lazy"
           />
         </div>
         <div class="service-card__info">
@@ -168,6 +173,7 @@
           src="~/assets/illustrations/icons/home/accompaniement.svg"
           alt=""
           class="services__cta-icon"
+          loading="lazy"
         />
       </div>
       <div class="services__cta-text">
