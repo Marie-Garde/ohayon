@@ -100,7 +100,7 @@
   flex-wrap: wrap;
   justify-content: center;
   gap: 50px;
-  max-width: 1000px;
+  max-width: 1300px;
   margin: 70px auto 0;
   padding: 0 40px;
 }
@@ -110,8 +110,8 @@
   border-radius: 5px;
   padding: 30px 20px;
   text-align: center;
-  width: 350px;
-  height: 220px;
+  width: calc(50% - 25px);
+  min-height: 264px;
   display: flex;
   flex-direction: column;
   justify-content: center;

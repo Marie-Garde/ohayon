@@ -11,7 +11,7 @@
       />
     </div>
 
-    <div class="team__intro" v-if="!selectedAssociate">
+    <div class="team__intro">
       <span class="team__intro-bar"></span>
       <p>
         Chez Ohayon & Associés, nous croyons qu'un cabinet d'expertise
