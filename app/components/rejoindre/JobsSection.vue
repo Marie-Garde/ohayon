@@ -6,6 +6,7 @@
           src="~/assets/illustrations/images/nous-rejoindre/offres.jpg"
           alt="Équipe au travail"
           class="jobs__image"
+          loading="lazy"
         />
       </div>
       <div class="jobs__title-wrapper">
@@ -19,6 +20,7 @@
           src="~/assets/illustrations/images/nous-rejoindre/profils.jpg"
           alt=""
           class="jobs__intro-img"
+          loading="lazy"
         />
         <div class="jobs__intro-content">
           <p class="jobs__intro-text">

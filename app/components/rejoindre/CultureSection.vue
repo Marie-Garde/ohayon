@@ -6,6 +6,7 @@
           src="~/assets/illustrations/images/nous-rejoindre/culture.jpg"
           alt="Équipe au travail"
           class="culture__image"
+          loading="lazy"
         />
       </div>
       <div class="culture__title-wrapper">
@@ -41,6 +42,7 @@
           src="~/assets/illustrations/icons/rejoindre/team-spirit.svg"
           alt=""
           class="culture__icon"
+          loading="lazy"
         />
         <h3>Esprit d'équipe</h3>
         <p>
@@ -53,6 +55,7 @@
           src="~/assets/illustrations/icons/rejoindre/work-life-balance.svg"
           alt=""
           class="culture__icon"
+          loading="lazy"
         />
         <h3>Équilibre vie pro / perso</h3>
         <p>
@@ -65,6 +68,7 @@
           src="~/assets/illustrations/icons/rejoindre/continuous-training.svg"
           alt=""
           class="culture__icon"
+          loading="lazy"
         />
         <h3>Formation continue</h3>
         <p>
@@ -77,6 +81,7 @@
           src="~/assets/illustrations/icons/rejoindre/convivial-moments.svg"
           alt=""
           class="culture__icon"
+          loading="lazy"
         />
         <h3>Moments conviviaux</h3>
         <p>
