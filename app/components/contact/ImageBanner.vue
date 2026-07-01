@@ -5,6 +5,7 @@
         src="~/assets/illustrations/images/contact/nousecrire.jpg"
         alt="Équipe au travail"
         class="banner__image"
+        loading="lazy"
       />
     </div>
     <div class="banner__title-wrapper">
