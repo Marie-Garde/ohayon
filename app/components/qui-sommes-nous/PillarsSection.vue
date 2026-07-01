@@ -6,6 +6,7 @@
           src="~/assets/illustrations/images/qui-sommes-nous/piliers.jpg"
           alt="Nos piliers"
           class="pillars__image"
+          loading="lazy"
         />
       </div>
       <div class="pillars__title-wrapper">

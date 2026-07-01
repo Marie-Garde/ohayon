@@ -7,6 +7,7 @@
           alt=""
           aria-hidden="true"
           class="values-quote__image"
+          loading="lazy"
         />
       </div>
       <div class="values-quote__content">
@@ -69,6 +70,7 @@
           alt=""
           aria-hidden="true"
           class="values-quote__image"
+          loading="lazy"
         />
       </div>
     </div>

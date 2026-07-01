@@ -8,6 +8,7 @@
         src="~/assets/illustrations/images/qui-sommes-nous/equipe.jpg"
         alt="Équipe au travail"
         class="team__image"
+        loading="lazy"
       />
     </div>
 
@@ -39,6 +40,7 @@
           <img
             :src="associate.photo"
             :alt="`${associate.firstName} ${associate.lastName}`"
+            loading="lazy"
           />
         </div>
         <div class="associate-card__body">
@@ -63,6 +65,7 @@
           <img
             :src="selectedAssociate.photo"
             :alt="`${selectedAssociate.firstName} ${selectedAssociate.lastName}`"
+            loading="lazy"
           />
         </div>
         <div class="associate-card__body">
