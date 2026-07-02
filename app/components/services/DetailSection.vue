@@ -170,7 +170,7 @@
     <div class="services__cta">
       <div class="services__cta-icon-wrapper">
         <img
-          src="~/assets/illustrations/icons/home/accompaniement.svg"
+          src="~/assets/illustrations/icons/home/contact.svg"
           alt=""
           class="services__cta-icon"
           loading="lazy"
@@ -303,8 +303,9 @@
   gap: 24px;
   margin-top: 16px;
   padding: 28px 36px;
-  background-color: var(--color-primary);
+  background-color: #f8f9fa;
   border-radius: 10px;
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.08);
 }
 
 .services__cta-icon-wrapper {
@@ -312,7 +313,7 @@
   width: 56px;
   height: 56px;
   border-radius: 50%;
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: rgba(28, 177, 161, 0.1);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -321,7 +322,7 @@
 .services__cta-icon {
   width: 30px;
   height: 30px;
-  filter: brightness(0) invert(1);
+  filter: invert(59%) sepia(61%) saturate(449%) hue-rotate(130deg) brightness(93%) contrast(89%);
 }
 
 .services__cta-text {
@@ -332,21 +333,21 @@
   font-family: var(--font-heading);
   font-weight: 700;
   font-size: 18px;
-  color: #fff;
+  color: var(--color-text);
   margin: 0 0 4px;
 }
 
 .services__cta-subtitle {
   font-size: 14px;
-  color: rgba(255, 255, 255, 0.8);
+  color: #666;
   margin: 0;
 }
 
 .services__cta-btn {
   flex-shrink: 0;
   padding: 12px 28px;
-  background-color: #fff;
-  color: var(--color-primary);
+  background-color: var(--color-primary);
+  color: #fff;
   border-radius: 6px;
   font-family: var(--font-heading);
   font-weight: 700;
