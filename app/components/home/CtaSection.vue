@@ -68,7 +68,7 @@
 
 @media (max-width: 768px) {
   .cta {
-    padding: 0 24px 90px;
+    padding: 50px 24px 90px;
   }
 
   .cta__image-wrapper {

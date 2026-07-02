@@ -133,4 +133,44 @@
 .pillars__item p {
   margin: 0;
 }
+
+@media (max-width: 768px) {
+  .pillars__image-wrapper {
+    height: 250px;
+    clip-path: none;
+  }
+
+  .pillars__title-wrapper {
+    bottom: 0;
+    transform: translateX(-50%) translateY(50%);
+  }
+
+  .pillars__title {
+    transform: none;
+    font-size: 28px;
+    padding: 12px 32px;
+  }
+
+  .pillars__list {
+    gap: 24px;
+    margin: 50px auto 0;
+    padding: 0 24px;
+  }
+
+  .pillars__item {
+    width: 100%;
+    min-height: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .pillars__title {
+    font-size: 22px;
+    padding: 10px 24px;
+  }
+
+  .pillars__list {
+    padding: 0 20px;
+  }
+}
 </style>
