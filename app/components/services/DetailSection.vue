@@ -374,14 +374,40 @@
   }
 
   .service-card__left {
-    border-right: none;
-    border-bottom: 1px solid #e8e8e8;
-    padding: 24px;
     flex: unset;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 28px 24px 0;
+    border-right: none;
+    border-bottom: none;
+  }
+
+  .service-card__left::after {
+    display: none;
+  }
+
+  .service-card__icon-wrapper {
+    margin-bottom: 16px;
+  }
+
+  .service-card__info p {
+    text-align: left;
   }
 
   .service-card__list {
-    padding: 24px;
+    padding: 20px 24px 24px;
+    position: relative;
+  }
+
+  .service-card__list::before {
+    content: '';
+    display: block;
+    width: 48px;
+    height: 3px;
+    border-radius: 2px;
+    background-color: var(--color-secondary);
+    margin: 0 auto 20px;
   }
 
   .services__cta {
