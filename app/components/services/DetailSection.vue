@@ -303,7 +303,7 @@
   gap: 24px;
   margin-top: 16px;
   padding: 28px 36px;
-  background-color: #f8f9fa;
+  background-color: #fff;
   border-radius: 10px;
   box-shadow: 0 2px 16px rgba(0, 0, 0, 0.08);
 }
