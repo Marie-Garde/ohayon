@@ -22,12 +22,12 @@
         <div class="timeline__step timeline__step--bottom">
           <span class="timeline__dot"></span>
           <div class="timeline__content">
+            <h3>Rendez-vous découverte</h3>
+            <span class="timeline__duration">45 min à 1 h</span>
             <p>
               Lors d'un entretien avec un expert-comptable, nous analysons
               votre organisation, vos objectifs et vos enjeux du moment.
             </p>
-            <h3>Rendez-vous découverte</h3>
-            <span class="timeline__duration">45 min à 1 h</span>
           </div>
         </div>
         <div class="timeline__step timeline__step--top">
@@ -45,13 +45,13 @@
         <div class="timeline__step timeline__step--bottom">
           <span class="timeline__dot"></span>
           <div class="timeline__content">
+            <h3>Démarrage de la mission</h3>
+            <span class="timeline__duration">1 à 2 semaines</span>
             <p>
               Après validation de notre proposition, nous mettons en place
               les outils, récupérons les informations nécessaires et
               organisons votre suivi.
             </p>
-            <h3>Démarrage de la mission</h3>
-            <span class="timeline__duration">1 à 2 semaines</span>
           </div>
         </div>
         <div class="timeline__step timeline__step--top">
@@ -151,7 +151,7 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding: 0 8px;
+  padding: 0;
 }
 
 .timeline__dot {
@@ -162,18 +162,24 @@
   outline: none;
   border-radius: 50%;
   position: absolute;
-  left: 8px;
+  left: 0;
   z-index: 1;
   flex-shrink: 0;
 }
 
 .timeline__step--top {
   justify-content: flex-end;
-  padding-bottom: 240px;
+  padding-bottom: 260px;
 }
 
 .timeline__step--top .timeline__dot {
   bottom: 232px;
+}
+
+.timeline__step--top .timeline__content {
+  height: 216px;
+  display: flex;
+  flex-direction: column;
 }
 
 .timeline__step--top .timeline__content p {
@@ -182,15 +188,21 @@
 
 .timeline__step--bottom {
   justify-content: flex-start;
-  padding-top: 240px;
+  padding-top: 260px;
 }
 
 .timeline__step--bottom .timeline__dot {
   top: 232px;
 }
 
+.timeline__step--bottom .timeline__content {
+  height: 216px;
+  display: flex;
+  flex-direction: column;
+}
+
 .timeline__step--bottom .timeline__content p {
-  padding-top: 23px;
+  padding-top: 8px;
 }
 
 .timeline__content h3 {
@@ -203,9 +215,6 @@
   color: #fff;
   font-weight: 300;
   margin: 0;
-  margin-left: 7px;
-  border-left: 3px solid #fff;
-  padding-left: 10px;
 }
 
 .timeline__duration {
@@ -220,11 +229,11 @@
 }
 
 .timeline__step--bottom .timeline__content h3 {
-  margin: 8px 0 0;
+  margin: 23px 0 6px;
 }
 
 .timeline__step--bottom .timeline__duration {
-  margin: 4px 0 0;
+  margin: 0 0 8px;
 }
 
 @media (max-width: 900px) {
