@@ -22,12 +22,12 @@
         <div class="timeline__step timeline__step--bottom">
           <span class="timeline__dot"></span>
           <div class="timeline__content">
-            <h3>Rendez-vous découverte</h3>
-            <span class="timeline__duration">45 min à 1 h</span>
             <p>
               Lors d'un entretien avec un expert-comptable, nous analysons
               votre organisation, vos objectifs et vos enjeux du moment.
             </p>
+            <h3>Rendez-vous découverte</h3>
+            <span class="timeline__duration">45 min à 1 h</span>
           </div>
         </div>
         <div class="timeline__step timeline__step--top">
@@ -45,13 +45,13 @@
         <div class="timeline__step timeline__step--bottom">
           <span class="timeline__dot"></span>
           <div class="timeline__content">
-            <h3>Démarrage de la mission</h3>
-            <span class="timeline__duration">1 à 2 semaines</span>
             <p>
               Après validation de notre proposition, nous mettons en place
               les outils, récupérons les informations nécessaires et
               organisons votre suivi.
             </p>
+            <h3>Démarrage de la mission</h3>
+            <span class="timeline__duration">1 à 2 semaines</span>
           </div>
         </div>
         <div class="timeline__step timeline__step--top">
@@ -188,7 +188,7 @@
 
 .timeline__step--bottom {
   justify-content: flex-start;
-  padding-top: 260px;
+  padding-top: 240px;
 }
 
 .timeline__step--bottom .timeline__dot {
@@ -196,13 +196,13 @@
 }
 
 .timeline__step--bottom .timeline__content {
-  height: 216px;
+  height: 230px;
   display: flex;
   flex-direction: column;
 }
 
 .timeline__step--bottom .timeline__content p {
-  padding-top: 8px;
+  padding-top: 23px;
 }
 
 .timeline__content h3 {
@@ -215,6 +215,9 @@
   color: #fff;
   font-weight: 300;
   margin: 0;
+  margin-left: 7px;
+  border-left: 3px solid #fff;
+  padding-left: 10px;
 }
 
 .timeline__duration {
@@ -229,11 +232,14 @@
 }
 
 .timeline__step--bottom .timeline__content h3 {
-  margin: 23px 0 6px;
+  margin: auto 0 0;
+  flex-shrink: 0;
+  min-height: 58px;
 }
 
 .timeline__step--bottom .timeline__duration {
-  margin: 0 0 8px;
+  margin: 4px 0 0;
+  flex-shrink: 0;
 }
 
 @media (max-width: 900px) {
