@@ -473,4 +473,21 @@ const selectedAssociate = computed(() =>
   line-height: 1;
   cursor: pointer;
 }
+
+@media (max-width: 768px) {
+  .team__associates {
+    gap: 100px 24px;
+    padding: 70px 24px 80px;
+  }
+
+  .team__detail {
+    flex-direction: column;
+    padding: 80px 24px 60px;
+    gap: 24px;
+  }
+
+  .associate-card--selected {
+    width: 100%;
+  }
+}
 </style>
