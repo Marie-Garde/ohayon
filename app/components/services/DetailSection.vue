@@ -212,10 +212,10 @@
 
 .service-card__left {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   gap: 20px;
   flex: 0 0 55%;
-  padding: 32px 36px 32px 32px;
+  padding: 32px 20px 32px 32px;
   position: relative;
 }
 
@@ -233,18 +233,18 @@
 
 .service-card__icon-wrapper {
   flex-shrink: 0;
-  width: 68px;
-  height: 68px;
-  border-radius: 14px;
-  background-color: rgba(28, 177, 161, 0.08);
+  width: 110px;
+  height: 110px;
+  border-radius: 24px;
+  background-color: rgba(255, 191, 0, 0.1);
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .service-card__icon {
-  width: 38px;
-  height: 38px;
+  width: 68px;
+  height: 68px;
 }
 
 .service-card__info {
