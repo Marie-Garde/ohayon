@@ -1,6 +1,6 @@
 <template>
   <section class="values-quote">
-    <div class="values-quote__inner">
+    <div class="values-quote__inner" v-reveal="'left'">
       <div class="values-quote__image-wrapper">
         <img
           src="~/assets/illustrations/images/qui-sommes-nous/arbre.jpg"
@@ -40,7 +40,7 @@
       </div>
     </div>
 
-    <div class="values-quote__inner">
+    <div class="values-quote__inner" v-reveal="'right'">
       <div class="values-quote__content">
         <p>
           Grâce à sa rigueur et son expérience des entreprises, le cabinet
@@ -95,7 +95,7 @@
   display: flex;
   align-items: center;
   gap: 60px;
-  max-width: 1100px;
+  max-width: 1220px;
   margin: 0 auto;
 }
 

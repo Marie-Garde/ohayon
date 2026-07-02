@@ -12,7 +12,7 @@
       />
     </div>
 
-    <div class="team__intro">
+    <div class="team__intro" v-reveal="'up'">
       <span class="team__intro-bar"></span>
       <p>
         Chez Ohayon & Associés, nous croyons qu'un cabinet d'expertise
@@ -34,6 +34,7 @@
         class="associate-card"
         v-for="associate in associates"
         :key="associate.id"
+        v-reveal="'up'"
         @click="selectedId = associate.id"
       >
         <div class="associate-card__avatar">

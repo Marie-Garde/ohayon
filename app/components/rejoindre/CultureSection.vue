@@ -175,7 +175,7 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 0 30px;
-  max-width: 1100px;
+  max-width: 1230px;
   margin: 60px auto 0;
   padding: 0 40px 40px;
 }
