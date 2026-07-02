@@ -174,6 +174,12 @@
 @media (max-width: 700px) {
   .history__timeline::before {
     left: 8px;
+    top: 4px;
+  }
+
+  .history__timeline::after {
+    left: 9px;
+    transform: translateX(-50%);
   }
 
   .history__item,
