@@ -187,7 +187,7 @@
 
 <style scoped>
 .services {
-  max-width: 1000px;
+  max-width: 1100px;
   margin: 0 auto;
   padding: 80px 40px 100px;
   display: flex;
@@ -214,7 +214,7 @@
   display: flex;
   align-items: center;
   gap: 20px;
-  flex: 0 0 55%;
+  flex: 0 0 65%;
   padding: 32px 20px 32px 32px;
   position: relative;
 }
@@ -236,7 +236,7 @@
   width: 110px;
   height: 110px;
   border-radius: 24px;
-  background-color: rgba(255, 191, 0, 0.1);
+  background-color: rgba(28, 177, 161, 0.1);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -261,6 +261,7 @@
   margin: 0 0 10px;
   font-size: 14px;
   line-height: 1.5;
+  text-align: justify;
 }
 
 .service-card__info p:last-child {

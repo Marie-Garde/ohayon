@@ -110,8 +110,8 @@
 
 .timeline {
   width: 100%;
-  max-width: 1150px;
-  margin: 70px auto 0;
+  max-width: 1020px;
+  margin: 100px auto 0;
 }
 
 .timeline__track {
@@ -151,7 +151,7 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding: 0 15px;
+  padding: 0 8px;
 }
 
 .timeline__dot {
@@ -162,7 +162,7 @@
   outline: none;
   border-radius: 50%;
   position: absolute;
-  left: 15px;
+  left: 8px;
   z-index: 1;
   flex-shrink: 0;
 }
