@@ -480,6 +480,10 @@ const selectedAssociate = computed(() =>
     padding: 70px 24px 80px;
   }
 
+  .associate-card {
+    width: 100%;
+  }
+
   .team__detail {
     flex-direction: column;
     padding: 80px 24px 60px;
