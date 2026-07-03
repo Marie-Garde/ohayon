@@ -171,7 +171,7 @@
   margin: 0;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 900px) {
   .history__timeline::before {
     left: 8px;
     top: 4px;
@@ -183,6 +183,7 @@
   }
 
   .history__item,
+  .history__item:nth-child(odd),
   .history__item:nth-child(even) {
     width: 100%;
     left: 0;
