@@ -204,10 +204,12 @@ onMounted(() => {
     padding: 0 24px 0 12px;
   }
 
-  .navbar__logo img {
-    height: 50px;
+  .navbar,
+  .navbar--scrolled {
+    height: 60px;
   }
 
+  .navbar__logo img,
   .navbar--scrolled .navbar__logo img {
     height: 38px;
   }

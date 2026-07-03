@@ -104,4 +104,31 @@
   color: var(--color-primary);
   border: 2px solid var(--color-primary);
 }
+
+@media (max-width: 768px) {
+  .values {
+    padding: 60px 24px 0;
+  }
+
+  .values__grid {
+    gap: 24px;
+    padding: 0 24px;
+  }
+
+  .values__card {
+    width: 100%;
+    height: auto;
+    min-height: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .values {
+    padding: 50px 20px 0;
+  }
+
+  .values__grid {
+    padding: 0 20px;
+  }
+}
 </style>
