@@ -9,7 +9,7 @@
       <div class="timeline__track">
         <div class="timeline__step timeline__step--top">
           <div class="timeline__content">
-            <h3>Vous postulez.</h3>
+            <h3>Vous postulez</h3>
             <p>Envoyez-nous votre CV, on le lit avec attention.</p>
           </div>
           <span class="timeline__dot"></span>
@@ -18,12 +18,12 @@
           <span class="timeline__dot"></span>
           <div class="timeline__content">
             <p>Un premier échange pour se rencontrer, sans chichis.</p>
-            <h3>Nous discutons.</h3>
+            <h3>Nous discutons</h3>
           </div>
         </div>
         <div class="timeline__step timeline__step--top">
           <div class="timeline__content">
-            <h3>Le courant passe.</h3>
+            <h3>Le courant passe</h3>
             <p>On vérifie que l'envie est la même des deux côtés.</p>
           </div>
           <span class="timeline__dot"></span>
