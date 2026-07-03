@@ -69,7 +69,7 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 50px 0;
-  max-width: 900px;
+  max-width: 1100px;
   margin: 0 auto;
 }
 

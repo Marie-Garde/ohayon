@@ -92,7 +92,7 @@
 }
 
 .jobs__intro-wrapper {
-  max-width: 1100px;
+  max-width: 1180px;
   margin: 60px auto 0;
   padding: 0 40px;
 }
@@ -135,7 +135,7 @@
   flex-direction: column;
   align-items: center;
   gap: 20px;
-  max-width: 1100px;
+  max-width: 1180px;
   margin: 60px auto 0;
   padding: 0 40px 100px;
   text-align: center;

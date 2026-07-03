@@ -140,7 +140,7 @@
 
 .culture__values {
   text-align: center;
-  max-width: 900px;
+  max-width: 1180px;
   margin: 80px auto 0;
   padding: 0 40px;
   font-family: var(--font-heading);
@@ -175,7 +175,7 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 0 30px;
-  max-width: 1230px;
+  max-width: 1180px;
   margin: 60px auto 0;
   padding: 0 40px 40px;
 }

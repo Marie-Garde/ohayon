@@ -75,7 +75,7 @@ const questions = [
 }
 
 .faq__inner {
-  max-width: 900px;
+  max-width: 1100px;
   margin: 0 auto;
 }
 

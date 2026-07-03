@@ -101,7 +101,7 @@
   flex-wrap: wrap;
   justify-content: center;
   gap: 50px;
-  max-width: 1300px;
+  max-width: 1180px;
   margin: 70px auto 0;
   padding: 0 40px;
 }

@@ -232,7 +232,7 @@ const selectedAssociate = computed(() =>
 }
 
 .team__intro {
-  max-width: 1240px;
+  max-width: 1180px;
   margin: 60px auto 60px;
   padding: 0 40px;
   text-align: center;
@@ -266,14 +266,14 @@ const selectedAssociate = computed(() =>
   flex-wrap: wrap;
   justify-content: center;
   gap: 120px 40px;
-  max-width: 1300px;
+  max-width: 1180px;
   margin: 0 auto;
   padding: 80px 40px 100px;
 }
 
 .associate-card {
   position: relative;
-  width: 260px;
+  width: 245px;
   border: 2px solid var(--color-primary);
   border-radius: 5px;
   background-color: #fff;
@@ -381,7 +381,7 @@ const selectedAssociate = computed(() =>
   display: flex;
   align-items: stretch;
   gap: 50px;
-  max-width: 1100px;
+  max-width: 1180px;
   margin: 0 auto;
   padding: 80px 40px 100px;
 }

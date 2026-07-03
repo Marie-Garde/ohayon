@@ -95,7 +95,7 @@
   display: flex;
   align-items: center;
   gap: 60px;
-  max-width: 1220px;
+  max-width: 1100px;
   margin: 0 auto;
 }
 

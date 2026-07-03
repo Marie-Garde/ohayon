@@ -50,8 +50,9 @@
   flex-wrap: wrap;
   justify-content: center;
   gap: 50px;
-  max-width: 1000px;
+  max-width: 1180px;
   margin: 0 auto;
+  padding: 0 40px;
 }
 
 .values__card {
@@ -59,7 +60,7 @@
   border-radius: 5px;
   padding: 30px 20px;
   text-align: center;
-  width: 350px;
+  width: calc(50% - 25px);
   height: 220px;
   display: flex;
   flex-direction: column;

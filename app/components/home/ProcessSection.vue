@@ -110,7 +110,7 @@
 
 .timeline {
   width: 100%;
-  max-width: 1150px;
+  max-width: 1100px;
   margin: 70px auto 0;
 }
 
