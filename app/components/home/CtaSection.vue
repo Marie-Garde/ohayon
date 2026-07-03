@@ -21,12 +21,12 @@
 
 .cta__image-wrapper {
   position: relative;
-  max-width: 1000px;
+  max-width: 1020px;
   height: 400px;
   margin: 0 auto;
   overflow: hidden;
   clip-path: polygon(
-    0 calc(tan(atan2(var(--slant-height), 100vw)) * 1000px),
+    0 calc(tan(atan2(var(--slant-height), 100vw)) * 1020px),
     100% 0,
     100% 100%,
     0 100%
