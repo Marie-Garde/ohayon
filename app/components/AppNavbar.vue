@@ -201,7 +201,15 @@ onMounted(() => {
 
 @media (max-width: 900px) {
   .navbar {
-    padding: 0 24px;
+    padding: 0 24px 0 12px;
+  }
+
+  .navbar__logo img {
+    height: 65px;
+  }
+
+  .navbar--scrolled .navbar__logo img {
+    height: 45px;
   }
 
   .navbar__toggle {
