@@ -147,7 +147,6 @@
 
 @media (max-width: 800px) {
   .values-quote {
-    clip-path: none;
     margin-bottom: 50px;
   }
 
@@ -158,7 +157,6 @@
 
   .values-quote__image-wrapper {
     width: 240px;
-    transform: none;
   }
 }
 </style>

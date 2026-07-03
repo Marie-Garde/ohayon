@@ -176,7 +176,7 @@
   }
 
   .jobs__title {
-    font-size: 26px;
+    font-size: 28px;
     padding: 12px 32px;
   }
 
@@ -199,8 +199,8 @@
   }
 
   .jobs__title {
-    font-size: 18px;
-    padding: 10px 20px;
+    font-size: 20px;
+    padding: 10px 22px;
   }
 
   .jobs__intro {

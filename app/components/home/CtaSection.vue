@@ -16,7 +16,7 @@
 
 <style scoped>
 .cta {
-  padding: 0 40px 130px;
+  padding: 100px 40px 130px;
 }
 
 .cta__image-wrapper {
@@ -70,13 +70,17 @@
 
 @media (max-width: 768px) {
   .cta {
-    padding: 50px 24px 90px;
+    padding: 70px 24px 90px;
   }
 
   .cta__image-wrapper {
     height: 320px;
-    clip-path: none;
-    border-radius: 5px;
+    clip-path: polygon(
+      0 var(--slant-height),
+      100% 0,
+      100% calc(100% - var(--slant-height)),
+      0 100%
+    );
   }
 
   .cta__btn {

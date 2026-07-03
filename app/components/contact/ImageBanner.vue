@@ -54,4 +54,30 @@
   white-space: nowrap;
   transform: rotate(calc(-1 * atan2(var(--slant-height), 100vw)));
 }
+
+@media (max-width: 768px) {
+  .banner {
+    margin-top: 30px;
+  }
+
+  .banner__image-wrapper {
+    height: 320px;
+  }
+
+  .banner__title {
+    font-size: 28px;
+    padding: 12px 32px;
+  }
+}
+
+@media (max-width: 480px) {
+  .banner__image-wrapper {
+    height: 260px;
+  }
+
+  .banner__title {
+    font-size: 20px;
+    padding: 10px 22px;
+  }
+}
 </style>

@@ -223,8 +223,8 @@
   }
 
   .culture__title {
-    font-size: 24px;
-    padding: 12px 30px;
+    font-size: 28px;
+    padding: 12px 32px;
   }
 
   .culture__values {
@@ -247,8 +247,8 @@
   }
 
   .culture__title {
-    font-size: 18px;
-    padding: 10px 20px;
+    font-size: 20px;
+    padding: 10px 22px;
   }
 
   .culture__values {

@@ -63,7 +63,7 @@
 
 .pillars__image-wrapper {
   width: 100%;
-  height: 350px;
+  height: 450px;
   overflow: hidden;
   clip-path: polygon(
     0 var(--slant-height),
@@ -136,17 +136,10 @@
 
 @media (max-width: 768px) {
   .pillars__image-wrapper {
-    height: 250px;
-    clip-path: none;
-  }
-
-  .pillars__title-wrapper {
-    bottom: 0;
-    transform: translateX(-50%) translateY(50%);
+    height: 320px;
   }
 
   .pillars__title {
-    transform: none;
     font-size: 28px;
     padding: 12px 32px;
   }
@@ -164,9 +157,13 @@
 }
 
 @media (max-width: 480px) {
+  .pillars__image-wrapper {
+    height: 260px;
+  }
+
   .pillars__title {
-    font-size: 22px;
-    padding: 10px 24px;
+    font-size: 20px;
+    padding: 10px 22px;
   }
 
   .pillars__list {

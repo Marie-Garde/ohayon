@@ -197,7 +197,7 @@ const selectedAssociate = computed(() =>
 
 .team__image-wrapper {
   width: 100%;
-  height: 350px;
+  height: 450px;
   overflow: hidden;
   clip-path: polygon(
     0 var(--slant-height),
@@ -475,6 +475,19 @@ const selectedAssociate = computed(() =>
 }
 
 @media (max-width: 768px) {
+  .team {
+    margin-top: 60px;
+  }
+
+  .team__image-wrapper {
+    height: 320px;
+  }
+
+  .team__title {
+    font-size: 28px;
+    padding: 12px 32px;
+  }
+
   .team__associates {
     gap: 100px 24px;
     padding: 70px 24px 80px;
@@ -492,6 +505,17 @@ const selectedAssociate = computed(() =>
 
   .associate-card--selected {
     width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .team__image-wrapper {
+    height: 260px;
+  }
+
+  .team__title {
+    font-size: 20px;
+    padding: 10px 22px;
   }
 }
 </style>
