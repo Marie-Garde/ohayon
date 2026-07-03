@@ -232,7 +232,7 @@ const selectedAssociate = computed(() =>
 }
 
 .team__intro {
-  max-width: 1300px;
+  max-width: 1240px;
   margin: 60px auto 60px;
   padding: 0 40px;
   text-align: center;
