@@ -224,7 +224,7 @@ onMounted(() => {
 
   .navbar__links {
     position: fixed;
-    top: 100px;
+    top: 60px;
     left: 0;
     right: 0;
     bottom: 0;
@@ -270,10 +270,6 @@ onMounted(() => {
   .navbar__links-cta .navbar__btn {
     display: block;
     text-align: center;
-  }
-
-  .navbar--scrolled .navbar__links {
-    top: 60px;
   }
 }
 </style>

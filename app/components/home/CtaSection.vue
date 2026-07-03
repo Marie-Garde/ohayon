@@ -78,7 +78,7 @@
     clip-path: polygon(
       0 var(--slant-height),
       100% 0,
-      100% calc(100% - var(--slant-height)),
+      100% 100%,
       0 100%
     );
   }

@@ -62,7 +62,7 @@
 
     <div class="team__detail" v-else>
       <div class="associate-card associate-card--selected">
-        <div class="associate-card__avatar">
+        <div ref="selectedCardEl" class="associate-card__avatar">
           <img
             :src="selectedAssociate.photo"
             :alt="`${selectedAssociate.firstName} ${selectedAssociate.lastName}`"
@@ -187,6 +187,19 @@ const selectedId = ref(null);
 const selectedAssociate = computed(() =>
   associates.find((associate) => associate.id === selectedId.value),
 );
+
+const selectedCardEl = ref(null);
+
+watch(selectedId, async (id) => {
+  if (id !== null) {
+    await nextTick();
+    const el = selectedCardEl.value;
+    if (!el) return;
+    const navbarHeight = document.querySelector(".navbar")?.offsetHeight ?? 0;
+    const rect = el.getBoundingClientRect();
+    window.scrollBy({ top: rect.top - navbarHeight, behavior: "smooth" });
+  }
+});
 </script>
 
 <style scoped>
