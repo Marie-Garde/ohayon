@@ -205,11 +205,11 @@ onMounted(() => {
   }
 
   .navbar__logo img {
-    height: 65px;
+    height: 50px;
   }
 
   .navbar--scrolled .navbar__logo img {
-    height: 45px;
+    height: 38px;
   }
 
   .navbar__toggle {
