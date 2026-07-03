@@ -269,7 +269,16 @@
   }
 
   .timeline__track::after {
-    display: none;
+    display: block;
+    top: auto;
+    bottom: -6px;
+    left: 8px;
+    right: auto;
+    transform: translateX(-50%);
+    border-top: 12px solid #fff;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-bottom: none;
   }
 
   .timeline__step,
