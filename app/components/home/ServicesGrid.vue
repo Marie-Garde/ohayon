@@ -6,6 +6,7 @@
           src="~/assets/illustrations/icons/home/accounting.svg"
           alt=""
           class="services__icon"
+          loading="lazy"
         />
         <h3>Comptabilité</h3>
         <p>La gestion de vos comptes au quotidien, tenue, révision, bilans.</p>
@@ -15,6 +16,7 @@
           src="~/assets/illustrations/icons/home/tax-management.svg"
           alt=""
           class="services__icon"
+          loading="lazy"
         />
         <h3>Gestion fiscale</h3>
         <p>Optimisation fiscale, déclarations, conseil stratégique.</p>
@@ -24,6 +26,7 @@
           src="~/assets/illustrations/icons/home/social-management.svg"
           alt=""
           class="services__icon"
+          loading="lazy"
         />
         <h3>Gestion sociale</h3>
         <p>Bulletins de paie, déclarations sociales, droit du travail.</p>
@@ -33,6 +36,7 @@
           src="~/assets/illustrations/icons/home/accompaniement.svg"
           alt=""
           class="services__icon"
+          loading="lazy"
         />
         <h3>Accompagnement</h3>
         <p>Création, transmission, évaluation, patrimoine du dirigeant.</p>
@@ -42,6 +46,7 @@
           src="~/assets/illustrations/icons/home/audit-office.svg"
           alt=""
           class="services__icon"
+          loading="lazy"
         />
         <h3>Audit légal</h3>
         <p>Commissariat aux comptes, certification, opérations sur capital.</p>
@@ -64,7 +69,7 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 50px 0;
-  max-width: 900px;
+  max-width: 1100px;
   margin: 0 auto;
 }
 
@@ -116,5 +121,32 @@
   background-color: var(--color-secondary);
   color: #fff;
   border-color: var(--color-secondary);
+}
+
+@media (max-width: 768px) {
+  .services {
+    padding: 80px 24px 70px;
+  }
+
+  .services__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 50px 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .services {
+    padding: 60px 20px 50px;
+  }
+
+  .services__grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .services__icon {
+    height: 80px;
+    width: 80px;
+  }
 }
 </style>

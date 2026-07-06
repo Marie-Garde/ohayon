@@ -2,9 +2,10 @@
   <section class="banner">
     <div class="banner__image-wrapper">
       <img
-        src="~/assets/illustrations/images/home/image.jpg"
+        src="~/assets/illustrations/images/contact/nousecrire.jpg"
         alt="Équipe au travail"
         class="banner__image"
+        loading="lazy"
       />
     </div>
     <div class="banner__title-wrapper">
@@ -52,5 +53,31 @@
   padding: 15px 50px;
   white-space: nowrap;
   transform: rotate(calc(-1 * atan2(var(--slant-height), 100vw)));
+}
+
+@media (max-width: 768px) {
+  .banner {
+    margin-top: 30px;
+  }
+
+  .banner__image-wrapper {
+    height: 320px;
+  }
+
+  .banner__title {
+    font-size: 28px;
+    padding: 12px 32px;
+  }
+}
+
+@media (max-width: 480px) {
+  .banner__image-wrapper {
+    height: 260px;
+  }
+
+  .banner__title {
+    font-size: 20px;
+    padding: 10px 22px;
+  }
 }
 </style>

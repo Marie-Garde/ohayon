@@ -2,7 +2,7 @@
   <section class="hero">
     <div class="hero__overlay"></div>
     <img
-      src="~/assets/illustrations/images/home/image.jpg"
+      src="~/assets/illustrations/images/home/ohayon.jpg"
       alt="Équipe au travail"
       class="hero__image"
     />
@@ -110,5 +110,53 @@
   background-color: #fff;
   color: var(--color-primary);
   border-color: #fff;
+}
+
+@media (max-width: 768px) {
+  .hero {
+    height: 480px;
+  }
+
+  .hero__content {
+    width: 100%;
+    padding: 60px 40px 0;
+  }
+
+  .hero__content h1 {
+    font-size: 36px;
+  }
+
+  .hero__content p {
+    font-size: 18px;
+    padding-left: 0;
+    margin-bottom: 24px;
+  }
+
+  .hero__btn {
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    height: 420px;
+  }
+
+  .hero__content {
+    padding: 40px 24px 0;
+  }
+
+  .hero__content h1 {
+    font-size: 26px;
+  }
+
+  .hero__content p {
+    font-size: 15px;
+  }
+
+  .hero__btn {
+    font-size: 14px;
+    padding: 10px 18px;
+  }
 }
 </style>

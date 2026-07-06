@@ -2,7 +2,7 @@
   <section class="page-hero">
     <div class="page-hero__overlay"></div>
     <img
-      src="~/assets/illustrations/images/home/image.jpg"
+      src="~/assets/illustrations/images/contact/hero-contact.jpg"
       alt="Cabinet Ohayon & Associés"
       class="page-hero__image"
     />
@@ -45,9 +45,9 @@
   z-index: 1;
   background: linear-gradient(
     to right,
-    var(--color-primary) 45%,
-    rgba(28, 177, 161, 0.75) 70%,
-    rgba(28, 177, 161, 0.3) 100%
+    var(--color-primary) 40%,
+    rgba(28, 177, 161, 0.6) 60%,
+    transparent 100%
   );
 }
 
@@ -75,5 +75,44 @@
   font-size: 20px;
   margin: 0;
   max-width: 500px;
+}
+
+@media (max-width: 768px) {
+  .page-hero {
+    height: 320px;
+  }
+
+  .page-hero__content {
+    padding: 0 40px;
+  }
+
+  .page-hero__content h1 {
+    font-size: 40px;
+    margin: 0 0 15px;
+  }
+
+  .page-hero__lead {
+    font-size: 17px;
+  }
+}
+
+@media (max-width: 480px) {
+  .page-hero {
+    height: 280px;
+  }
+
+  .page-hero__content {
+    padding: 0 24px;
+  }
+
+  .page-hero__content h1 {
+    font-size: 30px;
+    margin: 0 0 10px;
+  }
+
+  .page-hero__lead {
+    font-size: 15px;
+    max-width: 100%;
+  }
 }
 </style>

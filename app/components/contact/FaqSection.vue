@@ -11,6 +11,7 @@
           v-for="(item, index) in questions"
           :key="index"
           class="faq__item"
+          v-reveal="'up'"
         >
           <summary class="faq__question">
             <span>{{ item.question }}</span>
@@ -74,7 +75,7 @@ const questions = [
 }
 
 .faq__inner {
-  max-width: 900px;
+  max-width: 1100px;
   margin: 0 auto;
 }
 
@@ -194,5 +195,72 @@ const questions = [
 
 .faq__answer p {
   margin: 0;
+}
+
+@media (max-width: 768px) {
+  .faq {
+    padding: 100px 24px 100px;
+    margin-top: 40px;
+  }
+
+  .faq__header {
+    margin: 0 auto 30px;
+  }
+
+  .faq__subtitle {
+    font-size: 18px;
+    margin-left: 0;
+  }
+
+  .faq__title {
+    font-size: 32px;
+  }
+
+  .faq__list {
+    max-width: 90%;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .faq {
+    padding: 80px 20px 80px;
+  }
+
+  .faq__subtitle {
+    font-size: 15px;
+  }
+
+  .faq__title {
+    font-size: 24px;
+  }
+
+  .faq__question {
+    padding: 14px 18px;
+    font-size: 15px;
+    gap: 12px;
+  }
+
+  .faq__answer {
+    padding: 16px 18px 20px;
+  }
+
+  .faq__icon {
+    width: 14px;
+    height: 14px;
+  }
+
+  .faq__icon::before {
+    width: 14px;
+  }
+
+  .faq__icon::after {
+    height: 14px;
+  }
+
+  .faq__list {
+    max-width: 94%;
+    margin: 0 auto;
+  }
 }
 </style>

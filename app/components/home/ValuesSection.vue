@@ -50,8 +50,9 @@
   flex-wrap: wrap;
   justify-content: center;
   gap: 50px;
-  max-width: 1000px;
+  max-width: 1180px;
   margin: 0 auto;
+  padding: 0 40px;
 }
 
 .values__card {
@@ -59,11 +60,18 @@
   border-radius: 5px;
   padding: 30px 20px;
   text-align: center;
-  width: 350px;
+  width: calc(50% - 25px);
   height: 220px;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.values__card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
 }
 
 .values__card h3 {
@@ -102,5 +110,32 @@
   background-color: transparent;
   color: var(--color-primary);
   border: 2px solid var(--color-primary);
+}
+
+@media (max-width: 768px) {
+  .values {
+    padding: 60px 24px 0;
+  }
+
+  .values__grid {
+    gap: 24px;
+    padding: 0 24px;
+  }
+
+  .values__card {
+    width: 100%;
+    height: auto;
+    min-height: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .values {
+    padding: 50px 20px 0;
+  }
+
+  .values__grid {
+    padding: 0 20px;
+  }
 }
 </style>

@@ -2,9 +2,10 @@
   <section class="skills">
     <div class="skills__image-wrapper">
       <img
-        src="~/assets/illustrations/images/home/image.jpg"
+        src="~/assets/illustrations/images/home/savoir.jpg"
         alt="Équipe au travail"
         class="skills__image"
+        loading="lazy"
       />
     </div>
     <div class="skills__title-wrapper">
@@ -52,5 +53,31 @@
   padding: 15px 50px;
   white-space: nowrap;
   transform: rotate(calc(-1 * atan2(var(--slant-height), 100vw)));
+}
+
+@media (max-width: 768px) {
+  .skills {
+    margin-top: 60px;
+  }
+
+  .skills__image-wrapper {
+    height: 320px;
+  }
+
+  .skills__title {
+    font-size: 28px;
+    padding: 12px 32px;
+  }
+}
+
+@media (max-width: 480px) {
+  .skills__image-wrapper {
+    height: 260px;
+  }
+
+  .skills__title {
+    font-size: 20px;
+    padding: 10px 22px;
+  }
 }
 </style>
