@@ -14,7 +14,7 @@
       </div>
     </div>
 
-    <div class="jobs__intro-wrapper">
+    <div class="jobs__content">
       <div class="jobs__intro">
         <img
           src="~/assets/illustrations/images/nous-rejoindre/profils.jpg"
@@ -30,18 +30,31 @@
           </p>
         </div>
       </div>
-    </div>
 
-    <div class="jobs__cta-wrapper">
-      <p class="jobs__cta-text">Pour consulter nos offres en cours, cliquez ici :</p>
-      <a
-        class="jobs__cta-btn"
-        href="https://www.linkedin.com/company/ohayon-associes/jobs/"
-        target="_blank"
-        rel="noopener"
-      >
-        Voir nos offres
-      </a>
+      <div class="jobs__cta">
+        <div class="jobs__cta-icon-wrapper">
+          <img
+            src="~/assets/illustrations/icons/home/contact.svg"
+            alt=""
+            class="jobs__cta-icon"
+            loading="lazy"
+          />
+        </div>
+        <div class="jobs__cta-text">
+          <p class="jobs__cta-title">Envie de nous rejoindre ?</p>
+          <p class="jobs__cta-subtitle">
+            Consultez nos offres d'emploi en cours et postulez en ligne.
+          </p>
+        </div>
+        <a
+          class="jobs__cta-btn"
+          href="https://www.linkedin.com/company/ohayon-associes/jobs/"
+          target="_blank"
+          rel="noopener"
+        >
+          Voir nos offres
+        </a>
+      </div>
     </div>
   </section>
 </template>
@@ -91,10 +104,13 @@
   transform: rotate(calc(-1 * atan2(var(--slant-height), 100vw)));
 }
 
-.jobs__intro-wrapper {
+.jobs__content {
   max-width: 1180px;
-  margin: 60px auto 0;
-  padding: 0 40px;
+  margin: 70px auto -30px;
+  padding: 0 40px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
 }
 
 .jobs__intro {
@@ -102,7 +118,7 @@
   align-items: stretch;
   border-radius: 10px;
   overflow: hidden;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.08);
 }
 
 .jobs__intro-img {
@@ -116,7 +132,7 @@
 .jobs__intro-content {
   flex: 1;
   background-color: var(--color-primary);
-  padding: 36px 32px;
+  padding: 36px 40px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -130,39 +146,68 @@
   color: #fff;
 }
 
-.jobs__cta-wrapper {
+.jobs__cta {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  gap: 20px;
-  max-width: 1180px;
-  margin: 60px auto 0;
-  padding: 0 40px 100px;
-  text-align: center;
+  gap: 24px;
+  padding: 28px 40px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.08);
+}
+
+.jobs__cta-icon-wrapper {
+  flex-shrink: 0;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background-color: rgba(28, 177, 161, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.jobs__cta-icon {
+  width: 30px;
+  height: 30px;
+  filter: invert(59%) sepia(61%) saturate(449%) hue-rotate(130deg)
+    brightness(93%) contrast(89%);
 }
 
 .jobs__cta-text {
-  margin: 0;
-  font-weight: 300;
-  font-size: 17px;
+  flex: 1;
+}
+
+.jobs__cta-title {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 18px;
   color: var(--color-text);
+  margin: 0 0 4px;
+}
+
+.jobs__cta-subtitle {
+  font-size: 14px;
+  color: #666;
+  margin: 0;
 }
 
 .jobs__cta-btn {
-  font-family: var(--font-body);
-  font-weight: 300;
-  font-size: 16px;
-  color: var(--color-primary);
-  background-color: #fff;
-  border: 2px solid var(--color-primary);
-  border-radius: 5px;
+  flex-shrink: 0;
   padding: 12px 28px;
+  background-color: var(--color-primary);
+  color: #fff;
+  border-radius: 6px;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 15px;
   text-decoration: none;
+  white-space: nowrap;
   transition: background-color 0.3s, color 0.3s;
 }
 
 .jobs__cta-btn:hover {
-  background-color: var(--color-primary);
+  background-color: var(--color-secondary);
   color: #fff;
 }
 
@@ -180,16 +225,23 @@
     padding: 12px 32px;
   }
 
-  .jobs__intro-wrapper {
-    padding: 0 24px;
+  .jobs__content {
+    margin-bottom: 0;
+    padding: 0 24px 70px;
   }
 
   .jobs__intro-img {
     width: 140px;
   }
 
-  .jobs__cta-wrapper {
-    padding: 0 24px 70px;
+  .jobs__cta {
+    flex-wrap: wrap;
+    padding: 24px;
+  }
+
+  .jobs__cta-btn {
+    width: 100%;
+    text-align: center;
   }
 }
 
@@ -212,12 +264,8 @@
     height: 160px;
   }
 
-  .jobs__cta-wrapper {
-    padding: 0 20px 60px;
-  }
-
-  .jobs__cta-text {
-    font-size: 15px;
+  .jobs__intro-content {
+    padding: 24px 24px;
   }
 }
 </style>

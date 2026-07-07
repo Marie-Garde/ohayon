@@ -8,11 +8,10 @@
       <div class="history__item" v-reveal="'left'">
         <span class="history__dot"></span>
         <div class="history__content">
-          <span class="history__year">1985</span>
-          <h3>Lorem ipsum dolor sit amet</h3>
+          <span class="history__year">1987</span>
+          <h3>Naissance du cabinet</h3>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean
-            tincidunt, orci eget viverra feugiat.
+            Jean-Marc Ohayon fonde le cabinet Ohayon &amp; Associés à Toulouse.
           </p>
         </div>
       </div>
@@ -20,43 +19,52 @@
         <span class="history__dot"></span>
         <div class="history__content">
           <span class="history__year">1998</span>
-          <h3>Consectetur adipiscing elit</h3>
+          <h3>Une première associée</h3>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean
-            tincidunt, orci eget viverra feugiat.
+            Laurence Bertrand, arrivée en 1995, rejoint l'association.
           </p>
         </div>
       </div>
       <div class="history__item" v-reveal="'left'">
         <span class="history__dot"></span>
         <div class="history__content">
-          <span class="history__year">2010</span>
-          <h3>Sed do eiusmod tempor</h3>
+          <span class="history__year">2005</span>
+          <h3>Une nouvelle adresse</h3>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean
-            tincidunt, orci eget viverra feugiat.
+            Le cabinet s'installe route d'Espagne, où il est toujours implanté.
           </p>
         </div>
       </div>
       <div class="history__item" v-reveal="'right'">
         <span class="history__dot"></span>
         <div class="history__content">
-          <span class="history__year">2018</span>
-          <h3>Incididunt ut labore</h3>
+          <span class="history__year">2010</span>
+          <h3>Le virage numérique</h3>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean
-            tincidunt, orci eget viverra feugiat.
+            Digitalisation complète du cabinet : le « zéro papier » devient
+            réalité.
           </p>
         </div>
       </div>
       <div class="history__item" v-reveal="'left'">
         <span class="history__dot"></span>
         <div class="history__content">
-          <span class="history__year">2024</span>
-          <h3>Ut enim ad minim veniam</h3>
+          <span class="history__year">2014</span>
+          <h3>Le passage de relais</h3>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean
-            tincidunt, orci eget viverra feugiat.
+            Départ en retraite du fondateur ; Jérôme Ohayon et une nouvelle
+            génération d'associés prennent le relais.
+          </p>
+        </div>
+      </div>
+      <div class="history__item" v-reveal="'right'">
+        <span class="history__dot"></span>
+        <div class="history__content">
+          <span class="history__year">2023</span>
+          <h3>L'équipe d'aujourd'hui</h3>
+          <p>
+            Avec l'arrivée d'Océane Ducoulombier à l'association, le cabinet
+            compte 4 experts-comptables associés.
           </p>
         </div>
       </div>
@@ -139,7 +147,7 @@
   width: 16px;
   height: 16px;
   border-radius: 50%;
-  background-color: var(--color-secondary);
+  background-color: var(--color-primary);
   border: 3px solid var(--color-primary);
 }
 
@@ -153,16 +161,17 @@
 
 .history__year {
   display: inline-block;
+  font-family: var(--font-heading);
   font-weight: 700;
-  font-size: 14px;
+  font-size: 13px;
   text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: 0.5px;
   color: var(--color-secondary);
 }
 
 .history__content h3 {
   color: var(--color-primary);
-  margin: 8px 0;
+  margin: 2px 0 8px;
 }
 
 .history__content p {

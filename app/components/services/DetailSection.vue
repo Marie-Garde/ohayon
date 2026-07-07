@@ -187,7 +187,7 @@
 
 <style scoped>
 .services {
-  max-width: 1100px;
+  max-width: 1180px;
   margin: 0 auto;
   padding: 80px 40px 100px;
   display: flex;

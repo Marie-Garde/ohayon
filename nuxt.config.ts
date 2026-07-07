@@ -3,10 +3,13 @@ export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
   devtools: { enabled: true },
   ssr: false,
-  modules: ['@nuxtjs/google-fonts'],
+  modules: ['@nuxtjs/google-fonts', '@nuxtjs/sanity'],
   css: ['~/assets/css/variables.css'],
-  app: {
-    baseURL: '/ohayon/',
+  sanity: {
+    projectId: '0sf47gcp',
+    dataset: 'production',
+    apiVersion: '2026-05-15',
+    useCdn: true,
   },
   googleFonts: {
     families: {

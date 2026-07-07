@@ -203,6 +203,7 @@
 .culture__card h3 {
   color: var(--color-primary);
   font-size: 20px;
+  min-height: 56px;
   margin: 0 0 12px;
 }
 

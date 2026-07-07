@@ -42,7 +42,7 @@
   flex-wrap: nowrap;
   justify-content: center;
   gap: 50px;
-  max-width: 1150px;
+  max-width: 1100px;
   margin: 0 auto;
 }
 
@@ -51,7 +51,7 @@
   border-radius: 5px;
   padding: 40px 30px;
   text-align: center;
-  width: 350px;
+  width: calc((100% - 100px) / 3);
   min-height: 220px;
   display: flex;
   flex-direction: column;

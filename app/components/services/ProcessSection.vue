@@ -110,7 +110,7 @@
 
 .timeline {
   width: 100%;
-  max-width: 1020px;
+  max-width: 1100px;
   margin: 100px auto 0;
 }
 
@@ -169,7 +169,7 @@
 
 .timeline__step--top {
   justify-content: flex-end;
-  padding-bottom: 260px;
+  padding-bottom: 240px;
 }
 
 .timeline__step--top .timeline__dot {
@@ -177,12 +177,13 @@
 }
 
 .timeline__step--top .timeline__content {
-  height: 216px;
+  height: 236px;
   display: flex;
   flex-direction: column;
 }
 
 .timeline__step--top .timeline__content p {
+  flex: 1;
   padding-bottom: 23px;
 }
 
@@ -196,12 +197,13 @@
 }
 
 .timeline__step--bottom .timeline__content {
-  height: 230px;
+  height: 236px;
   display: flex;
   flex-direction: column;
 }
 
 .timeline__step--bottom .timeline__content p {
+  flex: 1;
   padding-top: 23px;
 }
 
@@ -232,7 +234,7 @@
 }
 
 .timeline__step--bottom .timeline__content h3 {
-  margin: auto 0 0;
+  margin: 6px 0 0;
   flex-shrink: 0;
   min-height: 58px;
 }

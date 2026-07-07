@@ -40,7 +40,7 @@
 
 .footer__logo {
   position: absolute;
-  left: 0;
+  left: 40px;
   top: 50%;
   transform: translateY(-50%);
 }

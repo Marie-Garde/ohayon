@@ -354,7 +354,7 @@ watch(selectedId, async (id) => {
 }
 
 .associate-card__role {
-  min-height: 42px;
+  min-height: 63px;
   font-weight: 700;
   margin: 0 0 14px;
 }

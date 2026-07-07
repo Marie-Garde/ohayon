@@ -26,9 +26,9 @@
       <div class="values__card">
         <h3>Digitalisation pionnière</h3>
         <p>
-          0 papier depuis 15 ans, outils interactifs (Pennylane, iSuite…).
-          Intégration de l'IA. On ne vous parle pas de digital, on le pratique
-          depuis 2010.
+          0 papier depuis plusieurs années, outils interactifs (Pennylane,
+          Silae…). Intégration de l'IA. On ne vous parle pas de digital, on le
+          pratique depuis 2010.
         </p>
       </div>
     </div>
@@ -66,7 +66,9 @@
   flex-direction: column;
   justify-content: center;
   box-shadow: 0 2px 16px rgba(0, 0, 0, 0.08);
-  transition: transform 0.3s, box-shadow 0.3s;
+  transition:
+    transform 0.3s,
+    box-shadow 0.3s;
 }
 
 .values__card:hover {

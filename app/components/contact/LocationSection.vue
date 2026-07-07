@@ -29,7 +29,7 @@
           <h3>Horaires</h3>
           <p>
             Du lundi au vendredi<br />
-            9h00 &ndash; 12h30 &middot; 14h00 &ndash; 18h00
+            08h30 &ndash; 18h00
           </p>
         </div>
 

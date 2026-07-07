@@ -29,34 +29,34 @@
 <script setup>
 const questions = [
   {
-    question: "Lorem ipsum dolor sit amet consectetur adipiscing elit ?",
+    question: "Quels types d'entreprises accompagnez-vous ?",
     answer:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+      "Nous accompagnons principalement les dirigeants de TPE, PME, professions libérales, commerçants, artisans et groupes de sociétés.",
   },
   {
-    question: "Ut enim ad minim veniam quis nostrud exercitation ?",
+    question: "Travaillez-vous uniquement à Toulouse ?",
     answer:
-      "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      "Non. Grâce à nos outils numériques, nous accompagnons des clients partout en France tout en conservant une relation de proximité.",
   },
   {
-    question: "Duis aute irure dolor in reprehenderit in voluptate ?",
+    question: "Puis-je changer d'expert-comptable facilement ?",
     answer:
-      "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt.",
+      "Oui. Nous vous guidons dans l'ensemble des démarches administratives liées au transfert de votre dossier.",
   },
   {
-    question: "Excepteur sint occaecat cupidatat non proident ?",
+    question: "Combien coûte un expert-comptable ?",
     answer:
-      "Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor.",
+      "Nos honoraires sont adaptés à la taille de votre structure, à vos besoins et au niveau d'accompagnement souhaité. Un devis personnalisé vous est remis en toute transparence.",
   },
   {
-    question: "At vero eos et accusamus et iusto odio dignissimos ?",
+    question: "Serez-vous mon interlocuteur direct ?",
     answer:
-      "Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus.",
+      "Chaque client bénéficie d'un interlocuteur dédié, soutenu par l'expertise de l'ensemble du cabinet lorsque cela est nécessaire.",
   },
   {
-    question: "Nam libero tempore cum soluta nobis est eligendi ?",
+    question: "Comment démarrer un accompagnement ?",
     answer:
-      "On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee.",
+      "Un simple échange suffit pour faire connaissance, comprendre vos besoins et déterminer la solution la plus adaptée à votre situation.",
   },
 ];
 </script>
