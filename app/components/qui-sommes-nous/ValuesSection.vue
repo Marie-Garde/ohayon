@@ -146,10 +146,6 @@
 }
 
 @media (max-width: 800px) {
-  .values-quote {
-    margin-bottom: 50px;
-  }
-
   .values-quote__inner {
     flex-direction: column;
     text-align: center;

@@ -3,7 +3,7 @@
     <QuiSommesNousPageHero />
     <QuiSommesNousHistorySection />
     <QuiSommesNousTeamSection />
-    <QuiSommesNousPillarsSection />
+    <QuiSommesNousLocauxSection />
     <QuiSommesNousValuesSection />
 <HomeCtaSection />
   </div>

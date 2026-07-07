@@ -106,7 +106,7 @@
 
 .jobs__content {
   max-width: 1180px;
-  margin: 70px auto -30px;
+  margin: 70px auto 0;
   padding: 0 40px 0;
   display: flex;
   flex-direction: column;

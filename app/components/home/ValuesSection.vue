@@ -1,35 +1,46 @@
 <template>
   <section class="values">
-    <div class="values__grid">
-      <div class="values__card">
-        <h3>Sur-mesure,<br />sans standard</h3>
-        <p>
-          Pas de pack, pas de grille. On commence par comprendre votre activité,
-          vos besoins, vos difficultés. Ensuite on construit l'accompagnement
-          adapté.
-        </p>
+    <div class="values__inner" v-reveal="'up'">
+      <div class="values__media">
+        <img
+          src="~/assets/illustrations/images/home/image.jpg"
+          alt="L'équipe du cabinet Ohayon &amp; Associés au travail"
+          class="values__image"
+          loading="lazy"
+        />
       </div>
-      <div class="values__card">
-        <h3>Réactivité &amp; proximité</h3>
-        <p>
-          Un collaborateur dédié, joignable en ligne directe, réponse mail dans
-          la journée. Toulouse et alentours mais proches de tous nos clients.
-        </p>
-      </div>
-      <div class="values__card">
-        <h3>Expertise &amp; qualité</h3>
-        <p>
-          Une équipe où ⅓ sont experts-comptables. Votre interlocuteur a la
-          compétence de répondre à 99% de vos questions.
-        </p>
-      </div>
-      <div class="values__card">
-        <h3>Digitalisation pionnière</h3>
-        <p>
-          0 papier depuis plusieurs années, outils interactifs (Pennylane,
-          Silae…). Intégration de l'IA. On ne vous parle pas de digital, on le
-          pratique depuis 2010.
-        </p>
+      <div class="values__grid">
+        <div class="values__card">
+          <h3>Sur-mesure,<br />sans standard</h3>
+          <p>
+            Pas de pack, pas de grille. On commence par comprendre votre
+            activité, vos besoins, vos difficultés. Ensuite on construit
+            l'accompagnement adapté.
+          </p>
+        </div>
+        <div class="values__card">
+          <h3>Réactivité &amp; proximité</h3>
+          <p>
+            Un collaborateur dédié, joignable en ligne directe, réponse mail
+            dans la journée. Toulouse et alentours mais proches de tous nos
+            clients.
+          </p>
+        </div>
+        <div class="values__card">
+          <h3>Expertise &amp; qualité</h3>
+          <p>
+            Une équipe où ⅓ sont experts-comptables. Votre interlocuteur a la
+            compétence de répondre à 99% de vos questions.
+          </p>
+        </div>
+        <div class="values__card">
+          <h3>Digitalisation pionnière</h3>
+          <p>
+            0 papier depuis plusieurs années, outils interactifs (Pennylane,
+            Silae…). Intégration de l'IA. On ne vous parle pas de digital, on
+            le pratique depuis 2010.
+          </p>
+        </div>
       </div>
     </div>
     <div class="values__cta">
@@ -45,23 +56,41 @@
   padding: 80px 40px 0;
 }
 
-.values__grid {
+.values__inner {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 50px;
+  align-items: stretch;
+  gap: 40px;
   max-width: 1180px;
   margin: 0 auto;
   padding: 0 40px;
 }
 
+.values__media {
+  flex: 0 0 38%;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.08);
+}
+
+.values__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.values__grid {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
 .values__card {
   border: 2px solid var(--color-primary);
   border-radius: 5px;
-  padding: 30px 20px;
+  padding: 26px 20px;
   text-align: center;
-  width: calc(50% - 25px);
-  height: 220px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -114,20 +143,35 @@
   border: 2px solid var(--color-primary);
 }
 
+@media (max-width: 900px) {
+  .values__inner {
+    flex-direction: column;
+    gap: 28px;
+  }
+
+  .values__media {
+    flex: unset;
+    max-height: 320px;
+  }
+}
+
 @media (max-width: 768px) {
   .values {
     padding: 60px 24px 0;
   }
 
-  .values__grid {
-    gap: 24px;
+  .values__inner {
     padding: 0 24px;
   }
 
-  .values__card {
-    width: 100%;
-    height: auto;
-    min-height: 0;
+  .values__grid {
+    gap: 20px;
+  }
+}
+
+@media (max-width: 560px) {
+  .values__grid {
+    grid-template-columns: 1fr;
   }
 }
 
@@ -136,7 +180,7 @@
     padding: 50px 20px 0;
   }
 
-  .values__grid {
+  .values__inner {
     padding: 0 20px;
   }
 }

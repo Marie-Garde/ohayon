@@ -76,7 +76,6 @@
   background-color: var(--color-primary);
   height: 880px;
   padding: 100px 40px 80px;
-  margin-bottom: 50px;
   display: flex;
   flex-direction: column;
   align-items: center;

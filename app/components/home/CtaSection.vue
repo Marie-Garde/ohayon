@@ -2,8 +2,8 @@
   <section class="cta">
     <div class="cta__image-wrapper">
       <img
-        src="~/assets/illustrations/images/home/contactCTA.jpg"
-        alt="Équipe au travail"
+        :src="image"
+        :alt="alt"
         class="cta__image"
         loading="lazy"
       />
@@ -14,9 +14,24 @@
   </section>
 </template>
 
+<script setup>
+import defaultImage from '../../assets/illustrations/images/home/contactCTA.jpg'
+
+defineProps({
+  image: {
+    type: String,
+    default: defaultImage,
+  },
+  alt: {
+    type: String,
+    default: 'Équipe au travail',
+  },
+})
+</script>
+
 <style scoped>
 .cta {
-  padding: 100px 40px 130px;
+  padding: 70px 40px 70px;
 }
 
 .cta__image-wrapper {
@@ -70,7 +85,7 @@
 
 @media (max-width: 768px) {
   .cta {
-    padding: 70px 24px 90px;
+    padding: 45px 24px 45px;
   }
 
   .cta__image-wrapper {
@@ -92,7 +107,7 @@
 
 @media (max-width: 480px) {
   .cta {
-    padding: 0 20px 70px;
+    padding: 35px 20px 35px;
   }
 
   .cta__image-wrapper {

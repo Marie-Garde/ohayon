@@ -2,6 +2,7 @@
   <div>
     <ContactPageHero />
     <ContactLocationSection />
+    <ContactHighlightSection />
     <ContactFaqSection />
     <ContactImageBanner />
     <ContactFormSection />
