@@ -24,6 +24,9 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npm run generate
+        env:
+          # Le site est servi depuis https://marie-garde.github.io/ohayon/
+          NUXT_APP_BASE_URL: /ohayon/
       - uses: actions/upload-pages-artifact@v3
         with:
           path: .output/public

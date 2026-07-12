@@ -5,6 +5,13 @@ export default defineNuxtConfig({
   ssr: false,
   modules: ['@nuxtjs/google-fonts', '@nuxtjs/sanity'],
   css: ['~/assets/css/variables.css'],
+  // Déploiement GitHub Pages : gère .nojekyll (sinon le dossier _nuxt est
+  // ignoré) et le fallback 404.html pour le routage SPA. La base d'URL
+  // (« /ohayon/ ») est fournie via NUXT_APP_BASE_URL dans le workflow, pour
+  // ne pas casser le dev en local qui reste servi sur « / ».
+  nitro: {
+    preset: 'github-pages',
+  },
   sanity: {
     projectId: '0sf47gcp',
     dataset: 'production',
