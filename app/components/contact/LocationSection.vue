@@ -1,13 +1,13 @@
 <template>
   <section class="location">
     <div class="location__title-wrapper">
-      <h2 class="location__title">Nous trouver</h2>
+      <h2 class="location__title">{{ data?.coordonneesTitre || 'Nous trouver' }}</h2>
     </div>
 
     <div class="location__grid">
       <div class="location__map">
         <iframe
-          src="https://www.google.com/maps?q=36+route+d'Espagne+31100+Toulouse&output=embed"
+          :src="mapUrl"
           title="Cabinet Ohayon & Associés sur Google Maps"
           loading="lazy"
           referrerpolicy="no-referrer-when-downgrade"
@@ -18,44 +18,50 @@
       <div class="location__info">
         <div class="location__card">
           <h3>Adresse</h3>
-          <p>
-            Cabinet Ohayon &amp; Associés<br />
-            36, route d'Espagne<br />
-            31100 Toulouse
-          </p>
+          <p>{{ adresse }}</p>
         </div>
 
         <div class="location__card">
           <h3>Horaires</h3>
-          <p>
-            Du lundi au vendredi<br />
-            08h30 &ndash; 18h00
-          </p>
+          <p>{{ horaires }}</p>
         </div>
 
         <div class="location__card location__card--highlight">
           <h3>Email</h3>
           <p>
-            <a href="mailto:contact@ohayon-associes.com"
-              >contact@ohayon-associes.com</a
-            >
+            <a :href="`mailto:${email}`">{{ email }}</a>
           </p>
-          <p class="location__hint">
-            Moyen de contact <strong>privilégié</strong> — réponse dans la
-            journée.
-          </p>
+          <p class="location__hint">{{ emailNote }}</p>
         </div>
 
         <div class="location__card location__card--wide">
           <h3>Téléphone</h3>
           <p>
-            <a href="tel:+33561552544">05 61 55 25 44</a>
+            <a :href="telHref">{{ telephone }}</a>
           </p>
         </div>
       </div>
     </div>
   </section>
 </template>
+
+<script setup lang="ts">
+const { data } = useContactContent()
+
+const mapUrl = computed(
+  () => data.value?.mapUrl || "https://www.google.com/maps?q=36+route+d'Espagne+31100+Toulouse&output=embed",
+)
+const adresse = computed(
+  () => data.value?.adresse || "Cabinet Ohayon & Associés\n36, route d'Espagne\n31100 Toulouse",
+)
+const horaires = computed(() => data.value?.horaires || 'Du lundi au vendredi\n08h30 – 18h00')
+const email = computed(() => data.value?.email || 'contact@ohayon-associes.com')
+const emailNote = computed(
+  () => data.value?.emailNote || 'Moyen de contact privilégié, réponse dans la journée.',
+)
+const telephone = computed(() => data.value?.telephone || '05 61 55 25 44')
+const telHref = computed(() => 'tel:' + telephone.value.replace(/\s+/g, ''))
+</script>
 
 <style scoped>
 .location {
@@ -122,6 +128,7 @@
 
 .location__card p {
   margin: 0;
+  white-space: pre-line;
 }
 
 .location__card a {

@@ -1,36 +1,49 @@
 <template>
   <section class="reasons">
     <div class="reasons__grid">
-      <div class="reasons__card" v-reveal="'left'">
-        <h3>Un cabinet<br />moderne</h3>
-        <p>
-          Évoluez dans un cabinet moderne où vos idées et votre autonomie
-          sont valorisées au quotidien.
-        </p>
-      </div>
-      <div class="reasons__card" v-reveal="'up'">
-        <h3>Votre progression compte</h3>
-        <p>
-          Ici, votre progression compte autant que vos compétences
-          techniques.
-        </p>
+      <div
+        v-for="(raison, index) in raisons"
+        :key="index"
+        class="reasons__card"
+        v-reveal="index === 0 ? 'left' : 'up'"
+      >
+        <h3>{{ raison.titre }}</h3>
+        <p>{{ raison.texte }}</p>
       </div>
       <div class="reasons__card reasons__card--stats" v-reveal="'right'">
-        <h3>Une équipe expérimentée</h3>
+        <h3>{{ equipeTitre }}</h3>
         <div class="reasons__stats">
-          <div class="reasons__stat">
-            <span class="reasons__stat-number">40</span>
-            <span class="reasons__stat-label">ans d'expérience</span>
-          </div>
-          <div class="reasons__stat">
-            <span class="reasons__stat-number">4</span>
-            <span class="reasons__stat-label">experts-comptables</span>
+          <div v-for="(chiffre, i) in equipeChiffres" :key="i" class="reasons__stat">
+            <span class="reasons__stat-number">{{ chiffre.nombre }}</span>
+            <span class="reasons__stat-label">{{ chiffre.libelle }}</span>
           </div>
         </div>
       </div>
     </div>
   </section>
 </template>
+
+<script setup lang="ts">
+const { data } = useRejoindreContent()
+
+const defaultRaisons = [
+  { titre: 'Un cabinet moderne', texte: 'Évoluez dans un cabinet moderne où vos idées et votre autonomie sont valorisées au quotidien.' },
+  { titre: 'Votre progression compte', texte: 'Ici, votre progression compte autant que vos compétences techniques.' },
+]
+const raisons = computed(() =>
+  data.value?.raisons?.length ? data.value.raisons : defaultRaisons,
+)
+
+const equipeTitre = computed(() => data.value?.equipeTitre || 'Une équipe expérimentée')
+
+const defaultChiffres = [
+  { nombre: '40', libelle: "ans d'expérience" },
+  { nombre: '4', libelle: 'experts-comptables' },
+]
+const equipeChiffres = computed(() =>
+  data.value?.equipeChiffres?.length ? data.value.equipeChiffres : defaultChiffres,
+)
+</script>
 
 <style scoped>
 .reasons {

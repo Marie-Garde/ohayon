@@ -1,12 +1,13 @@
 <template>
   <section class="team">
     <div class="team__title-wrapper">
-      <h2 class="team__title">L'équipe</h2>
+      <h2 class="team__title">{{ teamTitre }}</h2>
     </div>
-    <div class="team__image-wrapper">
+    <div class="team__image-wrapper" :class="{ 'img-loader-bg': loading }">
       <img
-        src="~/assets/illustrations/images/qui-sommes-nous/equipe.jpg"
-        alt="Équipe au travail"
+        v-if="teamImage"
+        :src="teamImage"
+        :alt="teamAlt"
         class="team__image"
         loading="lazy"
       />
@@ -14,7 +15,8 @@
 
     <div class="team__intro" v-reveal="'up'">
       <span class="team__intro-bar"></span>
-      <p>
+      <p v-if="introHtml" v-html="introHtml"></p>
+      <p v-else>
         Chez Ohayon & Associés, nous croyons qu'un cabinet d'expertise
         comptable se juge avant tout par la qualité de la relation humaine
         qu'il construit avec ses clients. Voici les quatre associés qui
@@ -113,8 +115,7 @@ import photoJerome from "~/assets/illustrations/images/qui-sommes-nous/Jérome.j
 import photoLaurence from "~/assets/illustrations/images/qui-sommes-nous/Laurence.jpg";
 import photoMaryse from "~/assets/illustrations/images/qui-sommes-nous/Maryse.jpg";
 import photoOceane from "~/assets/illustrations/images/qui-sommes-nous/Océane.jpg";
-
-const associates = [
+const defaultAssociates = [
   {
     id: 1,
     firstName: "Jérôme",
@@ -183,9 +184,36 @@ const associates = [
   },
 ];
 
+const { data } = useQuiSommesNousContent();
+const img = useSanityImageUrl();
+
+const associates = computed(() => {
+  const sanity = data.value?.associes;
+  if (sanity?.length) {
+    return sanity.map((associe, index) => ({
+      id: associe._key ?? index,
+      firstName: associe.prenom,
+      lastName: associe.nom,
+      role: associe.role,
+      photo: img(associe.photo)?.url() ?? defaultAssociates[index]?.photo ?? "",
+      email: associe.email,
+      bullets: associe.parcours ?? [],
+      likes: associe.aime,
+      dislikes: associe.aimePas,
+    }));
+  }
+  return defaultAssociates;
+});
+
+const loading = computed(() => !data.value);
+const teamTitre = computed(() => data.value?.equipeTitre || "L'équipe");
+const teamImage = computed(() => img(data.value?.equipeImage)?.url() || "");
+const teamAlt = computed(() => data.value?.equipeImage?.alt || "Équipe au travail");
+const introHtml = computed(() => richTextToHtml(data.value?.equipeIntro));
+
 const selectedId = ref(null);
 const selectedAssociate = computed(() =>
-  associates.find((associate) => associate.id === selectedId.value),
+  associates.value.find((associate) => associate.id === selectedId.value),
 );
 
 const selectedCardEl = ref(null);
@@ -269,7 +297,7 @@ watch(selectedId, async (id) => {
   margin: 0 0 24px;
 }
 
-.team__intro strong {
+.team__intro :deep(strong) {
   font-weight: 700;
   color: var(--color-primary);
 }

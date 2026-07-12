@@ -1,32 +1,39 @@
 <template>
   <section class="cta">
-    <div class="cta__image-wrapper">
+    <div class="cta__image-wrapper" :class="{ 'img-loader-bg': loading }">
       <img
-        :src="image"
-        :alt="alt"
+        v-if="resolvedImage"
+        :src="resolvedImage"
+        :alt="resolvedAlt"
         class="cta__image"
         loading="lazy"
       />
       <NuxtLink to="/contact" class="cta__btn">
-        Pour toute question n'hésitez pas<br /><strong>contactez-nous !</strong>
+        <template v-if="contactTexte">{{ contactTexte }}</template>
+        <template v-else>Pour toute question n'hésitez pas<br /><strong>contactez-nous !</strong></template>
       </NuxtLink>
     </div>
   </section>
 </template>
 
-<script setup>
-import defaultImage from '../../assets/illustrations/images/home/contactCTA.jpg'
+<script setup lang="ts">
+const props = defineProps<{
+  // Valeurs de la page courante. Si non fournies, repli sur la page d'accueil.
+  texte?: string
+  image?: unknown
+  alt?: string
+}>()
 
-defineProps({
-  image: {
-    type: String,
-    default: defaultImage,
-  },
-  alt: {
-    type: String,
-    default: 'Équipe au travail',
-  },
-})
+const { data } = useHomeContent()
+const img = useSanityImageUrl()
+
+const rawImage = computed(() => props.image ?? data.value?.contactImage)
+const loading = computed(() => !rawImage.value && !data.value)
+const resolvedImage = computed(() => img(rawImage.value as any)?.url() || '')
+const resolvedAlt = computed(
+  () => props.alt ?? (rawImage.value as any)?.alt ?? 'Équipe au travail',
+)
+const contactTexte = computed(() => props.texte ?? data.value?.contactTexte ?? '')
 </script>
 
 <style scoped>

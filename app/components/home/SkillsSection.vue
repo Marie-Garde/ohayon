@@ -1,18 +1,32 @@
 <template>
   <section class="skills">
-    <div class="skills__image-wrapper">
+    <div class="skills__image-wrapper" :class="{ 'img-loader-bg': loading }">
       <img
-        src="~/assets/illustrations/images/home/savoir.jpg"
-        alt="Équipe au travail"
+        v-if="savoirFaireImage"
+        :src="savoirFaireImage"
+        :alt="savoirFaireAlt"
         class="skills__image"
         loading="lazy"
       />
     </div>
     <div class="skills__title-wrapper">
-      <h2 class="skills__title">Nos savoir-faire</h2>
+      <h2 class="skills__title">{{ data?.savoirFaireTitre || 'Nos savoir-faire' }}</h2>
     </div>
   </section>
 </template>
+
+<script setup lang="ts">
+const { data } = useHomeContent()
+const img = useSanityImageUrl()
+
+const loading = computed(() => !data.value)
+const savoirFaireImage = computed(
+  () => img(data.value?.savoirFaireImage as any)?.url() || '',
+)
+const savoirFaireAlt = computed(
+  () => (data.value?.savoirFaireImage as any)?.alt || 'Équipe au travail',
+)
+</script>
 
 <style scoped>
 .skills {

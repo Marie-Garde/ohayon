@@ -1,33 +1,26 @@
 <script setup>
-import logoIsuite from "~/assets/illustrations/images/vos-outils/logo-isuite.png";
-import logoPennylane from "~/assets/illustrations/images/vos-outils/logo-pennylane.png";
-import logoSilae from "~/assets/illustrations/images/vos-outils/my-silae-white-64px.0at-9417.svg";
+const { data } = useOutilsContent();
+const img = useSanityImageUrl();
 
-const tools = [
-  {
-    name: "ISuite",
-    href: "https://portail.ohayon-associes.com/cnx/iSuiteExpert/Connexion",
-    description: "Accès GED",
-    logo: logoIsuite,
-  },
-  {
-    name: "Pennylane",
-    href: "https://app.pennylane.com/auth/login?",
-    description: "Outil comptable et de gestion",
-    logo: logoPennylane,
-  },
-  {
-    name: "My Silae",
-    href: "https://my.silae.fr/sign-in",
-    description: "Outils RH et paye",
-    logo: logoSilae,
-  },
-];
+const loading = computed(() => !data.value);
+
+const tools = computed(() =>
+  (data.value?.outils || []).map((outil) => ({
+    name: outil.nom,
+    href: outil.lien,
+    description: outil.description,
+    logo: img(outil.logo)?.url() || "",
+  })),
+);
 </script>
 
 <template>
   <section class="tools">
-    <div class="tools__grid">
+    <div
+      class="tools__grid"
+      :class="{ 'img-loader-bg': loading }"
+      :style="loading ? { minHeight: '200px' } : null"
+    >
       <a
         v-for="tool in tools"
         :key="tool.name"

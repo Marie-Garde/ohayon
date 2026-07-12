@@ -1,22 +1,34 @@
 <template>
-  <section class="hero">
+  <section class="hero" :class="{ 'img-loader-bg': loading }">
     <div class="hero__overlay"></div>
     <img
-      src="~/assets/illustrations/images/home/ohayon.jpg"
-      alt="Équipe au travail"
+      v-if="heroImage"
+      :src="heroImage"
+      :alt="heroAlt"
       class="hero__image"
     />
     <div class="hero__content">
-      <h1>La qualité, par principe.</h1>
-      <p>
+      <h1>{{ data?.heroTitre || 'La qualité, par principe.' }}</h1>
+      <p v-if="heroTexteHtml" v-html="heroTexteHtml"></p>
+      <p v-else>
         Cabinet d'expertise comptable &amp; commissariat aux comptes.<br />
         Accompagnement sur-mesure des <strong>TPE-PME</strong>.<br />
         Sur <span class="highlight">Toulouse</span> et sa région.
       </p>
-      <NuxtLink to="/contact" class="hero__btn">Contactez-nous !</NuxtLink>
+      <NuxtLink to="/contact" class="hero__btn">{{ data?.heroBouton || 'Contactez-nous !' }}</NuxtLink>
     </div>
   </section>
 </template>
+
+<script setup lang="ts">
+const { data } = useHomeContent()
+const img = useSanityImageUrl()
+
+const loading = computed(() => !data.value)
+const heroImage = computed(() => img(data.value?.heroImage as any)?.url() || '')
+const heroAlt = computed(() => (data.value?.heroImage as any)?.alt || 'Équipe au travail')
+const heroTexteHtml = computed(() => richTextToHtml(data.value?.heroTexte))
+</script>
 
 <style scoped>
 .hero {
@@ -79,7 +91,7 @@
   padding-left: 160px;
 }
 
-.hero__content strong {
+.hero__content :deep(strong) {
   font-weight: 700;
 }
 

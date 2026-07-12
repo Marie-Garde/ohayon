@@ -9,7 +9,10 @@ export default defineNuxtConfig({
     projectId: '0sf47gcp',
     dataset: 'production',
     apiVersion: '2026-05-15',
-    useCdn: true,
+    // useCdn: false => le site lit toujours la version fraîche de l'API
+    // Sanity (pas le cache CDN qui met ~1 min à se rafraîchir). Les
+    // modifications publiées apparaissent dès le rechargement de la page.
+    useCdn: false,
   },
   googleFonts: {
     families: {

@@ -2,13 +2,14 @@
 // le document « Accueil » géré dans Sanity.
 export interface HomeContent {
   heroTitre?: string
-  heroTexte?: string
+  heroTexte?: unknown[]
   heroBouton?: string
   heroImage?: unknown
   chiffres?: { _key: string; nombre?: string; libelle?: string }[]
   definitTitre?: string
   definitImage?: unknown
   valeurs?: { _key: string; titre?: string; texte?: string }[]
+  valeursImage?: unknown
   valeursBouton?: string
   savoirFaireTitre?: string
   savoirFaireImage?: unknown
@@ -25,7 +26,7 @@ const HOME_QUERY = groq`*[_type == "homePage"][0]{
   heroTitre, heroTexte, heroBouton, heroImage,
   chiffres[]{ _key, nombre, libelle },
   definitTitre, definitImage,
-  valeurs[]{ _key, titre, texte }, valeursBouton,
+  valeurs[]{ _key, titre, texte }, valeursImage, valeursBouton,
   savoirFaireTitre, savoirFaireImage,
   services[]{ _key, titre, texte, icone }, servicesBouton,
   processusSurtitre, processusTitre,

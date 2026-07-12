@@ -1,6 +1,15 @@
 import { defineType, defineField, defineArrayMember } from 'sanity'
 import { HomeIcon } from '@sanity/icons'
 
+/** Champ « texte alternatif » réutilisable, ajouté à chaque image. */
+const altField = () =>
+  defineField({
+    name: 'alt',
+    title: 'Texte alternatif',
+    type: 'string',
+    description: 'Décrit l’image (accessibilité et référencement). Peut rester vide si l’image est purement décorative.',
+  })
+
 /**
  * Page d'accueil.
  * Chaque texte visible sur la page = un champ, chaque image = un champ image.
@@ -37,10 +46,21 @@ export const homePage = defineType({
     defineField({
       name: 'heroTexte',
       title: 'Texte sous le titre',
-      type: 'text',
-      rows: 3,
+      type: 'array',
       group: 'hero',
-      description: 'Chaque retour à la ligne sera conservé.',
+      description:
+        'Utilisez le bouton « Gras » pour mettre des mots en valeur (ex. TPE-PME, Toulouse). Appuyez sur Entrée pour passer à la ligne.',
+      of: [
+        defineArrayMember({
+          type: 'block',
+          styles: [{ title: 'Normal', value: 'normal' }],
+          lists: [],
+          marks: {
+            decorators: [{ title: 'Gras', value: 'strong' }],
+            annotations: [],
+          },
+        }),
+      ],
     }),
     defineField({
       name: 'heroBouton',
@@ -55,6 +75,7 @@ export const homePage = defineType({
       type: 'image',
       group: 'hero',
       options: { hotspot: true },
+      fields: [altField()],
     }),
 
     /* ------------------------------------------------------------------ */
@@ -97,6 +118,7 @@ export const homePage = defineType({
       type: 'image',
       group: 'definit',
       options: { hotspot: true },
+      fields: [altField()],
     }),
 
     /* ------------------------------------------------------------------ */
@@ -123,6 +145,14 @@ export const homePage = defineType({
       ],
     }),
     defineField({
+      name: 'valeursImage',
+      title: 'Image (à côté des cartes)',
+      type: 'image',
+      group: 'valeurs',
+      options: { hotspot: true },
+      fields: [altField()],
+    }),
+    defineField({
       name: 'valeursBouton',
       title: 'Texte du bouton',
       type: 'string',
@@ -146,6 +176,7 @@ export const homePage = defineType({
       type: 'image',
       group: 'savoirFaire',
       options: { hotspot: true },
+      fields: [altField()],
     }),
 
     /* ------------------------------------------------------------------ */
@@ -240,10 +271,12 @@ export const homePage = defineType({
       type: 'image',
       group: 'contact',
       options: { hotspot: true },
+      fields: [altField()],
     }),
   ],
 
   preview: {
-    prepare: () => ({ title: 'Accueil' }),
+    select: { titre: 'heroTitre' },
+    prepare: ({ titre }) => ({ title: titre || 'Accueil' }),
   },
 })

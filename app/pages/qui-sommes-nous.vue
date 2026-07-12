@@ -5,6 +5,10 @@
     <QuiSommesNousTeamSection />
     <QuiSommesNousLocauxSection />
     <QuiSommesNousValuesSection />
-<HomeCtaSection />
+    <HomeCtaSection :texte="data?.contactTexte" :image="data?.contactImage" />
   </div>
 </template>
+
+<script setup lang="ts">
+const { data } = useQuiSommesNousContent()
+</script>

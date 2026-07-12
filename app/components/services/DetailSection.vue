@@ -1,169 +1,27 @@
 <template>
   <section class="services">
-    <div class="service-card" v-reveal="'up'">
+    <div
+      class="service-card"
+      v-for="(prestation, index) in prestations"
+      :key="index"
+      v-reveal="'up'"
+    >
       <div class="service-card__left">
         <div class="service-card__icon-wrapper">
           <img
-            src="~/assets/illustrations/icons/home/accounting.svg"
+            :src="prestation.icone"
             alt=""
             class="service-card__icon"
             loading="lazy"
           />
         </div>
         <div class="service-card__info">
-          <h3>Comptabilité</h3>
-          <p>
-            Nous assurons la tenue, la révision et l'établissement de vos
-            comptes annuels, avec un suivi régulier plutôt qu'un bilan
-            découvert une fois par an. Vous gardez à tout moment une vision
-            claire de votre activité.
-          </p>
-          <p>
-            Notre équipe s'appuie sur des outils digitaux pour fiabiliser la
-            saisie et raccourcir les délais, sans jamais perdre le contact
-            humain qui fait la différence dans le suivi de votre dossier.
-          </p>
+          <h3>{{ prestation.titre }}</h3>
+          <p v-for="(para, i) in prestation.paras" :key="i" v-html="para"></p>
         </div>
       </div>
       <ul class="service-card__list">
-        <li>Tenue comptable</li>
-        <li>Établissement des comptes annuels</li>
-        <li>Déclarations comptables</li>
-        <li>Tableaux de bord &amp; reporting</li>
-      </ul>
-    </div>
-
-    <div class="service-card" v-reveal="'up'">
-      <div class="service-card__left">
-        <div class="service-card__icon-wrapper">
-          <img
-            src="~/assets/illustrations/icons/home/tax-management.svg"
-            alt=""
-            class="service-card__icon"
-            loading="lazy"
-          />
-        </div>
-        <div class="service-card__info">
-          <h3>Gestion fiscale</h3>
-          <p>
-            De l'établissement de vos déclarations à l'optimisation de votre
-            situation fiscale, nous vous accompagnons pour sécuriser vos
-            obligations tout en identifiant les dispositifs adaptés à votre
-            activité.
-          </p>
-          <p>
-            Nous anticipons les échéances et vous alertons en amont sur les
-            changements de réglementation qui peuvent vous concerner, pour que
-            la fiscalité reste un sujet maîtrisé plutôt qu'une source
-            d'inquiétude.
-          </p>
-        </div>
-      </div>
-      <ul class="service-card__list">
-        <li>Déclarations fiscales</li>
-        <li>Optimisation fiscale</li>
-        <li>TVA &amp; taxes</li>
-        <li>Assistance en cas de contrôle fiscal</li>
-      </ul>
-    </div>
-
-    <div class="service-card" v-reveal="'up'">
-      <div class="service-card__left">
-        <div class="service-card__icon-wrapper">
-          <img
-            src="~/assets/illustrations/icons/home/social-management.svg"
-            alt=""
-            class="service-card__icon"
-            loading="lazy"
-          />
-        </div>
-        <div class="service-card__info">
-          <h3>Gestion sociale &amp; paie</h3>
-          <p>
-            Nous prenons en charge l'établissement des bulletins de paie, les
-            déclarations sociales et l'administration du personnel, quelle que
-            soit la taille de votre équipe ou la complexité de votre convention
-            collective.
-          </p>
-          <p>
-            Au-delà de la paie, nous vous conseillons sur vos obligations
-            d'employeur : contrats de travail, rupture conventionnelle,
-            embauche, pour vous permettre de rester concentré sur le pilotage
-            de votre activité.
-          </p>
-        </div>
-      </div>
-      <ul class="service-card__list">
-        <li>Établissement des bulletins de paie</li>
-        <li>Déclarations sociales</li>
-        <li>Gestion des contrats</li>
-        <li>Conseil en droit social</li>
-      </ul>
-    </div>
-
-    <div class="service-card" v-reveal="'up'">
-      <div class="service-card__left">
-        <div class="service-card__icon-wrapper">
-          <img
-            src="~/assets/illustrations/icons/home/accompaniement.svg"
-            alt=""
-            class="service-card__icon"
-            loading="lazy"
-          />
-        </div>
-        <div class="service-card__info">
-          <h3>Conseil &amp; accompagnement</h3>
-          <p>
-            Création d'entreprise, levée de fonds, transmission,
-            restructuration : nous accompagnons les moments clés de votre
-            activité avec un conseil adapté à votre secteur et à vos
-            objectifs.
-          </p>
-          <p>
-            Nous prenons le temps de comprendre votre projet avant de vous
-            proposer des solutions, parce qu'un bon conseil commence toujours
-            par une bonne écoute.
-          </p>
-        </div>
-      </div>
-      <ul class="service-card__list">
-        <li>Conseil en gestion</li>
-        <li>Accompagnement à la création</li>
-        <li>Business plan &amp; prévisionnel</li>
-        <li>Gestion de la croissance &amp; transmission</li>
-      </ul>
-    </div>
-
-    <div class="service-card" v-reveal="'up'">
-      <div class="service-card__left">
-        <div class="service-card__icon-wrapper">
-          <img
-            src="~/assets/illustrations/icons/home/audit-office.svg"
-            alt=""
-            class="service-card__icon"
-            loading="lazy"
-          />
-        </div>
-        <div class="service-card__info">
-          <h3>Commissariat aux comptes</h3>
-          <p>
-            Nos missions de commissariat aux comptes garantissent la fiabilité
-            de vos comptes auprès de vos partenaires, actionnaires et
-            financeurs, dans le respect strict des normes d'exercice
-            professionnel.
-          </p>
-          <p>
-            Notre équipe d'audit intervient avec rigueur et indépendance, et
-            formule des recommandations concrètes pour renforcer vos process
-            de contrôle interne.
-          </p>
-        </div>
-      </div>
-      <ul class="service-card__list">
-        <li>Audit légal</li>
-        <li>Certification des comptes</li>
-        <li>Missions spécifiques</li>
-        <li>Audit contractuel</li>
+        <li v-for="(point, i) in prestation.points" :key="i">{{ point }}</li>
       </ul>
     </div>
 
@@ -177,13 +35,90 @@
         />
       </div>
       <div class="services__cta-text">
-        <p class="services__cta-title">Besoin d'un accompagnement personnalisé ?</p>
-        <p class="services__cta-subtitle">Prenez rendez-vous avec nos experts.</p>
+        <p class="services__cta-title">{{ data?.encartTitre || "Besoin d'un accompagnement personnalisé ?" }}</p>
+        <p class="services__cta-subtitle">{{ data?.encartSousTitre || 'Prenez rendez-vous avec nos experts.' }}</p>
       </div>
-      <NuxtLink to="/contact" class="services__cta-btn">Contactez-nous</NuxtLink>
+      <NuxtLink to="/contact" class="services__cta-btn">{{ data?.encartBouton || 'Contactez-nous' }}</NuxtLink>
     </div>
   </section>
 </template>
+
+<script setup lang="ts">
+import iconAccounting from '../../assets/illustrations/icons/home/accounting.svg'
+import iconTax from '../../assets/illustrations/icons/home/tax-management.svg'
+import iconSocial from '../../assets/illustrations/icons/home/social-management.svg'
+import iconAccompaniement from '../../assets/illustrations/icons/home/accompaniement.svg'
+import iconAudit from '../../assets/illustrations/icons/home/audit-office.svg'
+
+const { data } = useServicesContent()
+const img = useSanityImageUrl()
+
+const defaultPrestations = [
+  {
+    titre: 'Comptabilité',
+    icone: iconAccounting,
+    paragraphes: [
+      "Nous assurons la tenue, la révision et l'établissement de vos comptes annuels, avec un suivi régulier plutôt qu'un bilan découvert une fois par an. Vous gardez à tout moment une vision claire de votre activité.",
+      "Notre équipe s'appuie sur des outils digitaux pour fiabiliser la saisie et raccourcir les délais, sans jamais perdre le contact humain qui fait la différence dans le suivi de votre dossier.",
+    ],
+    points: ['Tenue comptable', 'Établissement des comptes annuels', 'Déclarations comptables', 'Tableaux de bord & reporting'],
+  },
+  {
+    titre: 'Gestion fiscale',
+    icone: iconTax,
+    paragraphes: [
+      "De l'établissement de vos déclarations à l'optimisation de votre situation fiscale, nous vous accompagnons pour sécuriser vos obligations tout en identifiant les dispositifs adaptés à votre activité.",
+      "Nous anticipons les échéances et vous alertons en amont sur les changements de réglementation qui peuvent vous concerner, pour que la fiscalité reste un sujet maîtrisé plutôt qu'une source d'inquiétude.",
+    ],
+    points: ['Déclarations fiscales', 'Optimisation fiscale', 'TVA & taxes', 'Assistance en cas de contrôle fiscal'],
+  },
+  {
+    titre: 'Gestion sociale & paie',
+    icone: iconSocial,
+    paragraphes: [
+      "Nous prenons en charge l'établissement des bulletins de paie, les déclarations sociales et l'administration du personnel, quelle que soit la taille de votre équipe ou la complexité de votre convention collective.",
+      "Au-delà de la paie, nous vous conseillons sur vos obligations d'employeur : contrats de travail, rupture conventionnelle, embauche, pour vous permettre de rester concentré sur le pilotage de votre activité.",
+    ],
+    points: ['Établissement des bulletins de paie', 'Déclarations sociales', 'Gestion des contrats', 'Conseil en droit social'],
+  },
+  {
+    titre: 'Conseil & accompagnement',
+    icone: iconAccompaniement,
+    paragraphes: [
+      "Création d'entreprise, levée de fonds, transmission, restructuration : nous accompagnons les moments clés de votre activité avec un conseil adapté à votre secteur et à vos objectifs.",
+      "Nous prenons le temps de comprendre votre projet avant de vous proposer des solutions, parce qu'un bon conseil commence toujours par une bonne écoute.",
+    ],
+    points: ['Conseil en gestion', 'Accompagnement à la création', 'Business plan & prévisionnel', 'Gestion de la croissance & transmission'],
+  },
+  {
+    titre: 'Commissariat aux comptes',
+    icone: iconAudit,
+    paragraphes: [
+      "Nos missions de commissariat aux comptes garantissent la fiabilité de vos comptes auprès de vos partenaires, actionnaires et financeurs, dans le respect strict des normes d'exercice professionnel.",
+      "Notre équipe d'audit intervient avec rigueur et indépendance, et formule des recommandations concrètes pour renforcer vos process de contrôle interne.",
+    ],
+    points: ['Audit légal', 'Certification des comptes', 'Missions spécifiques', 'Audit contractuel'],
+  },
+]
+
+const prestations = computed(() => {
+  const sanity = data.value?.prestations
+  if (sanity?.length) {
+    return sanity.map((prestation, index) => ({
+      titre: prestation.titre,
+      icone: img(prestation.icone as any)?.url() ?? defaultPrestations[index]?.icone ?? '',
+      paras: richTextToParagraphArray(prestation.texte),
+      points: prestation.points ?? [],
+    }))
+  }
+  return defaultPrestations.map((prestation) => ({
+    titre: prestation.titre,
+    icone: prestation.icone,
+    paras: prestation.paragraphes,
+    points: prestation.points,
+  }))
+})
+</script>
 
 <style scoped>
 .services {

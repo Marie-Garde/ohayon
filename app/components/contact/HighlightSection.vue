@@ -2,25 +2,29 @@
   <section class="highlight">
     <div class="highlight__inner" v-reveal="'up'">
       <div class="highlight__content">
-        <p class="highlight__subtitle">Prenons contact</p>
-        <h2 class="highlight__title">
-          Un premier échange, sans engagement
-        </h2>
-        <p class="highlight__text">
-          Que vous soyez en pleine création, en quête d'un nouvel
-          expert-comptable ou simplement à la recherche de conseils, nous
-          prenons le temps de vous écouter avant toute chose.
-        </p>
-        <p class="highlight__text">
-          Appelez-nous, écrivez-nous ou passez nous voir à Toulouse : nous vous
-          répondons dans la journée et vous orientons vers la solution la plus
-          adaptée à votre situation.
-        </p>
+        <p class="highlight__subtitle">{{ data?.approcheSurtitre || 'Prenons contact' }}</p>
+        <h2 class="highlight__title">{{ data?.approcheTitre || 'Un premier échange, sans engagement' }}</h2>
+        <template v-if="approcheParas.length">
+          <p v-for="(para, i) in approcheParas" :key="i" class="highlight__text" v-html="para"></p>
+        </template>
+        <template v-else>
+          <p class="highlight__text">
+            Que vous soyez en pleine création, en quête d'un nouvel
+            expert-comptable ou simplement à la recherche de conseils, nous
+            prenons le temps de vous écouter avant toute chose.
+          </p>
+          <p class="highlight__text">
+            Appelez-nous, écrivez-nous ou passez nous voir à Toulouse : nous vous
+            répondons dans la journée et vous orientons vers la solution la plus
+            adaptée à votre situation.
+          </p>
+        </template>
       </div>
-      <div class="highlight__media">
+      <div class="highlight__media" :class="{ 'img-loader-bg': loading }">
         <img
-          src="~/assets/illustrations/images/home/contactCTA.jpg"
-          alt="Échange avec l'équipe du cabinet Ohayon &amp; Associés"
+          v-if="approcheImage"
+          :src="approcheImage"
+          :alt="approcheAlt"
           class="highlight__image"
           loading="lazy"
         />
@@ -28,6 +32,18 @@
     </div>
   </section>
 </template>
+
+<script setup lang="ts">
+const { data } = useContactContent()
+const img = useSanityImageUrl()
+
+const loading = computed(() => !data.value)
+const approcheImage = computed(() => img(data.value?.approcheImage as any)?.url() || '')
+const approcheAlt = computed(
+  () => (data.value?.approcheImage as any)?.alt || "Échange avec l'équipe du cabinet Ohayon & Associés",
+)
+const approcheParas = computed(() => richTextToParagraphArray(data.value?.approcheTexte))
+</script>
 
 <style scoped>
 .highlight {

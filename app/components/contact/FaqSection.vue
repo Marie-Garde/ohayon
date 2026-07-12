@@ -2,8 +2,8 @@
   <section class="faq">
     <div class="faq__inner">
       <div class="faq__header">
-        <p class="faq__subtitle">Une interrogation ?</p>
-        <h2 class="faq__title">Questions fréquentes</h2>
+        <p class="faq__subtitle">{{ data?.faqSurtitre || 'Une interrogation ?' }}</p>
+        <h2 class="faq__title">{{ data?.faqTitre || 'Questions fréquentes' }}</h2>
       </div>
 
       <div class="faq__list">
@@ -27,7 +27,9 @@
 </template>
 
 <script setup>
-const questions = [
+const { data } = useContactContent()
+
+const defaultQuestions = [
   {
     question: "Quels types d'entreprises accompagnez-vous ?",
     answer:
@@ -59,6 +61,14 @@ const questions = [
       "Un simple échange suffit pour faire connaissance, comprendre vos besoins et déterminer la solution la plus adaptée à votre situation.",
   },
 ];
+
+const questions = computed(() => {
+  const sanity = data.value?.questions;
+  if (sanity?.length) {
+    return sanity.map((q) => ({ question: q.question, answer: q.reponse }));
+  }
+  return defaultQuestions;
+});
 </script>
 
 <style scoped>

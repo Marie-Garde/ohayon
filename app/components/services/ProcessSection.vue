@@ -1,75 +1,53 @@
 <template>
   <section class="process">
     <div class="process__header">
-      <p class="process__subtitle">Premier contact ?</p>
-      <h2 class="process__title">Comment ça se passe</h2>
+      <p class="process__subtitle">{{ data?.processusSurtitre || 'Premier contact ?' }}</p>
+      <h2 class="process__title">{{ data?.processusTitre || 'Comment ça se passe' }}</h2>
     </div>
 
     <div class="timeline">
       <div class="timeline__track">
-        <div class="timeline__step timeline__step--top">
+        <div
+          v-for="(etape, index) in etapes"
+          :key="index"
+          class="timeline__step"
+          :class="index % 2 === 0 ? 'timeline__step--top' : 'timeline__step--bottom'"
+        >
+          <span v-if="index % 2 !== 0" class="timeline__dot"></span>
           <div class="timeline__content">
-            <h3>Premier<br />échange</h3>
-            <span class="timeline__duration">15 à 30 min</span>
-            <p>
-              Nous prenons le temps d'échanger sur votre activité, vos
-              enjeux et vos besoins afin de comprendre précisément votre
-              situation.
-            </p>
+            <template v-if="index % 2 === 0">
+              <h3>{{ etape.titre }}</h3>
+              <span class="timeline__duration">{{ etape.duree }}</span>
+              <p>{{ etape.texte }}</p>
+            </template>
+            <template v-else>
+              <p>{{ etape.texte }}</p>
+              <h3>{{ etape.titre }}</h3>
+              <span class="timeline__duration">{{ etape.duree }}</span>
+            </template>
           </div>
-          <span class="timeline__dot"></span>
-        </div>
-        <div class="timeline__step timeline__step--bottom">
-          <span class="timeline__dot"></span>
-          <div class="timeline__content">
-            <p>
-              Lors d'un entretien avec un expert-comptable, nous analysons
-              votre organisation, vos objectifs et vos enjeux du moment.
-            </p>
-            <h3>Rendez-vous découverte</h3>
-            <span class="timeline__duration">45 min à 1 h</span>
-          </div>
-        </div>
-        <div class="timeline__step timeline__step--top">
-          <div class="timeline__content">
-            <h3>Proposition personnalisée</h3>
-            <span class="timeline__duration">24 à 72 h</span>
-            <p>
-              Nous vous adressons une lettre de mission claire et adaptée,
-              détaillant les prestations proposées, les outils mis à
-              disposition et les honoraires.
-            </p>
-          </div>
-          <span class="timeline__dot"></span>
-        </div>
-        <div class="timeline__step timeline__step--bottom">
-          <span class="timeline__dot"></span>
-          <div class="timeline__content">
-            <p>
-              Après validation de notre proposition, nous mettons en place
-              les outils, récupérons les informations nécessaires et
-              organisons votre suivi.
-            </p>
-            <h3>Démarrage de la mission</h3>
-            <span class="timeline__duration">1 à 2 semaines</span>
-          </div>
-        </div>
-        <div class="timeline__step timeline__step--top">
-          <div class="timeline__content">
-            <h3>Accompagnement continu</h3>
-            <span class="timeline__duration">En continu</span>
-            <p>
-              Vous bénéficiez d'un interlocuteur dédié et de conseils
-              réguliers, tout au long de l'année, pour piloter sereinement
-              votre activité.
-            </p>
-          </div>
-          <span class="timeline__dot"></span>
+          <span v-if="index % 2 === 0" class="timeline__dot"></span>
         </div>
       </div>
     </div>
   </section>
 </template>
+
+<script setup lang="ts">
+const { data } = useServicesContent()
+
+const defaultEtapes = [
+  { titre: 'Premier échange', duree: '15 à 30 min', texte: "Nous prenons le temps d'échanger sur votre activité, vos enjeux et vos besoins afin de comprendre précisément votre situation." },
+  { titre: 'Rendez-vous découverte', duree: '45 min à 1 h', texte: "Lors d'un entretien avec un expert-comptable, nous analysons votre organisation, vos objectifs et vos enjeux du moment." },
+  { titre: 'Proposition personnalisée', duree: '24 à 72 h', texte: 'Nous vous adressons une lettre de mission claire et adaptée, détaillant les prestations proposées, les outils mis à disposition et les honoraires.' },
+  { titre: 'Démarrage de la mission', duree: '1 à 2 semaines', texte: 'Après validation de notre proposition, nous mettons en place les outils, récupérons les informations nécessaires et organisons votre suivi.' },
+  { titre: 'Accompagnement continu', duree: 'En continu', texte: "Vous bénéficiez d'un interlocuteur dédié et de conseils réguliers, tout au long de l'année, pour piloter sereinement votre activité." },
+]
+
+const etapes = computed(() =>
+  data.value?.etapes?.length ? data.value.etapes : defaultEtapes,
+)
+</script>
 
 <style scoped>
 .process {

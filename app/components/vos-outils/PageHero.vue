@@ -1,21 +1,29 @@
 <template>
-  <section class="page-hero">
+  <section class="page-hero" :class="{ 'img-loader-bg': loading }">
     <div class="page-hero__overlay"></div>
     <img
-      src="~/assets/illustrations/images/home/image.jpg"
-      alt="Cabinet Ohayon & Associés"
+      v-if="heroImage"
+      :src="heroImage"
+      :alt="heroAlt"
       class="page-hero__image"
     />
     <div class="page-hero__content">
-      <h1>Vos outils</h1>
+      <h1>{{ data?.heroTitre || 'Vos outils' }}</h1>
       <p class="page-hero__lead">
-        Convaincus que la digitalisation sert avant tout la relation humaine,
-        nous mettons à votre disposition des plateformes sécurisées et
-        intuitives pour suivre votre activité en toute autonomie.
+        {{ data?.heroLead || 'Convaincus que la digitalisation sert avant tout la relation humaine, nous mettons à votre disposition des plateformes sécurisées et intuitives pour suivre votre activité en toute autonomie.' }}
       </p>
     </div>
   </section>
 </template>
+
+<script setup lang="ts">
+const { data } = useOutilsContent()
+const img = useSanityImageUrl()
+
+const loading = computed(() => !data.value)
+const heroImage = computed(() => img(data.value?.heroImage as any)?.url() || '')
+const heroAlt = computed(() => (data.value?.heroImage as any)?.alt || 'Cabinet Ohayon & Associés')
+</script>
 
 <style scoped>
 .page-hero {

@@ -1,20 +1,27 @@
 <template>
-  <section class="page-hero">
+  <section class="page-hero" :class="{ 'img-loader-bg': loading }">
     <div class="page-hero__overlay"></div>
     <img
-      src="~/assets/illustrations/images/contact/hero-contact.jpg"
-      alt="Cabinet Ohayon & Associés"
+      v-if="heroImage"
+      :src="heroImage"
+      :alt="heroAlt"
       class="page-hero__image"
     />
     <div class="page-hero__content">
-      <h1>Contactez-nous</h1>
-      <p class="page-hero__lead">
-        Une question, un projet, un rendez-vous ?<br />
-        Nous sommes à votre écoute.
-      </p>
+      <h1>{{ data?.heroTitre || 'Contactez-nous' }}</h1>
+      <p class="page-hero__lead">{{ data?.heroLead || 'Une question, un projet, un rendez-vous ?\nNous sommes à votre écoute.' }}</p>
     </div>
   </section>
 </template>
+
+<script setup lang="ts">
+const { data } = useContactContent()
+const img = useSanityImageUrl()
+
+const loading = computed(() => !data.value)
+const heroImage = computed(() => img(data.value?.heroImage as any)?.url() || '')
+const heroAlt = computed(() => (data.value?.heroImage as any)?.alt || 'Cabinet Ohayon & Associés')
+</script>
 
 <style scoped>
 .page-hero {
@@ -75,6 +82,7 @@
   font-size: 20px;
   margin: 0;
   max-width: 500px;
+  white-space: pre-line;
 }
 
 @media (max-width: 768px) {

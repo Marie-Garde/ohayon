@@ -1,97 +1,82 @@
 <template>
   <section class="culture">
     <div class="culture__banner">
-      <div class="culture__image-wrapper">
+      <div class="culture__image-wrapper" :class="{ 'img-loader-bg': loading }">
         <img
-          src="~/assets/illustrations/images/nous-rejoindre/culture.jpg"
-          alt="Équipe au travail"
+          v-if="cultureImage"
+          :src="cultureImage"
+          :alt="cultureAlt"
           class="culture__image"
           loading="lazy"
         />
       </div>
       <div class="culture__title-wrapper">
-        <h2 class="culture__title">Culture &amp; ambiance du cabinet</h2>
+        <h2 class="culture__title">{{ cultureTitre }}</h2>
       </div>
     </div>
 
     <p class="culture__values">
-      <span class="culture__value">Bienveillance</span>
-      <span class="culture__dot" aria-hidden="true">·</span>
-      <span class="culture__value">Exigence</span>
-      <span class="culture__dot" aria-hidden="true">·</span>
-      <span class="culture__value">Esprit d'équipe</span>
-      <span class="culture__dot" aria-hidden="true">·</span>
-      <span class="culture__value">Confiance</span>
-      <span class="culture__dot" aria-hidden="true">·</span>
-      <span class="culture__value">Proximité</span>
-      <span class="culture__dot" aria-hidden="true">·</span>
-      <span class="culture__value">Autonomie</span>
-      <span class="culture__dot" aria-hidden="true">·</span>
-      <span class="culture__value">Engagement</span>
-      <span class="culture__dot" aria-hidden="true">·</span>
-      <span class="culture__value">Innovation</span>
-      <span class="culture__dot" aria-hidden="true">·</span>
-      <span class="culture__value">Convivialité</span>
-      <span class="culture__dot" aria-hidden="true">·</span>
-      <span class="culture__value">Réactivité</span>
+      <template v-for="(mot, i) in motsCles" :key="i">
+        <span v-if="i > 0" class="culture__dot" aria-hidden="true">·</span>
+        <span class="culture__value">{{ mot }}</span>
+      </template>
     </p>
 
     <div class="culture__grid">
-      <div class="culture__card">
+      <div v-for="(carte, index) in cultureCartes" :key="index" class="culture__card">
         <img
-          src="~/assets/illustrations/icons/rejoindre/team-spirit.svg"
+          :src="carte.icone"
           alt=""
           class="culture__icon"
           loading="lazy"
         />
-        <h3>Esprit d'équipe</h3>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-          eiusmod tempor incididunt ut labore.
-        </p>
-      </div>
-      <div class="culture__card">
-        <img
-          src="~/assets/illustrations/icons/rejoindre/work-life-balance.svg"
-          alt=""
-          class="culture__icon"
-          loading="lazy"
-        />
-        <h3>Équilibre vie pro / perso</h3>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-          eiusmod tempor incididunt ut labore.
-        </p>
-      </div>
-      <div class="culture__card">
-        <img
-          src="~/assets/illustrations/icons/rejoindre/continuous-training.svg"
-          alt=""
-          class="culture__icon"
-          loading="lazy"
-        />
-        <h3>Formation continue</h3>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-          eiusmod tempor incididunt ut labore.
-        </p>
-      </div>
-      <div class="culture__card">
-        <img
-          src="~/assets/illustrations/icons/rejoindre/convivial-moments.svg"
-          alt=""
-          class="culture__icon"
-          loading="lazy"
-        />
-        <h3>Moments conviviaux</h3>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-          eiusmod tempor incididunt ut labore.
-        </p>
+        <h3>{{ carte.titre }}</h3>
+        <p>{{ carte.texte }}</p>
       </div>
     </div>
   </section>
 </template>
+
+<script setup lang="ts">
+import iconTeamSpirit from '../../assets/illustrations/icons/rejoindre/team-spirit.svg'
+import iconWorkLife from '../../assets/illustrations/icons/rejoindre/work-life-balance.svg'
+import iconTraining from '../../assets/illustrations/icons/rejoindre/continuous-training.svg'
+import iconConvivial from '../../assets/illustrations/icons/rejoindre/convivial-moments.svg'
+
+const { data } = useRejoindreContent()
+const img = useSanityImageUrl()
+
+const loading = computed(() => !data.value)
+const cultureTitre = computed(() => data.value?.cultureTitre || 'Culture & ambiance du cabinet')
+const cultureImage = computed(() => img(data.value?.cultureImage as any)?.url() || '')
+const cultureAlt = computed(() => (data.value?.cultureImage as any)?.alt || 'Équipe au travail')
+
+const defaultMotsCles = [
+  'Bienveillance', 'Exigence', "Esprit d'équipe", 'Confiance', 'Proximité',
+  'Autonomie', 'Engagement', 'Innovation', 'Convivialité', 'Réactivité',
+]
+const motsCles = computed(() =>
+  data.value?.motsCles?.length ? data.value.motsCles : defaultMotsCles,
+)
+
+const defaultCartes = [
+  { titre: "Esprit d'équipe", icone: iconTeamSpirit, texte: "Ici, personne n'avance seul. On partage les dossiers, les idées et les coups de main : c'est à plusieurs qu'on trouve les meilleures solutions pour nos clients." },
+  { titre: 'Équilibre vie pro / perso', icone: iconWorkLife, texte: "Une charge de travail maîtrisée, de la souplesse dans l'organisation et des outils qui allègent le quotidien : on tient à ce que chacun s'épanouisse au cabinet comme en dehors." },
+  { titre: 'Formation continue', icone: iconTraining, texte: "Nos outils évoluent, nos méthodes aussi, et vous avec. Montée en compétences, veille métier et intégration de l'IA : chez nous, on n'arrête jamais d'apprendre." },
+  { titre: 'Moments conviviaux', icone: iconConvivial, texte: "Au-delà des chiffres, il y a les pauses café, les déjeuners d'équipe et les moments partagés qui donnent envie de se retrouver chaque matin." },
+]
+const cultureCartes = computed(() => {
+  const sanity = data.value?.cultureCartes
+  if (sanity?.length) {
+    return sanity.map((carte, index) => ({
+      titre: carte.titre,
+      texte: carte.texte,
+      icone: img(carte.icone as any)?.url() ?? defaultCartes[index]?.icone ?? '',
+    }))
+  }
+  return defaultCartes
+})
+</script>
 
 <style scoped>
 .culture {

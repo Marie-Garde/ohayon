@@ -1,18 +1,28 @@
 <template>
   <section class="banner">
-    <div class="banner__image-wrapper">
+    <div class="banner__image-wrapper" :class="{ 'img-loader-bg': loading }">
       <img
-        src="~/assets/illustrations/images/contact/nousecrire.jpg"
-        alt="Équipe au travail"
+        v-if="ecrireImage"
+        :src="ecrireImage"
+        :alt="ecrireAlt"
         class="banner__image"
         loading="lazy"
       />
     </div>
     <div class="banner__title-wrapper">
-      <h2 class="banner__title">Écrivez-nous</h2>
+      <h2 class="banner__title">{{ data?.ecrireTitre || 'Écrivez-nous' }}</h2>
     </div>
   </section>
 </template>
+
+<script setup lang="ts">
+const { data } = useContactContent()
+const img = useSanityImageUrl()
+
+const loading = computed(() => !data.value)
+const ecrireImage = computed(() => img(data.value?.ecrireImage as any)?.url() || '')
+const ecrireAlt = computed(() => (data.value?.ecrireImage as any)?.alt || 'Équipe au travail')
+</script>
 
 <style scoped>
 .banner {

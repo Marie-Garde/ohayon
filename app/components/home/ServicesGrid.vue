@@ -1,64 +1,58 @@
 <template>
   <section class="services">
     <div class="services__grid">
-      <div class="services__card">
+      <div v-for="(service, index) in services" :key="index" class="services__card">
         <img
-          src="~/assets/illustrations/icons/home/accounting.svg"
+          :src="service.icone"
           alt=""
           class="services__icon"
           loading="lazy"
         />
-        <h3>Comptabilité</h3>
-        <p>La gestion de vos comptes au quotidien, tenue, révision, bilans.</p>
-      </div>
-      <div class="services__card">
-        <img
-          src="~/assets/illustrations/icons/home/tax-management.svg"
-          alt=""
-          class="services__icon"
-          loading="lazy"
-        />
-        <h3>Gestion fiscale</h3>
-        <p>Optimisation fiscale, déclarations, conseil stratégique.</p>
-      </div>
-      <div class="services__card">
-        <img
-          src="~/assets/illustrations/icons/home/social-management.svg"
-          alt=""
-          class="services__icon"
-          loading="lazy"
-        />
-        <h3>Gestion sociale</h3>
-        <p>Bulletins de paie, déclarations sociales, droit du travail.</p>
-      </div>
-      <div class="services__card">
-        <img
-          src="~/assets/illustrations/icons/home/accompaniement.svg"
-          alt=""
-          class="services__icon"
-          loading="lazy"
-        />
-        <h3>Accompagnement</h3>
-        <p>Création, transmission, évaluation, patrimoine du dirigeant.</p>
-      </div>
-      <div class="services__card">
-        <img
-          src="~/assets/illustrations/icons/home/audit-office.svg"
-          alt=""
-          class="services__icon"
-          loading="lazy"
-        />
-        <h3>Audit légal</h3>
-        <p>Commissariat aux comptes, certification, opérations sur capital.</p>
+        <h3>{{ service.titre }}</h3>
+        <p>{{ service.texte }}</p>
       </div>
       <div class="services__card services__card--cta">
         <NuxtLink to="/nos-services" class="services__btn">
-          Découvrir <strong>nos services</strong><br />en détail
+          <template v-if="servicesBouton">{{ servicesBouton }}</template>
+          <template v-else>Découvrir <strong>nos services</strong><br />en détail</template>
         </NuxtLink>
       </div>
     </div>
   </section>
 </template>
+
+<script setup lang="ts">
+import iconAccounting from '../../assets/illustrations/icons/home/accounting.svg'
+import iconTax from '../../assets/illustrations/icons/home/tax-management.svg'
+import iconSocial from '../../assets/illustrations/icons/home/social-management.svg'
+import iconAccompaniement from '../../assets/illustrations/icons/home/accompaniement.svg'
+import iconAudit from '../../assets/illustrations/icons/home/audit-office.svg'
+
+const { data } = useHomeContent()
+const img = useSanityImageUrl()
+
+const defaultServices = [
+  { titre: 'Comptabilité', texte: 'La gestion de vos comptes au quotidien, tenue, révision, bilans.', icone: iconAccounting },
+  { titre: 'Gestion fiscale', texte: 'Optimisation fiscale, déclarations, conseil stratégique.', icone: iconTax },
+  { titre: 'Gestion sociale', texte: 'Bulletins de paie, déclarations sociales, droit du travail.', icone: iconSocial },
+  { titre: 'Accompagnement', texte: 'Création, transmission, évaluation, patrimoine du dirigeant.', icone: iconAccompaniement },
+  { titre: 'Audit légal', texte: 'Commissariat aux comptes, certification, opérations sur capital.', icone: iconAudit },
+]
+
+const services = computed(() => {
+  const sanity = data.value?.services
+  if (sanity?.length) {
+    return sanity.map((service, index) => ({
+      titre: service.titre,
+      texte: service.texte,
+      icone: img(service.icone as any)?.url() ?? defaultServices[index]?.icone ?? '',
+    }))
+  }
+  return defaultServices
+})
+
+const servicesBouton = computed(() => data.value?.servicesBouton || '')
+</script>
 
 <style scoped>
 .services {

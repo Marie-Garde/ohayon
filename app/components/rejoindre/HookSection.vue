@@ -1,10 +1,14 @@
 <template>
   <section class="hook">
     <div class="hook__title-wrapper">
-      <h2 class="hook__title">Pourquoi nous rejoindre ?</h2>
+      <h2 class="hook__title">{{ data?.raisonsTitre || 'Pourquoi nous rejoindre ?' }}</h2>
     </div>
   </section>
 </template>
+
+<script setup lang="ts">
+const { data } = useRejoindreContent()
+</script>
 
 <style scoped>
 .hook {

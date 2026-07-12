@@ -1,37 +1,65 @@
 <template>
   <section class="jobs">
     <div class="jobs__banner">
-      <div class="jobs__image-wrapper">
+      <div class="jobs__image-wrapper" :class="{ 'img-loader-bg': loading }">
         <img
-          src="~/assets/illustrations/images/nous-rejoindre/offres.jpg"
-          alt="Équipe au travail"
+          v-if="offresImage"
+          :src="offresImage"
+          :alt="offresAlt"
           class="jobs__image"
           loading="lazy"
         />
       </div>
       <div class="jobs__title-wrapper">
-        <h2 class="jobs__title">Offres d'emploi</h2>
+        <h2 class="jobs__title">{{ data?.offresTitre || "Offres d'emploi" }}</h2>
       </div>
     </div>
 
     <div class="jobs__content">
       <div class="jobs__intro">
-        <img
-          src="~/assets/illustrations/images/nous-rejoindre/profils.jpg"
-          alt=""
-          class="jobs__intro-img"
-          loading="lazy"
-        />
+        <div class="jobs__intro-media" :class="{ 'img-loader-bg': loading }">
+          <img
+            v-if="profilsImage"
+            :src="profilsImage"
+            :alt="profilsAlt"
+            class="jobs__intro-img"
+            loading="lazy"
+          />
+        </div>
         <div class="jobs__intro-content">
           <p class="jobs__intro-text">
-            Nous recherchons des personnalités curieuses, engagées et autonomes,
-            qui ont envie de progresser, de prendre des initiatives et de
-            contribuer à la réussite collective.
+            {{ data?.profilsTexte || "Nous recherchons des personnalités curieuses, engagées et autonomes, qui ont envie de progresser, de prendre des initiatives et de contribuer à la réussite collective." }}
           </p>
         </div>
       </div>
 
-      <div class="jobs__cta">
+      <ul v-if="offres.length" class="jobs__list">
+        <li v-for="offre in offres" :key="offre._key" class="jobs__cta">
+          <div class="jobs__cta-text">
+            <p class="jobs__cta-title">{{ offre.titre }}</p>
+            <ul
+              v-if="offre.typePoste || offre.niveauEtude || offre.debutSouhaite !== undefined"
+              class="jobs__tags"
+            >
+              <li v-if="offre.typePoste" class="jobs__tag">{{ offre.typePoste }}</li>
+              <li v-if="offre.niveauEtude" class="jobs__tag">{{ offre.niveauEtude }}</li>
+              <li class="jobs__tag">Début : {{ formatDebut(offre.debutSouhaite) }}</li>
+            </ul>
+            <p class="jobs__cta-subtitle">{{ truncate(offre.texte) }}</p>
+          </div>
+          <a
+            v-if="offre.lien"
+            class="jobs__cta-btn"
+            :href="offre.lien"
+            target="_blank"
+            rel="noopener"
+          >
+            Voir l'offre
+          </a>
+        </li>
+      </ul>
+
+      <div v-else class="jobs__cta">
         <div class="jobs__cta-icon-wrapper">
           <img
             src="~/assets/illustrations/icons/home/contact.svg"
@@ -41,23 +69,56 @@
           />
         </div>
         <div class="jobs__cta-text">
-          <p class="jobs__cta-title">Envie de nous rejoindre ?</p>
+          <p class="jobs__cta-title">{{ data?.offresEncartTitre || 'Envie de nous rejoindre ?' }}</p>
           <p class="jobs__cta-subtitle">
-            Consultez nos offres d'emploi en cours et postulez en ligne.
+            {{ data?.offresEncartSousTitre || "Consultez nos offres d'emploi en cours et postulez en ligne." }}
           </p>
         </div>
         <a
           class="jobs__cta-btn"
-          href="https://www.linkedin.com/company/ohayon-associes/jobs/"
+          :href="offresLien"
           target="_blank"
           rel="noopener"
         >
-          Voir nos offres
+          {{ data?.offresEncartBouton || 'Voir nos offres' }}
         </a>
       </div>
     </div>
   </section>
 </template>
+
+<script setup lang="ts">
+const { data } = useRejoindreContent()
+const img = useSanityImageUrl()
+
+const loading = computed(() => !data.value)
+const offresImage = computed(() => img(data.value?.offresImage as any)?.url() || '')
+const offresAlt = computed(() => (data.value?.offresImage as any)?.alt || 'Équipe au travail')
+const profilsImage = computed(() => img(data.value?.profilsImage as any)?.url() || '')
+const profilsAlt = computed(() => (data.value?.profilsImage as any)?.alt || '')
+const offresLien = computed(
+  () => data.value?.offresEncartLien || 'https://www.linkedin.com/company/ohayon-associes/jobs/',
+)
+
+const offres = computed(() => data.value?.offres ?? [])
+
+function truncate(text?: string) {
+  if (!text) return ''
+  return text.length > 200 ? text.slice(0, 200) + '…' : text
+}
+
+// Sanity renvoie une date au format « AAAA-MM-JJ ».
+// Vide ou antérieure à aujourd'hui → « Maintenant », sinon date en JJ/MM/AAAA.
+function formatDebut(date?: string) {
+  if (!date) return 'Dès que possible'
+  const debut = new Date(date + 'T00:00:00')
+  if (Number.isNaN(debut.getTime())) return 'Dès que possible'
+  const aujourdhui = new Date()
+  aujourdhui.setHours(0, 0, 0, 0)
+  if (debut <= aujourdhui) return 'Dès que possible'
+  return debut.toLocaleDateString('fr-FR')
+}
+</script>
 
 <style scoped>
 .jobs {
@@ -121,9 +182,14 @@
   box-shadow: 0 2px 16px rgba(0, 0, 0, 0.08);
 }
 
-.jobs__intro-img {
+.jobs__intro-media {
   width: 220px;
   flex-shrink: 0;
+  position: relative;
+}
+.jobs__intro-img {
+  width: 100%;
+  height: 100%;
   object-fit: cover;
   object-position: center;
   display: block;
@@ -144,6 +210,15 @@
   font-size: 16px;
   line-height: 1.7;
   color: #fff;
+}
+
+.jobs__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
 }
 
 .jobs__cta {
@@ -184,6 +259,26 @@
   font-size: 18px;
   color: var(--color-text);
   margin: 0 0 4px;
+}
+
+.jobs__tags {
+  list-style: none;
+  margin: 0 0 10px;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.jobs__tag {
+  padding: 4px 12px;
+  background-color: var(--color-secondary);
+  color: var(--color-text);
+  border-radius: 999px;
+  font-family: var(--font-heading);
+  font-size: 13px;
+  font-weight: 700;
+  white-space: nowrap;
 }
 
 .jobs__cta-subtitle {
@@ -230,7 +325,7 @@
     padding: 0 24px 70px;
   }
 
-  .jobs__intro-img {
+  .jobs__intro-media {
     width: 140px;
   }
 
@@ -259,7 +354,7 @@
     flex-direction: column;
   }
 
-  .jobs__intro-img {
+  .jobs__intro-media {
     width: 100%;
     height: 160px;
   }

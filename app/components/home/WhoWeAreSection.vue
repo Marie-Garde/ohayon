@@ -1,18 +1,28 @@
 <template>
   <section class="whoweare">
     <div class="whoweare__title-wrapper">
-      <h2 class="whoweare__title">Ce qui nous définit</h2>
+      <h2 class="whoweare__title">{{ data?.definitTitre || 'Ce qui nous définit' }}</h2>
     </div>
-    <div class="whoweare__image-wrapper">
+    <div class="whoweare__image-wrapper" :class="{ 'img-loader-bg': loading }">
       <img
-        src="~/assets/illustrations/images/home/define.jpg"
-        alt="Équipe au travail"
+        v-if="definitImage"
+        :src="definitImage"
+        :alt="definitAlt"
         class="whoweare__image"
         loading="lazy"
       />
     </div>
   </section>
 </template>
+
+<script setup lang="ts">
+const { data } = useHomeContent()
+const img = useSanityImageUrl()
+
+const loading = computed(() => !data.value)
+const definitImage = computed(() => img(data.value?.definitImage as any)?.url() || '')
+const definitAlt = computed(() => (data.value?.definitImage as any)?.alt || 'Équipe au travail')
+</script>
 
 <style scoped>
 .whoweare {

@@ -1,34 +1,50 @@
 <template>
   <section class="highlight">
     <div class="highlight__inner" v-reveal="'up'">
-      <div class="highlight__media">
+      <div class="highlight__media" :class="{ 'img-loader-bg': loading }">
         <img
-          src="~/assets/illustrations/images/qui-sommes-nous/equipe.jpg"
-          alt="L'équipe du cabinet Ohayon &amp; Associés"
+          v-if="approcheImage"
+          :src="approcheImage"
+          :alt="approcheAlt"
           class="highlight__image"
           loading="lazy"
         />
       </div>
       <div class="highlight__content">
-        <p class="highlight__subtitle">Notre approche</p>
-        <h2 class="highlight__title">
-          Un accompagnement à taille&nbsp;humaine
-        </h2>
-        <p class="highlight__text">
-          Derrière chaque mission, une équipe qui prend le temps de comprendre
-          votre activité. Nous conjuguons la rigueur d'un cabinet d'expertise
-          comptable et la proximité d'un partenaire du quotidien, disponible
-          pour répondre à vos questions bien au-delà des échéances.
-        </p>
-        <p class="highlight__text">
-          Des outils digitaux pour la fiabilité, un interlocuteur dédié pour le
-          conseil : vous gardez une vision claire de votre activité, toute
-          l'année.
-        </p>
+        <p class="highlight__subtitle">{{ data?.approcheSurtitre || 'Notre approche' }}</p>
+        <h2 class="highlight__title">{{ data?.approcheTitre || 'Un accompagnement à taille humaine' }}</h2>
+        <template v-if="approcheParas.length">
+          <p v-for="(para, i) in approcheParas" :key="i" class="highlight__text" v-html="para"></p>
+        </template>
+        <template v-else>
+          <p class="highlight__text">
+            Derrière chaque mission, une équipe qui prend le temps de comprendre
+            votre activité. Nous conjuguons la rigueur d'un cabinet d'expertise
+            comptable et la proximité d'un partenaire du quotidien, disponible
+            pour répondre à vos questions bien au-delà des échéances.
+          </p>
+          <p class="highlight__text">
+            Des outils digitaux pour la fiabilité, un interlocuteur dédié pour le
+            conseil : vous gardez une vision claire de votre activité, toute
+            l'année.
+          </p>
+        </template>
       </div>
     </div>
   </section>
 </template>
+
+<script setup lang="ts">
+const { data } = useServicesContent()
+const img = useSanityImageUrl()
+
+const loading = computed(() => !data.value)
+const approcheImage = computed(() => img(data.value?.approcheImage as any)?.url() || '')
+const approcheAlt = computed(
+  () => (data.value?.approcheImage as any)?.alt || "L'équipe du cabinet Ohayon & Associés",
+)
+const approcheParas = computed(() => richTextToParagraphArray(data.value?.approcheTexte))
+</script>
 
 <style scoped>
 .highlight {

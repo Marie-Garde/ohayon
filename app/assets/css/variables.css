@@ -89,3 +89,30 @@ p {
   opacity: 1;
   transform: none;
 }
+
+/* Spinner de chargement des images Sanity.
+   La classe est ajoutée sur le conteneur d'une image tant que le contenu
+   se charge depuis le CMS ; elle est retirée une fois la donnée reçue. */
+.img-loader-bg {
+  position: relative;
+}
+
+.img-loader-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 34px;
+  height: 34px;
+  border: 3px solid rgba(0, 0, 0, 0.12);
+  border-top-color: var(--color-primary);
+  border-radius: 50%;
+  animation: img-spin 0.7s linear infinite;
+  z-index: 2;
+}
+
+@keyframes img-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

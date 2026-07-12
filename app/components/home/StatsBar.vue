@@ -1,23 +1,26 @@
 <template>
   <div class="stats">
-    <div class="stats__item">
-      <span class="stats__number">40</span>
-      <span class="stats__label">Années d'expériences</span>
-    </div>
-    <div class="stats__item">
-      <span class="stats__number">4</span>
-      <span class="stats__label">Experts-comptables</span>
-    </div>
-    <div class="stats__item">
-      <span class="stats__number">⅓</span>
-      <span class="stats__label">Experts-comptables</span>
-    </div>
-    <div class="stats__item">
-      <span class="stats__number">15</span>
-      <span class="stats__label">Années de zéro papier</span>
+    <div v-for="(chiffre, index) in chiffres" :key="index" class="stats__item">
+      <span class="stats__number">{{ chiffre.nombre }}</span>
+      <span class="stats__label">{{ chiffre.libelle }}</span>
     </div>
   </div>
 </template>
+
+<script setup lang="ts">
+const { data } = useHomeContent()
+
+const defaultChiffres = [
+  { nombre: '40', libelle: "Années d'expériences" },
+  { nombre: '4', libelle: 'Experts-comptables' },
+  { nombre: '⅓', libelle: 'Experts-comptables' },
+  { nombre: '15', libelle: 'Années de zéro papier' },
+]
+
+const chiffres = computed(() =>
+  data.value?.chiffres?.length ? data.value.chiffres : defaultChiffres,
+)
+</script>
 
 <style scoped>
 .stats {

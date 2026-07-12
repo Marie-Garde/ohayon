@@ -1,51 +1,50 @@
 <template>
   <section class="process">
     <div class="process__header">
-      <p class="process__subtitle">Envie de nous rejoindre ?</p>
-      <h2 class="process__title">Processus de recrutement</h2>
+      <p class="process__subtitle">{{ data?.processusSurtitre || 'Envie de nous rejoindre ?' }}</p>
+      <h2 class="process__title">{{ data?.processusTitre || 'Processus de recrutement' }}</h2>
     </div>
 
     <div class="timeline">
       <div class="timeline__track">
-        <div class="timeline__step timeline__step--top">
+        <div
+          v-for="(etape, index) in etapes"
+          :key="index"
+          class="timeline__step"
+          :class="index % 2 === 0 ? 'timeline__step--top' : 'timeline__step--bottom'"
+        >
+          <span v-if="index % 2 !== 0" class="timeline__dot"></span>
           <div class="timeline__content">
-            <h3>Vous postulez</h3>
-            <p>Envoyez-nous votre CV, on le lit avec attention.</p>
+            <template v-if="index % 2 === 0">
+              <h3>{{ etape.titre }}</h3>
+              <p>{{ etape.texte }}</p>
+            </template>
+            <template v-else>
+              <p>{{ etape.texte }}</p>
+              <h3>{{ etape.titre }}</h3>
+            </template>
           </div>
-          <span class="timeline__dot"></span>
-        </div>
-        <div class="timeline__step timeline__step--bottom">
-          <span class="timeline__dot"></span>
-          <div class="timeline__content">
-            <p>Un premier échange pour se rencontrer, sans chichis.</p>
-            <h3>Nous discutons</h3>
-          </div>
-        </div>
-        <div class="timeline__step timeline__step--top">
-          <div class="timeline__content">
-            <h3>Le courant passe</h3>
-            <p>On vérifie que l'envie est la même des deux côtés.</p>
-          </div>
-          <span class="timeline__dot"></span>
-        </div>
-        <div class="timeline__step timeline__step--bottom">
-          <span class="timeline__dot"></span>
-          <div class="timeline__content">
-            <p>On vérifie que tu connais RechercheV sous Excel.</p>
-            <h3>Le test</h3>
-          </div>
-        </div>
-        <div class="timeline__step timeline__step--top">
-          <div class="timeline__content">
-            <h3>Bienvenue</h3>
-            <p>Et si tout va bien, l'aventure commence.</p>
-          </div>
-          <span class="timeline__dot"></span>
+          <span v-if="index % 2 === 0" class="timeline__dot"></span>
         </div>
       </div>
     </div>
   </section>
 </template>
+
+<script setup lang="ts">
+const { data } = useRejoindreContent()
+
+const defaultEtapes = [
+  { titre: 'Vous postulez', texte: 'Envoyez-nous votre CV, on le lit avec attention.' },
+  { titre: 'Nous discutons', texte: 'Un premier échange pour se rencontrer, sans chichis.' },
+  { titre: 'Le courant passe', texte: "On vérifie que l'envie est la même des deux côtés." },
+  { titre: 'Le test', texte: 'On vérifie que tu connais RechercheV sous Excel.' },
+  { titre: 'Bienvenue', texte: "Et si tout va bien, l'aventure commence." },
+]
+const etapes = computed(() =>
+  data.value?.etapes?.length ? data.value.etapes : defaultEtapes,
+)
+</script>
 
 <style scoped>
 .process {

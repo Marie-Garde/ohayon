@@ -1,55 +1,73 @@
 <template>
   <section class="values">
     <div class="values__inner" v-reveal="'up'">
-      <div class="values__media">
+      <div class="values__media" :class="{ 'img-loader-bg': loading }">
         <img
-          src="~/assets/illustrations/images/home/image.jpg"
-          alt="L'équipe du cabinet Ohayon &amp; Associés au travail"
+          v-if="valeursImage"
+          :src="valeursImage"
+          :alt="valeursAlt"
           class="values__image"
           loading="lazy"
         />
       </div>
       <div class="values__grid">
-        <div class="values__card">
-          <h3>Sur-mesure,<br />sans standard</h3>
-          <p>
-            Pas de pack, pas de grille. On commence par comprendre votre
-            activité, vos besoins, vos difficultés. Ensuite on construit
-            l'accompagnement adapté.
-          </p>
-        </div>
-        <div class="values__card">
-          <h3>Réactivité &amp; proximité</h3>
-          <p>
-            Un collaborateur dédié, joignable en ligne directe, réponse mail
-            dans la journée. Toulouse et alentours mais proches de tous nos
-            clients.
-          </p>
-        </div>
-        <div class="values__card">
-          <h3>Expertise &amp; qualité</h3>
-          <p>
-            Une équipe où ⅓ sont experts-comptables. Votre interlocuteur a la
-            compétence de répondre à 99% de vos questions.
-          </p>
-        </div>
-        <div class="values__card">
-          <h3>Digitalisation pionnière</h3>
-          <p>
-            0 papier depuis plusieurs années, outils interactifs (Pennylane,
-            Silae…). Intégration de l'IA. On ne vous parle pas de digital, on
-            le pratique depuis 2010.
-          </p>
+        <div v-for="(valeur, index) in valeurs" :key="index" class="values__card">
+          <h3>{{ valeur.titre }}</h3>
+          <p>{{ valeur.texte }}</p>
         </div>
       </div>
     </div>
     <div class="values__cta">
       <NuxtLink to="/qui-sommes-nous" class="values__btn">
-        Découvrir <strong>qui nous sommes</strong><br />et nos valeurs
+        <template v-if="valeursBouton">{{ valeursBouton }}</template>
+        <template v-else>Découvrir <strong>qui nous sommes</strong><br />et nos valeurs</template>
       </NuxtLink>
     </div>
   </section>
 </template>
+
+<script setup lang="ts">
+const { data } = useHomeContent()
+const img = useSanityImageUrl()
+
+const loading = computed(() => !data.value)
+
+const defaultValeurs = [
+  {
+    titre: 'Sur-mesure, sans standard',
+    texte:
+      "Pas de pack, pas de grille. On commence par comprendre votre activité, vos besoins, vos difficultés. Ensuite on construit l'accompagnement adapté.",
+  },
+  {
+    titre: 'Réactivité & proximité',
+    texte:
+      'Un collaborateur dédié, joignable en ligne directe, réponse mail dans la journée. Toulouse et alentours mais proches de tous nos clients.',
+  },
+  {
+    titre: 'Expertise & qualité',
+    texte:
+      'Une équipe où ⅓ sont experts-comptables. Votre interlocuteur a la compétence de répondre à 99% de vos questions.',
+  },
+  {
+    titre: 'Digitalisation pionnière',
+    texte:
+      "0 papier depuis plusieurs années, outils interactifs (Pennylane, Silae…). Intégration de l'IA. On ne vous parle pas de digital, on le pratique depuis 2010.",
+  },
+]
+
+const valeurs = computed(() =>
+  data.value?.valeurs?.length ? data.value.valeurs : defaultValeurs,
+)
+const valeursImage = computed(
+  () => img(data.value?.valeursImage as any)?.url() || '',
+)
+const valeursAlt = computed(
+  () =>
+    (data.value?.valeursImage as any)?.alt ||
+    "L'équipe du cabinet Ohayon & Associés au travail",
+)
+const valeursBouton = computed(() => data.value?.valeursBouton || '')
+</script>
 
 <style scoped>
 .values {

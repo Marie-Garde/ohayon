@@ -1,21 +1,29 @@
 <template>
-  <section class="page-hero">
+  <section class="page-hero" :class="{ 'img-loader-bg': loading }">
     <div class="page-hero__overlay"></div>
     <img
-      src="~/assets/illustrations/images/qui-sommes-nous/historique.jpg"
-      alt="Cabinet Ohayon & Associés"
+      v-if="heroImage"
+      :src="heroImage"
+      :alt="heroAlt"
       class="page-hero__image"
     />
     <div class="page-hero__content">
-      <h1>Qui sommes-nous</h1>
+      <h1>{{ data?.heroTitre || 'Qui sommes-nous' }}</h1>
       <p class="page-hero__lead">
-        Équipe très qualifiée, interlocuteurs dédiés, grande disponibilité.
-        Depuis plus de 40 ans, le cabinet Ohayon &amp; Associés accompagne
-        les TPE et PME avec rigueur, proximité et un engagement sans faille.
+        {{ data?.heroLead || "Équipe très qualifiée, interlocuteurs dédiés, grande disponibilité. Depuis plus de 40 ans, le cabinet Ohayon & Associés accompagne les TPE et PME avec rigueur, proximité et un engagement sans faille." }}
       </p>
     </div>
   </section>
 </template>
+
+<script setup lang="ts">
+const { data } = useQuiSommesNousContent()
+const img = useSanityImageUrl()
+
+const loading = computed(() => !data.value)
+const heroImage = computed(() => img(data.value?.heroImage as any)?.url() || '')
+const heroAlt = computed(() => (data.value?.heroImage as any)?.alt || 'Cabinet Ohayon & Associés')
+</script>
 
 <style scoped>
 .page-hero {

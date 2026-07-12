@@ -1,76 +1,43 @@
 <template>
   <section class="history">
     <div class="history__title-wrapper">
-      <h2 class="history__title">Notre histoire</h2>
+      <h2 class="history__title">{{ data?.histoireTitre || 'Notre histoire' }}</h2>
     </div>
 
     <div class="history__timeline">
-      <div class="history__item" v-reveal="'left'">
+      <div
+        v-for="(jalon, index) in jalons"
+        :key="index"
+        class="history__item"
+        v-reveal="index % 2 === 0 ? 'left' : 'right'"
+      >
         <span class="history__dot"></span>
         <div class="history__content">
-          <span class="history__year">1987</span>
-          <h3>Naissance du cabinet</h3>
-          <p>
-            Jean-Marc Ohayon fonde le cabinet Ohayon &amp; Associés à Toulouse.
-          </p>
-        </div>
-      </div>
-      <div class="history__item" v-reveal="'right'">
-        <span class="history__dot"></span>
-        <div class="history__content">
-          <span class="history__year">1998</span>
-          <h3>Une première associée</h3>
-          <p>
-            Laurence Bertrand, arrivée en 1995, rejoint l'association.
-          </p>
-        </div>
-      </div>
-      <div class="history__item" v-reveal="'left'">
-        <span class="history__dot"></span>
-        <div class="history__content">
-          <span class="history__year">2005</span>
-          <h3>Une nouvelle adresse</h3>
-          <p>
-            Le cabinet s'installe route d'Espagne, où il est toujours implanté.
-          </p>
-        </div>
-      </div>
-      <div class="history__item" v-reveal="'right'">
-        <span class="history__dot"></span>
-        <div class="history__content">
-          <span class="history__year">2010</span>
-          <h3>Le virage numérique</h3>
-          <p>
-            Digitalisation complète du cabinet : le « zéro papier » devient
-            réalité.
-          </p>
-        </div>
-      </div>
-      <div class="history__item" v-reveal="'left'">
-        <span class="history__dot"></span>
-        <div class="history__content">
-          <span class="history__year">2014</span>
-          <h3>Le passage de relais</h3>
-          <p>
-            Départ en retraite du fondateur ; Jérôme Ohayon et une nouvelle
-            génération d'associés prennent le relais.
-          </p>
-        </div>
-      </div>
-      <div class="history__item" v-reveal="'right'">
-        <span class="history__dot"></span>
-        <div class="history__content">
-          <span class="history__year">2023</span>
-          <h3>L'équipe d'aujourd'hui</h3>
-          <p>
-            Avec l'arrivée d'Océane Ducoulombier à l'association, le cabinet
-            compte 4 experts-comptables associés.
-          </p>
+          <span class="history__year">{{ jalon.annee }}</span>
+          <h3>{{ jalon.titre }}</h3>
+          <p>{{ jalon.texte }}</p>
         </div>
       </div>
     </div>
   </section>
 </template>
+
+<script setup lang="ts">
+const { data } = useQuiSommesNousContent()
+
+const defaultJalons = [
+  { annee: '1987', titre: 'Naissance du cabinet', texte: 'Jean-Marc Ohayon fonde le cabinet Ohayon & Associés à Toulouse.' },
+  { annee: '1998', titre: 'Une première associée', texte: "Laurence Bertrand, arrivée en 1995, rejoint l'association." },
+  { annee: '2005', titre: 'Une nouvelle adresse', texte: "Le cabinet s'installe route d'Espagne, où il est toujours implanté." },
+  { annee: '2010', titre: 'Le virage numérique', texte: 'Digitalisation complète du cabinet : le « zéro papier » devient réalité.' },
+  { annee: '2014', titre: 'Le passage de relais', texte: "Départ en retraite du fondateur ; Jérôme Ohayon et une nouvelle génération d'associés prennent le relais." },
+  { annee: '2023', titre: "L'équipe d'aujourd'hui", texte: "Avec l'arrivée d'Océane Ducoulombier à l'association, le cabinet compte 4 experts-comptables associés." },
+]
+
+const jalons = computed(() =>
+  data.value?.jalons?.length ? data.value.jalons : defaultJalons,
+)
+</script>
 
 <style scoped>
 .history {

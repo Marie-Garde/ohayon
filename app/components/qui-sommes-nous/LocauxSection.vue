@@ -1,9 +1,10 @@
 <template>
   <section class="locaux">
     <div class="locaux__banner">
-      <div class="locaux__image-wrapper">
+      <div class="locaux__image-wrapper" :class="{ 'img-loader-bg': loading }">
         <img
-          :src="photos[0]"
+          v-if="bannerImage"
+          :src="bannerImage"
           alt="Nos locaux"
           class="locaux__banner-image"
           loading="lazy"
@@ -15,13 +16,15 @@
     </div>
 
     <div class="locaux__intro" v-reveal="'up'">
-      <p>
-        Un cadre de travail lumineux et chaleureux, pensé pour vous recevoir
-        comme pour faire grandir nos équipes. Poussez la porte, en images.
-      </p>
+      <p>{{ introText }}</p>
     </div>
 
-    <div class="locaux__grid" v-reveal="'up'">
+    <div
+      class="locaux__grid"
+      :class="{ 'img-loader-bg': loading }"
+      :style="loading ? { minHeight: '320px' } : null"
+      v-reveal="'up'"
+    >
       <button
         v-for="(photo, index) in photos"
         :key="index"
@@ -55,13 +58,24 @@
 </template>
 
 <script setup>
-const modules = import.meta.glob(
-  '../../assets/illustrations/images/qui-sommes-nous/locaux/*.{jpg,jpeg,png,webp}',
-  { eager: true, import: 'default' }
+const { data } = useQuiSommesNousContent()
+const img = useSanityImageUrl()
+
+const loading = computed(() => !data.value)
+
+// Galerie : uniquement les photos gérées dans Sanity.
+const photos = computed(() =>
+  (data.value?.locauxPhotos || [])
+    .map((photo) => img(photo)?.url())
+    .filter(Boolean),
 )
-const photos = Object.keys(modules)
-  .sort()
-  .map((key) => modules[key])
+
+const bannerImage = computed(() => img(data.value?.locauxImage)?.url() || '')
+const introText = computed(
+  () =>
+    data.value?.locauxIntro ||
+    'Un cadre de travail lumineux et chaleureux, pensé pour vous recevoir comme pour faire grandir nos équipes. Poussez la porte, en images.',
+)
 
 // Tuiles agrandies, réparties à un rythme régulier (mosaïque maîtrisée)
 const largeIndexes = [0, 6, 11]
@@ -76,10 +90,10 @@ const close = () => {
   current.value = null
 }
 const next = () => {
-  current.value = (current.value + 1) % photos.length
+  current.value = (current.value + 1) % photos.value.length
 }
 const prev = () => {
-  current.value = (current.value - 1 + photos.length) % photos.length
+  current.value = (current.value - 1 + photos.value.length) % photos.value.length
 }
 
 const onKey = (e) => {

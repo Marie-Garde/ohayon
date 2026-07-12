@@ -1,74 +1,92 @@
 <template>
   <section class="values-quote">
     <div class="values-quote__inner" v-reveal="'left'">
-      <div class="values-quote__image-wrapper">
+      <div
+        class="values-quote__image-wrapper"
+        :class="{ 'img-loader-bg': loading }"
+        :style="loading ? { minHeight: '220px' } : null"
+      >
         <img
-          src="~/assets/illustrations/images/qui-sommes-nous/arbre.jpg"
-          alt=""
-          aria-hidden="true"
+          v-if="image1"
+          :src="image1"
+          :alt="image1Alt"
           class="values-quote__image"
           loading="lazy"
         />
       </div>
       <div class="values-quote__content">
-        <h2>Nos valeurs</h2>
-        <p>
-          Notre conception d'un cabinet d'expertise-comptable est celle où la
-          <strong>proximité et la confiance</strong> sont des valeurs
-          indissociables des prestations proposées à nos clients.
-        </p>
-        <p>
-          La confiance que vous inspire un expert-comptable est sans aucun
-          doute le premier critère pour vous permettre de choisir. Nous
-          basons notre collaboration avec vous sur le principe d'une
-          <strong>confiance réciproque</strong>.
-        </p>
-        <p>
-          Dès le départ, un <strong>interlocuteur unique</strong> établit et
-          entretient avec vous une relation de proximité et de confiance
-          afin de vous conseiller au quotidien.
-        </p>
-        <p>
-          Que vous soyez dirigeant ou créateur d'une entreprise, la réussite
-          professionnelle durable n'est jamais le fruit du hasard, elle
-          demande non seulement de s'impliquer et d'oser mais aussi de
-          s'organiser et de savoir s'entourer. En tant que
-          <strong>partenaire privilégié</strong> des chefs d'entreprises,
-          nous vous guidons et vous accompagnons dans tous vos projets de
-          développement.
-        </p>
+        <h2>{{ valeursTitre }}</h2>
+        <template v-if="texte1Paras.length">
+          <p v-for="(para, i) in texte1Paras" :key="i" v-html="para"></p>
+        </template>
+        <template v-else>
+          <p>
+            Notre conception d'un cabinet d'expertise-comptable est celle où la
+            <strong>proximité et la confiance</strong> sont des valeurs
+            indissociables des prestations proposées à nos clients.
+          </p>
+          <p>
+            La confiance que vous inspire un expert-comptable est sans aucun
+            doute le premier critère pour vous permettre de choisir. Nous
+            basons notre collaboration avec vous sur le principe d'une
+            <strong>confiance réciproque</strong>.
+          </p>
+          <p>
+            Dès le départ, un <strong>interlocuteur unique</strong> établit et
+            entretient avec vous une relation de proximité et de confiance
+            afin de vous conseiller au quotidien.
+          </p>
+          <p>
+            Que vous soyez dirigeant ou créateur d'une entreprise, la réussite
+            professionnelle durable n'est jamais le fruit du hasard, elle
+            demande non seulement de s'impliquer et d'oser mais aussi de
+            s'organiser et de savoir s'entourer. En tant que
+            <strong>partenaire privilégié</strong> des chefs d'entreprises,
+            nous vous guidons et vous accompagnons dans tous vos projets de
+            développement.
+          </p>
+        </template>
       </div>
     </div>
 
     <div class="values-quote__inner" v-reveal="'right'">
       <div class="values-quote__content">
-        <p>
-          Grâce à sa rigueur et son expérience des entreprises, le cabinet
-          Ohayon &amp; Associés vous accompagnera
-          <strong>encore plus efficacement</strong> tout au long du chemin
-          de votre réussite.
-        </p>
-        <p>
-          Vous travaillerez avec une
-          <strong>équipe pluridisciplinaire, dynamique, disponible et
-          réactive</strong>, toujours à l'écoute de vos attentes. Pour
-          accompagner la réussite de votre entreprise et développer votre
-          leadership, nous agissons avec rigueur, professionnalisme en
-          constante interaction avec vous.
-        </p>
-        <p>
-          Notre objectif est avant tout de
-          <strong>vous informer et de bien vous conseiller</strong> pour
-          mettre en place tous les outils adaptés à une parfaite maîtrise
-          de l'environnement de votre entreprise, et ainsi contribuer à
-          améliorer ses performances.
-        </p>
+        <template v-if="texte2Paras.length">
+          <p v-for="(para, i) in texte2Paras" :key="i" v-html="para"></p>
+        </template>
+        <template v-else>
+          <p>
+            Grâce à sa rigueur et son expérience des entreprises, le cabinet
+            Ohayon &amp; Associés vous accompagnera
+            <strong>encore plus efficacement</strong> tout au long du chemin
+            de votre réussite.
+          </p>
+          <p>
+            Vous travaillerez avec une
+            <strong>équipe pluridisciplinaire, dynamique, disponible et
+            réactive</strong>, toujours à l'écoute de vos attentes. Pour
+            accompagner la réussite de votre entreprise et développer votre
+            leadership, nous agissons avec rigueur, professionnalisme en
+            constante interaction avec vous.
+          </p>
+          <p>
+            Notre objectif est avant tout de
+            <strong>vous informer et de bien vous conseiller</strong> pour
+            mettre en place tous les outils adaptés à une parfaite maîtrise
+            de l'environnement de votre entreprise, et ainsi contribuer à
+            améliorer ses performances.
+          </p>
+        </template>
       </div>
-      <div class="values-quote__image-wrapper">
+      <div
+        class="values-quote__image-wrapper"
+        :class="{ 'img-loader-bg': loading }"
+        :style="loading ? { minHeight: '220px' } : null"
+      >
         <img
-          src="~/assets/illustrations/images/qui-sommes-nous/eolienne.jpg"
-          alt=""
-          aria-hidden="true"
+          v-if="image2"
+          :src="image2"
+          :alt="image2Alt"
           class="values-quote__image"
           loading="lazy"
         />
@@ -76,6 +94,20 @@
     </div>
   </section>
 </template>
+
+<script setup lang="ts">
+const { data } = useQuiSommesNousContent()
+const img = useSanityImageUrl()
+
+const loading = computed(() => !data.value)
+const valeursTitre = computed(() => data.value?.valeursTitre || 'Nos valeurs')
+const texte1Paras = computed(() => richTextToParagraphArray(data.value?.valeursTexte1))
+const texte2Paras = computed(() => richTextToParagraphArray(data.value?.valeursTexte2))
+const image1 = computed(() => img(data.value?.valeursImage1 as any)?.url() || '')
+const image1Alt = computed(() => (data.value?.valeursImage1 as any)?.alt || '')
+const image2 = computed(() => img(data.value?.valeursImage2 as any)?.url() || '')
+const image2Alt = computed(() => (data.value?.valeursImage2 as any)?.alt || '')
+</script>
 
 <style scoped>
 .values-quote {
@@ -140,7 +172,7 @@
   margin-bottom: 0;
 }
 
-.values-quote__content strong {
+.values-quote__content :deep(strong) {
   font-weight: 700;
   color: var(--color-secondary);
 }
