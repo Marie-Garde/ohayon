@@ -160,6 +160,12 @@
 
 <script setup>
 const lastUpdate = "avril 2026";
+
+useSeo({
+  title: "Mentions légales | Cabinet Ohayon & Associés",
+  description:
+    "Mentions légales du site du Cabinet Ohayon & Associés, expert-comptable à Toulouse : éditeur, hébergeur, propriété intellectuelle et données personnelles.",
+});
 </script>
 
 <style scoped>

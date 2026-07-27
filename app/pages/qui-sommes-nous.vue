@@ -11,4 +11,10 @@
 
 <script setup lang="ts">
 const { data } = useQuiSommesNousContent()
+
+useSeo({
+  title: 'Qui sommes-nous — Cabinet Ohayon & Associés à Toulouse',
+  description:
+    "Découvrez le Cabinet Ohayon & Associés, expert-comptable à Toulouse : notre histoire, notre équipe et les valeurs qui guident l'accompagnement de nos clients.",
+})
 </script>

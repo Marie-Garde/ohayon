@@ -31,6 +31,14 @@
   </div>
 </template>
 
+<script setup lang="ts">
+useSeo({
+  title: 'Plan du site | Cabinet Ohayon & Associés',
+  description:
+    "Retrouvez toutes les pages du site du Cabinet Ohayon & Associés, expert-comptable à Toulouse : navigation principale et informations légales.",
+})
+</script>
+
 <style scoped>
 .sitemap {
   max-width: 850px;
