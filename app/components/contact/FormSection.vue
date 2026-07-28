@@ -49,6 +49,17 @@
           <textarea id="message" v-model="form.message" name="message" rows="6" required></textarea>
         </div>
 
+        <!-- Honeypot anti-spam : masqué aux humains, rempli par les bots. -->
+        <input
+          v-model="form.botcheck"
+          type="checkbox"
+          name="botcheck"
+          class="form__honeypot"
+          tabindex="-1"
+          autocomplete="off"
+          aria-hidden="true"
+        />
+
         <div class="form__consent">
           <input id="consent" v-model="form.consent" type="checkbox" name="consent" required />
           <label for="consent">
@@ -76,22 +87,67 @@ const form = reactive({
   subject: '',
   message: '',
   consent: false,
+  botcheck: false,
 })
 
 const loading = ref(false)
 const success = ref(false)
 const error = ref(false)
 
+const config = useRuntimeConfig()
+
+const subjectLabels: Record<string, string> = {
+  devis: 'Demande de devis',
+  rdv: 'Prise de rendez-vous',
+  info: "Demande d'informations",
+  collaboration: 'Candidature / collaboration',
+  autre: 'Autre',
+}
+
+// Envoi via Web3Forms (https://web3forms.com) : fonctionne sur hébergement
+// statique, sans serveur. Les candidatures partent vers la clé RH si elle est
+// configurée, comme le faisait l'ancien routage Brevo. Le fichier
+// server/api/contact.post.ts reste dans le repo pour un futur hébergement Node.
 async function handleSubmit() {
   loading.value = true
   error.value = false
 
+  const rhKey = config.public.web3formsKeyRh as string
+  const accessKey =
+    form.subject === 'collaboration' && rhKey
+      ? rhKey
+      : (config.public.web3formsKey as string)
+
+  if (!accessKey) {
+    console.error('Web3Forms : clé d’accès manquante (NUXT_PUBLIC_WEB3FORMS_KEY).')
+    error.value = true
+    loading.value = false
+    return
+  }
+
   try {
-    await $fetch('/api/contact', {
-      method: 'POST',
-      body: form,
-    })
-    success.value = true
+    const res = await $fetch<{ success: boolean }>(
+      'https://api.web3forms.com/submit',
+      {
+        method: 'POST',
+        body: {
+          access_key: accessKey,
+          subject: `[Contact] ${subjectLabels[form.subject] ?? form.subject}`,
+          from_name: `${form.firstname} ${form.lastname}`,
+          replyto: form.email,
+          botcheck: form.botcheck,
+          Prénom: form.firstname,
+          Nom: form.lastname,
+          Email: form.email,
+          Téléphone: form.phone || 'Non renseigné',
+          Objet: subjectLabels[form.subject] ?? form.subject,
+          Message: form.message,
+        },
+      },
+    )
+
+    if (res.success) success.value = true
+    else error.value = true
   } catch {
     error.value = true
   } finally {
@@ -176,6 +232,10 @@ async function handleSubmit() {
   background-repeat: no-repeat;
   background-position: right 14px center;
   padding-right: 36px;
+}
+
+.form__honeypot {
+  display: none !important;
 }
 
 .form__consent {

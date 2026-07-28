@@ -19,6 +19,13 @@ export default defineNuxtConfig({
       // Base des URL canoniques / Open Graph. À surcharger via
       // NUXT_PUBLIC_SITE_URL le jour où le site aura un nom de domaine propre.
       siteUrl: 'https://marie-garde.github.io/ohayon',
+      // Formulaire de contact via Web3Forms (fonctionne sur hébergement
+      // statique, sans serveur). Ces clés d'accès sont PUBLIQUES par design
+      // (elles ne font qu'identifier la boîte de réception, aucun secret).
+      // À renseigner via NUXT_PUBLIC_WEB3FORMS_KEY (et _RH pour les
+      // candidatures). Récupérables gratuitement sur https://web3forms.com.
+      web3formsKey: '',
+      web3formsKeyRh: '',
     },
   },
   // Déploiement GitHub Pages : gère .nojekyll (sinon le dossier _nuxt est

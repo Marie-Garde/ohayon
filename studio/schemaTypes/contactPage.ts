@@ -1,5 +1,5 @@
 import { defineType, defineField, defineArrayMember } from 'sanity'
-import { EnvelopeIcon } from '@sanity/icons'
+import { EnvelopeIcon } from '@sanity/icons/Envelope'
 
 /** Champ « texte alternatif » réutilisable, ajouté à chaque image. */
 const altField = () =>

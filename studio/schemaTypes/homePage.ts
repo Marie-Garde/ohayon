@@ -1,5 +1,5 @@
 import { defineType, defineField, defineArrayMember } from 'sanity'
-import { HomeIcon } from '@sanity/icons'
+import { HomeIcon } from '@sanity/icons/Home'
 
 /** Champ « texte alternatif » réutilisable, ajouté à chaque image. */
 const altField = () =>

@@ -1,8 +1,16 @@
 name: Deploy to GitHub Pages
 
 on:
+  # Déploiement à chaque push sur main.
   push:
     branches: [main]
+  # Déclenchement manuel depuis l'onglet Actions de GitHub.
+  workflow_dispatch:
+  # Déclenchement externe : le webhook Sanity appelle l'API GitHub avec
+  # event_type « sanity-publish » à chaque publication de contenu, ce qui
+  # régénère le site statique avec les dernières données.
+  repository_dispatch:
+    types: [sanity-publish]
 
 permissions:
   contents: read
