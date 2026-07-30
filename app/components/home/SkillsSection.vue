@@ -36,7 +36,7 @@ const savoirFaireAlt = computed(
 
 .skills__image-wrapper {
   width: 100%;
-  height: 450px;
+  height: 620px;
   overflow: hidden;
   clip-path: polygon(
     0 var(--slant-height),
@@ -75,7 +75,7 @@ const savoirFaireAlt = computed(
   }
 
   .skills__image-wrapper {
-    height: 320px;
+    height: 440px;
   }
 
   .skills__title {
@@ -86,7 +86,7 @@ const savoirFaireAlt = computed(
 
 @media (max-width: 480px) {
   .skills__image-wrapper {
-    height: 260px;
+    height: 360px;
   }
 
   .skills__title {

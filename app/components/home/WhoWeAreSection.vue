@@ -32,7 +32,7 @@ const definitAlt = computed(() => (data.value?.definitImage as any)?.alt || 'Éq
 
 .whoweare__image-wrapper {
   width: 100%;
-  height: 450px;
+  height: 620px;
   overflow: hidden;
   clip-path: polygon(
     0 var(--slant-height),
@@ -72,7 +72,7 @@ const definitAlt = computed(() => (data.value?.definitImage as any)?.alt || 'Éq
   }
 
   .whoweare__image-wrapper {
-    height: 320px;
+    height: 440px;
   }
 
   .whoweare__title {
@@ -83,7 +83,7 @@ const definitAlt = computed(() => (data.value?.definitImage as any)?.alt || 'Éq
 
 @media (max-width: 480px) {
   .whoweare__image-wrapper {
-    height: 260px;
+    height: 360px;
   }
 
   .whoweare__title {

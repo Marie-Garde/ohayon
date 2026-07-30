@@ -11,10 +11,10 @@
     "schema:deploy": "sanity schema deploy"
   },
   "dependencies": {
-    "@sanity/vision": "^6.5.0",
+    "@sanity/vision": "^6.7.0",
     "react": "^19.2.2",
     "react-dom": "^19.2.2",
-    "sanity": "^6.5.0",
+    "sanity": "^6.7.0",
     "styled-components": "^6.1.15"
   }
 }

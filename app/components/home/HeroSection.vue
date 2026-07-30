@@ -1,14 +1,12 @@
 <template>
   <section class="hero" :class="{ 'img-loader-bg': loading }">
-    <div class="hero__bg-green"></div>
-    <div class="hero__image-wrapper">
-      <img
-        v-if="heroImage"
-        :src="heroImage"
-        :alt="heroAlt"
-        class="hero__image"
-      />
-    </div>
+    <div class="hero__overlay"></div>
+    <img
+      v-if="heroImage"
+      :src="heroImage"
+      :alt="heroAlt"
+      class="hero__image"
+    />
     <div class="hero__content">
       <h1>{{ data?.heroTitre || 'La qualité, par principe.' }}</h1>
       <p v-if="heroTexteHtml" v-html="heroTexteHtml"></p>
@@ -38,6 +36,7 @@ const heroTexteHtml = computed(() => richTextToHtml(data.value?.heroTexte))
   width: 100%;
   height: 580px;
   overflow: hidden;
+  background: var(--color-primary);
   clip-path: polygon(
     0 0,
     100% 0,
@@ -46,28 +45,30 @@ const heroTexteHtml = computed(() => richTextToHtml(data.value?.heroTexte))
   );
 }
 
-.hero__bg-green {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  background: var(--color-primary);
-}
-
-.hero__image-wrapper {
+.hero__image {
   position: absolute;
   top: 0;
   right: 0;
   bottom: 0;
-  width: 55%;
-  z-index: 1;
-  mask-image: linear-gradient(to right, transparent 0%, black 40%);
-  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 40%);
-}
-
-.hero__image {
-  width: 100%;
+  left: 50%;
+  width: 50%;
   height: 100%;
   object-fit: cover;
+  z-index: 0;
+  mask-image: linear-gradient(to right, transparent 0%, black 20%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 20%);
+}
+
+.hero__overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(
+    to right,
+    var(--color-primary) 35%,
+    rgba(28, 177, 161, 0.6) 52%,
+    transparent 85%
+  );
 }
 
 .hero__content {

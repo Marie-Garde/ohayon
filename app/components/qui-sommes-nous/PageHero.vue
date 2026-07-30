@@ -29,8 +29,9 @@ const heroAlt = computed(() => (data.value?.heroImage as any)?.alt || 'Cabinet O
 .page-hero {
   position: relative;
   width: 100%;
-  height: 380px;
+  height: 520px;
   overflow: hidden;
+  background: var(--color-primary);
   clip-path: polygon(
     0 0,
     100% 0,
@@ -41,11 +42,16 @@ const heroAlt = computed(() => (data.value?.heroImage as any)?.alt || 'Cabinet O
 
 .page-hero__image {
   position: absolute;
-  inset: 0;
-  width: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 50%;
+  width: 50%;
   height: 100%;
   object-fit: cover;
   z-index: 0;
+  mask-image: linear-gradient(to right, transparent 0%, black 20%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 20%);
 }
 
 .page-hero__overlay {
@@ -54,9 +60,9 @@ const heroAlt = computed(() => (data.value?.heroImage as any)?.alt || 'Cabinet O
   z-index: 1;
   background: linear-gradient(
     to right,
-    var(--color-primary) 40%,
-    rgba(28, 177, 161, 0.6) 60%,
-    transparent 100%
+    var(--color-primary) 35%,
+    rgba(28, 177, 161, 0.6) 52%,
+    transparent 85%
   );
 }
 
@@ -89,7 +95,7 @@ const heroAlt = computed(() => (data.value?.heroImage as any)?.alt || 'Cabinet O
 
 @media (max-width: 768px) {
   .page-hero {
-    height: 320px;
+    height: 420px;
   }
 
   .page-hero__content {
@@ -108,7 +114,7 @@ const heroAlt = computed(() => (data.value?.heroImage as any)?.alt || 'Cabinet O
 
 @media (max-width: 480px) {
   .page-hero {
-    height: 280px;
+    height: 360px;
   }
 
   .page-hero__content {
