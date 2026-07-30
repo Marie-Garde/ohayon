@@ -90,7 +90,7 @@ const cultureCartes = computed(() => {
 
 .culture__image-wrapper {
   width: 100%;
-  height: 450px;
+  height: 620px;
   overflow: hidden;
   clip-path: polygon(
     0 var(--slant-height),
@@ -205,7 +205,7 @@ const cultureCartes = computed(() => {
   }
 
   .culture__image-wrapper {
-    height: 320px;
+    height: 440px;
   }
 
   .culture__title {
@@ -229,7 +229,7 @@ const cultureCartes = computed(() => {
 
 @media (max-width: 480px) {
   .culture__image-wrapper {
-    height: 260px;
+    height: 360px;
   }
 
   .culture__title {

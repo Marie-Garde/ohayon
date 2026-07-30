@@ -238,7 +238,7 @@ watch(selectedId, async (id) => {
 
 .team__image-wrapper {
   width: 100%;
-  height: 450px;
+  height: 620px;
   overflow: hidden;
   clip-path: polygon(
     0 var(--slant-height),
@@ -521,7 +521,7 @@ watch(selectedId, async (id) => {
   }
 
   .team__image-wrapper {
-    height: 320px;
+    height: 440px;
   }
 
   .team__title {
@@ -551,7 +551,7 @@ watch(selectedId, async (id) => {
 
 @media (max-width: 480px) {
   .team__image-wrapper {
-    height: 260px;
+    height: 360px;
   }
 
   .team__title {

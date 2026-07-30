@@ -63,7 +63,7 @@
 
 .pillars__image-wrapper {
   width: 100%;
-  height: 450px;
+  height: 620px;
   overflow: hidden;
   clip-path: polygon(
     0 var(--slant-height),
@@ -136,7 +136,7 @@
 
 @media (max-width: 768px) {
   .pillars__image-wrapper {
-    height: 320px;
+    height: 440px;
   }
 
   .pillars__title {
@@ -158,7 +158,7 @@
 
 @media (max-width: 480px) {
   .pillars__image-wrapper {
-    height: 260px;
+    height: 360px;
   }
 
   .pillars__title {
