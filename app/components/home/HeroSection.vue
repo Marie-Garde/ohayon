@@ -50,13 +50,13 @@ const heroTexteHtml = computed(() => richTextToHtml(data.value?.heroTexte))
   top: 0;
   right: 0;
   bottom: 0;
-  left: 50%;
-  width: 50%;
+  left: 20%;
+  width: 80%;
   height: 100%;
   object-fit: cover;
   z-index: 0;
-  mask-image: linear-gradient(to right, transparent 0%, black 20%);
-  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 20%);
+  mask-image: linear-gradient(to right, transparent 0%, black 12%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 12%);
 }
 
 .hero__overlay {
@@ -65,9 +65,9 @@ const heroTexteHtml = computed(() => richTextToHtml(data.value?.heroTexte))
   z-index: 1;
   background: linear-gradient(
     to right,
-    var(--color-primary) 35%,
-    rgba(28, 177, 161, 0.6) 52%,
-    transparent 85%
+    var(--color-primary) 10%,
+    rgba(28, 177, 161, 0.6) 25%,
+    transparent 55%
   );
 }
 
