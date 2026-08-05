@@ -7,5 +7,5 @@ export default defineCliConfig({
   },
   // URL du Studio hébergé par Sanity -> https://ohayon.sanity.studio
   studioHost: 'ohayon',
-  autoUpdates: true,
+  deployment: { autoUpdates: true },
 })

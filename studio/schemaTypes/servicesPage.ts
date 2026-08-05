@@ -1,5 +1,5 @@
 import { defineType, defineField, defineArrayMember } from 'sanity'
-import { CaseIcon } from '@sanity/icons/Case'
+import { CaseIcon } from '@sanity/icons'
 
 /** Champ « texte alternatif » réutilisable, ajouté à chaque image. */
 const altField = () =>

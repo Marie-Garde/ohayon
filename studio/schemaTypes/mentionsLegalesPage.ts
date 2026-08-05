@@ -1,5 +1,5 @@
 import { defineType, defineField, defineArrayMember } from 'sanity'
-import { DocumentIcon } from '@sanity/icons/Document'
+import { DocumentIcon } from '@sanity/icons'
 
 /**
  * Page « Mentions légales ».

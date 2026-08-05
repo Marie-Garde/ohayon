@@ -1,5 +1,5 @@
 import { defineType, defineField, defineArrayMember } from 'sanity'
-import { RocketIcon } from '@sanity/icons/Rocket'
+import { RocketIcon } from '@sanity/icons'
 
 /** Champ « texte alternatif » réutilisable, ajouté à chaque image. */
 const altField = () =>

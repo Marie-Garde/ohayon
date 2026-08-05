@@ -1,11 +1,5 @@
 import type { StructureResolver } from 'sanity/structure'
-import { HomeIcon } from '@sanity/icons/Home'
-import { UsersIcon } from '@sanity/icons/Users'
-import { CaseIcon } from '@sanity/icons/Case'
-import { RocketIcon } from '@sanity/icons/Rocket'
-import { EnvelopeIcon } from '@sanity/icons/Envelope'
-import { CogIcon } from '@sanity/icons/Cog'
-import { DocumentIcon } from '@sanity/icons/Document'
+import { HomeIcon, UsersIcon, CaseIcon, RocketIcon, EnvelopeIcon, CogIcon, DocumentIcon } from '@sanity/icons'
 
 // Chaque page du site = un document unique (singleton).
 // On ajoutera ici les autres pages au fur et à mesure.
