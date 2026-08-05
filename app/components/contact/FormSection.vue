@@ -105,9 +105,8 @@ const subjectLabels: Record<string, string> = {
 }
 
 // Envoi via Web3Forms (https://web3forms.com) : fonctionne sur hébergement
-// statique, sans serveur. Les candidatures partent vers la clé RH si elle est
-// configurée, comme le faisait l'ancien routage Brevo. Le fichier
-// server/api/contact.post.ts reste dans le repo pour un futur hébergement Node.
+// statique, sans serveur. Les candidatures (objet « collaboration ») partent
+// vers la clé RH si elle est configurée, sinon vers la clé générale.
 async function handleSubmit() {
   loading.value = true
   error.value = false

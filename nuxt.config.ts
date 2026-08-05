@@ -12,13 +12,16 @@ export default defineNuxtConfig({
   app: {
     head: {
       htmlAttrs: { lang: 'fr' },
+      link: [
+        { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' },
+      ],
     },
   },
   runtimeConfig: {
     public: {
-      // Base des URL canoniques / Open Graph. À surcharger via
-      // NUXT_PUBLIC_SITE_URL le jour où le site aura un nom de domaine propre.
-      siteUrl: 'https://marie-garde.github.io/ohayon',
+      // Base des URL canoniques / Open Graph. Surchargeable via
+      // NUXT_PUBLIC_SITE_URL (ex. variable d'environnement Vercel).
+      siteUrl: 'https://www.ohayon-associes.com',
       // Formulaire de contact via Web3Forms (fonctionne sur hébergement
       // statique, sans serveur). Ces clés d'accès sont PUBLIQUES par design
       // (elles ne font qu'identifier la boîte de réception, aucun secret).
@@ -28,12 +31,8 @@ export default defineNuxtConfig({
       web3formsKeyRh: '',
     },
   },
-  // Déploiement GitHub Pages : gère .nojekyll (sinon le dossier _nuxt est
-  // ignoré) et le fallback 404.html pour le routage SPA. La base d'URL
-  // (« /ohayon/ ») est fournie via NUXT_APP_BASE_URL dans le workflow, pour
-  // ne pas casser le dev en local qui reste servi sur « / ».
+  // Déploiement Vercel : le préréglage Nitro est détecté automatiquement.
   nitro: {
-    preset: 'github-pages',
     // Le sitemap n'est lié depuis aucune page : on force son prérendu.
     prerender: {
       routes: ['/sitemap.xml'],

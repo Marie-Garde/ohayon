@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://marie-garde.github.io/ohayon/sitemap.xml
+Sitemap: https://www.ohayon-associes.com/sitemap.xml
